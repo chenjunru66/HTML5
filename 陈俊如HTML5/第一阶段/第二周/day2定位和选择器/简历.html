@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title></title>
+    <style>
+        main {
+            width: 50%;
+            min-width: 930px;
+            height: 1400px;
+            margin: 0px auto;
+            background-color: #a68064;
+        }
+        
+        #zuobian1 {
+            width: 70%;
+            height: 150px;
+            border-radius: 25px;
+            background-color: #1f1a17;
+            position: relative;
+            top: 100px;
+            left: 100px;
+            z-index: 8;
+        }
+        
+        #zuobian2 {
+            width: 70%;
+            height: 150px;
+            border-radius: 25px;
+            background-color: #c4be66;
+            position: relative;
+            top: 80px;
+            left: 100px;
+            z-index: 6;
+        }
+        
+        #zuobian3 {
+            width: 70%;
+            height: 150px;
+            border-radius: 25px;
+            background-color: #dc214c;
+            position: relative;
+            top: 60px;
+            left: 100px;
+            z-index: 4;
+        }
+        
+        #zuobian4 {
+            width: 70%;
+            height: 150px;
+            border-radius: 25px;
+            background-color: #d5c2d8;
+            position: relative;
+            top: 40px;
+            left: 100px;
+            z-index: 2;
+        }
+        
+        .yuandian1 {
+            width: 30px;
+            height: 30px;
+            background-color: #a68064;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 16px;
+            left: 20px;
+            z-index: 7;
+        }
+        
+        .yuandian2 {
+            width: 30px;
+            height: 30px;
+            background-color: #a68064;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 16px;
+            left: 20px;
+            z-index: 7;
+        }
+        
+        #youbian1 {
+            width: 70%;
+            height: 150px;
+            border-radius: 25px;
+            background-color: #dededc;
+            position: relative;
+            top: 90px;
+            left: 200px;
+            z-index: 7;
+        }
+        
+        #youbian2 {
+            width: 70%;
+            height: 150px;
+            border-radius: 25px;
+            background-color: #ba8fba;
+            position: relative;
+            top: 70px;
+            left: 200px;
+            z-index: 5;
+        }
+        
+        #youbian3 {
+            width: 70%;
+            height: 150px;
+            border-radius: 25px;
+            background-color: #e3efc1;
+            position: relative;
+            top: 50px;
+            left: 200px;
+            z-index: 3;
+        }
+        
+        #youbian4 {
+            width: 70%;
+            height: 150px;
+            border-radius: 25px;
+            background-color: #c1c1c1;
+            position: relative;
+            top: 20px;
+            left: 200px;
+            z-index: 1;
+            overflow: hidden;
+            /*background-blend-mode: difference;*/
+            background-blend-mode: color;
+        }
+        
+        #zuobian1>span:nth-of-type(1) {
+            font-family: "时尚中黑简体";
+            font-size: 35px;
+            color: lightblue;
+            position: absolute;
+            bottom: 25px;
+            left: 42px;
+            z-index: 8;
+        }
+        
+        #zuobian1>span:nth-of-type(2) {
+            font-family: "时尚中黑简体";
+            font-size: 22px;
+            color: white;
+            position: absolute;
+            bottom: 5px;
+            left: 42px;
+            z-index: 6;
+        }
+        
+        #zuobian1>span:nth-of-type(3) {
+            font-family: "迷你简双线体";
+            font-size: 100px;
+            color: white;
+            position: absolute;
+            top: -13px;
+            left: 300px;
+        }
+        
+        #zuobian1>div:nth-of-type(2) {
+            width: 150px;
+            height: 100px;
+            background-image: url(diwen.png);
+            background-repeat: no-repeat;
+            background-size: 100% 110%;
+            position: absolute;
+            right: 0px;
+            top: 10px;
+        }
+        
+        .dazi {
+            margin-top: 0;
+            font-size: 25px;
+            font-family: "时尚中黑简体";
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+        
+        .xiaozi {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            text-align: right;
+        }
+        
+        .xizozi1 {
+            position: absolute;
+            top: 35px;
+            right: 260px;
+            text-align: right;
+        }
+        
+        #xiaozi2 {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            text-align: left;
+        }
+        
+        #youbian2 div:nth-child(4)>span {
+            font-size: 25px;
+            font-family: "迷你简双线体";
+            position: absolute;
+            left: 15px;
+            bottom: 0px;
+            color: #d0b6cf;
+            z-index: 4;
+        }
+        
+        #zuobian3 div:nth-child(4)>span {
+            font-size: 25px;
+            font-family: "迷你简双线体";
+            position: absolute;
+            left: 10px;
+            top: 50px;
+            color: #d0b6cf;
+            z-index: 4;
+        }
+        
+        #youbian4 div:nth-child(2)>span:nth-child(1) {
+            font-size: 30px;
+            font-family: "时尚中黑简体";
+            color: #d0b6cf;
+            position: absolute;
+            left: 200px;
+            top: 30px;
+            z-index: 2;
+        }
+        
+        #youbian4 div:nth-child(2)>span:nth-child(2) {
+            font-size: 35px;
+            font-family: "时尚中黑简体";
+            color: #d0b6cf;
+            position: absolute;
+            left: 250px;
+            top: 80px;
+            z-index: 2;
+        }
+        
+        #youbian4 div:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: yellow;
+            position: absolute;
+            left: 30px;
+            top: 10px;
+            /*mix-blend-mode: color;*/
+            opacity: 0.9;
+        }
+        
+        #youbian4 div:nth-child(4) {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: blue;
+            position: absolute;
+            left: 160px;
+            top: -80px;
+            opacity: 0.5;
+            /*mix-blend-mode: color;*/
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="zuobian1">
+            <div class="yuandian1"></div>
+            <span>小&nbsp;婷</span>
+            <span>xiao&nbsp;ting</span>
+            <span>简历</span>
+            <div></div>
+        </div>
+        <div id="youbian1">
+            <div class="yuandian2"></div>
+            <div class="dazi">个人信息</div>
+            <div class="xiaozi">
+                <span> 民族：xx族</span><br>
+                <span>出生日期：9x年xx月xx日</span><br>
+                <span>身高：1xxcm</span>
+            </div>
+            <div class="xizozi1">
+                <span>籍贯：xxx</span><br>
+                <span>政治面貌：xxx</span><br>
+                <span>毕业学校：xxxxxxxxxx</span><br>
+                <span>专业：xxxxx</span>
+            </div>
+        </div>
+        <div id="zuobian2">
+            <div class="yuandian1"></div>
+            <div class="dazi">联系方式</div>
+            <div class="xiaozi">
+                <span>电话：1511111111111</span><br> <span>E_Mail:915999999@qq.com</span><br>
+                <span>QQ:915999999</span>
+            </div>
+        </div>
+        <div id="youbian2">
+            <div class="yuandian2"></div>
+            <div class="dazi">教育经历</div>
+            <div class="xiaozi">
+                <span>于xx省xx市xxxxx学校</span><br>
+                <span>就读xxxxx</span>
+            </div>
+            <div><span>2007年至2012年7月</span></div>
+        </div>
+        <div id="zuobian3">
+            <div class="yuandian1"></div>
+            <div class="dazi">实践经历</div>
+            <div class="xiaozi">
+                <span>xx市xxxxx设计有限公司就职</span><br>
+                <span>担当设计师</span>
+            </div>
+            <div><span>2010年07月至2011年9月</span></div>
+        </div>
+        <div id="youbian3">
+            <div class="yuandian2"></div>
+            <div class="dazi">技能水平</div>
+            <div class="xiaozi">
+                <span>可熟练操作</span><br>
+                <span>CoreIDRAW.Adobe Photoshop</span><br>
+                <span>等设计软件与办公室软件</span>
+            </div>
+        </div>
+        <div id="zuobian4">
+            <div class="yuandian1"></div>
+            <div class="dazi">自我评价</div>
+            <div id="xiaozi2">
+                <span>1.大胆创新，具有敏锐的时尚触角，对设计方面极感兴趣
+                    </span><br>
+                <span>2.有很好的独立工作能力，工作认真积极，责任心强，有<br>较好的沟通能力和接受能力</span><br>
+                <span>3.既有团队精神和协调能力，适应能力强，能吃苦耐劳，待人真诚热情</span>
+            </div>
+        </div>
+        <div id="youbian4">
+            <div class="yuandian2"></div>
+            <div>
+                <span>求职意向</span>
+                <span>淘宝美工</span>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+    </main>
+</body>
+
+</html>

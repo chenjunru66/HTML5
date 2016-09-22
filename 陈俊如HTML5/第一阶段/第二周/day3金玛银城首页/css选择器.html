@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>选择器部分总结</title>
+        <style>
+            body{
+                font-size: 50px;
+            }
+            /*关于样式继承：默认字体大小、颜色、粗细等（跟字体有关的样式）都是可以继承的；跟盒模型相关的样式是不可以继承的*/
+            a{
+                /*font-size: 50px;*/
+            }
+            /*伪类选择器：*/
+            
+            /*已访问过的链接的显示结果*/
+            a:visited{
+                color: red;
+            }
+            /*未访问过的链接的显示结果*/
+            a：link{
+                color: cyan;
+            }
+            /*鼠标指针在标签之上的显示结果，在这里得放在link和visited之下才有效果*/
+            a:hover{
+                color: green;
+            }
+            /*鼠标左键按着不松手的显示结果*/
+            a:active{
+                color: yellow;
+            }
+            /*焦点显示结果：鼠标右键按着不松手的显示的结果*/
+            a:focus{
+                color: orange;
+            }
+            :empty:before{
+                content: '前缀';
+            }
+            :empty:after{
+                content: '后缀';
+            }
+            /*:empty 代表选中所有的空标签（）*/
+            /*
+            *{}代表选中所有的标签
+            */
+            *{
+                color: blue;
+            }
+            /*属性选择器：选择带有target属性的标签*/
+            a[target]:hover{
+               color: gray;
+            }
+            /*选择title属性最后一个值作为结尾的标签*/
+            a[title$=索]{
+                color: yellow;
+            }
+            /*选择title属性第一个值为开始的标签例如a标签tittle属性（该属性值有两个）中第一个值中的‘淘’是第一个值的开始*/
+            a[title^=淘]{
+                color: brown;
+            }
+            /*1em=16px；em是以父标签的字号作为标准进行计算，如果父元素也是em字号，则可以逐级相乘，直到到达有明确字号定义的标签*/
+        </style>
+    </head>
+    <body>
+        <!--_blank:新窗口打开链接-->
+       <a href="http://baidu.com" target="_blank">百度搜索</a>
+       <a href="http://bing.com"title="必应、搜索">必应搜索</a>
+       <a href="http://taobao.com"title="淘宝网、天猫">淘宝网</a>
+       <span></span>
+       <p></p>
+    </body>
+</html>

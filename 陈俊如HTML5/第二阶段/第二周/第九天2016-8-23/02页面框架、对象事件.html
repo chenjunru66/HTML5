@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>页面框架、对象事件</title>
+    <style>
+        body {
+            background: #000;
+            text-align: center;
+        }
+        
+        div {
+            height: 50px;
+            background: red;
+        }
+        
+        section {
+            height: 50px;
+            background: blue;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            alert('1111')
+        }
+    </script>
+</head>
+
+<body>
+    <img src="http://icon.nipic.com/BannerPic/20160719/home/20160719091802.jpg" alt="">
+    <img src="http://icon.nipic.com/BannerPic/20160727/home/20160727142700.jpg" alt="">
+    <div>
+        div标签的加载事件
+    </div>
+    <section class="">
+        section的加载事件
+    </section>
+    <a href="http://www.baidu.com">百度搜索</a>
+</body>
+    <script>
+      
+    // onload加载事件  窗口加载的内容实际上是body内部的内容
+    // onload 事件会在页面或图像加载完成后立即发生。
+    // onload 通常用于 <body> 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。 
+     window.onload = function(e){
+         alert('页面加载完成')
+         alert('window:' + e.target.nodeName )//#document
+     }
+    //  document.body.onload = function(e){
+    //      alert('body加载完毕')
+    //      alert('body:' + e.target.nodeName )//#document
+    //  }
+    //  document.documentElement.onload = function(e){
+    //      alert('html加载完毕')
+    //      alert('html:' + e.target.nodeName )
+    //  }  
+    //  document.querySelector('img').onload = function(e){
+    //      alert('图片加载完毕')
+    //      alert('img:' + e.target.nodeName )
+    //  }
+        
+        // document.body.onclick  = function(event){
+        //     // return event.target
+        //     console.log( event.target)
+        // }
+        // // obj(event)
+        // document.body.onload  = function(event){
+        //     // return event.target
+        //     console.log( event.target)
+        // }
+        // window.onload = function(event){
+        //     console.log( event.target)
+        // }
+    </script>
+
+</html>

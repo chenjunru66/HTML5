@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>宽度、高度和内容溢出</title>
+        <style>
+            div{    
+                /*width: 80%;*/
+                /*当max大于设定的width，由width决定；当小于的时候，由max决定*/
+                /*width: 500px;               
+                max-width: 300px;
+                min-width: 800px;
+                当min大于width的时候，宽度为min；当min小于width的时候，宽度为width；适用多个平台使用*/
+                height: 800px;
+                width: 500px;
+                /*溢出内容隐藏:滚动条取消*/
+                overflow: hidden;
+                /*溢出内容：自动处理，出现滚动条*/
+                overflow: auto;
+                /*始终出现滚动条的位置*/
+                overflow: scroll;
+                /*处理水平方向的内容溢出*/
+                /*overflow-x: hidden;*/
+                /*处理竖直方向的内容溢出*/
+                /*overflow-y: hidden;*/
+                margin: 0 auto;
+                border: solid 1px red;
+                /*outline:轮廓线：实线 宽度 颜色(不影响标签，会覆盖，起装饰作用)*/
+                outline: solid 20px blue;
+                /*设置的是轮廓线的偏移量，正值在标签之外，负值在标签之内*/
+                outline-offset: 100px;
+            }
+        </style>
+    </head>
+    <body>
+      <div>
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容  
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          aklgjak ngopaipurioqjgorpuaoijgkalsdgjalkdjfaldksfjasdlfjla
+          aklgjakngopaipurioqjgorpuaoijgkalsdgjalkdjfaldksfjasdlfjla
+          aklgjakngopaipurioqjgorpuaoijgkalsdgjalkdjfaldksfjasdlfjla
+          aklgjakngopaipurioqjgorpuaoijgkalsdgjalkdjfaldksfjasdlfjla
+          aklgjakngopaipurioqjgorpuaoijgkalsdgjalkdjfaldksfjasdlfjla
+          aklgjakngopaipurioqjgorpuaoijgkalsdgjalkdjfaldksfjasdlfjla
+          aklgjakngopaipurioqjgorpuaoijgkalsdgjalkdjfaldksfjasdlfjla
+          aklgjakngopaipurioqjgorpuaoijgkalsdgjalkdjfaldksfjasdlfjla       
+      </div>
+      <header>内容1内容1内容1内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+      </header>
+    </body>
+</html>

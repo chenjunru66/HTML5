@@ -1,0 +1,1 @@
+{"uname":"as","password":"as1122","male":"on","email":"as@qq.com","ip":"::ffff:127.0.0.1","date":"2016-09-19T02:31:50.307Z"}

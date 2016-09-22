@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--定义标签内语言格式-->
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <!--设置IE浏览器的兼容性，以最新的版本兼容当前的-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--对视扣得，宽 度为当前的设备的宽度；出事的缩放比例；最初的缩放比例为1，用户是否缩放，用户是否可以缩放，-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="陈俊如">
+        <title>Bootstrap</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <!--data-placement:提示内容出现的位置
+            -->
+        
+<h4>提示工具（Tooltip）插件 - 锚</h4>
+这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" 
+   title="默认的 Tooltip">
+   默认的 Tooltip
+</a>.
+这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" 
+   data-placement="left" title="左侧的 Tooltip">
+   左侧的 Tooltip
+</a>.
+这是一个 <a href="#" data-toggle="tooltip" data-placement="top" 
+   title="顶部的 Tooltip">
+   顶部的 Tooltip
+</a>.
+这是一个 <a href="#" data-toggle="tooltip" data-placement="bottom" 
+   title="底部的 Tooltip">
+   底部的 Tooltip
+</a>.
+这是一个 <a href="#" data-toggle="tooltip" data-placement="right" 
+   title="右侧的 Tooltip">
+   右侧的 Tooltip
+</a>
+
+<br>
+
+<h4>提示工具（Tooltip）插件 - 按钮</h4>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   title="默认的 Tooltip">
+   默认的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   data-placement="left" title="左侧的 Tooltip">
+   左侧的 Tooltip
+</button>
+<button type="button" class="btn btn-success" data-toggle="tooltip" 
+   data-placement="top" title="顶部的 Tooltip">
+   顶部的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   data-placement="bottom" title="底部的 Tooltip">
+   底部的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   data-placement="right" title="右侧的 Tooltip">
+   右侧的 Tooltip
+</button>
+<script>
+   $(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
+     
+     <!--警告框-->
+<div id="myAlert" class="alert alert-success">
+   <a href="#" class="close" data-dismiss="alert">&times;</a>
+   <strong>成功！</strong>结果是成功的。
+</div>
+
+<h3>警告框（Alert）插件 alert('close') 方法</h3>
+<div id="myAlert" class="alert alert-success">
+   <a href="#" class="close" data-dismiss="alert">&times;</a>
+   <strong>成功！</strong>结果是成功的。
+</div>
+<div id="myAlert" class="alert alert-warning">
+   <a href="#" class="close" data-dismiss="alert">&times;</a>
+   <strong>警告！</strong>您的网络连接有问题。
+</div>
+
+<script type="text/javascript">
+$(function(){
+   $(".close").click(function(){
+      $("#myAlert").alert('close');
+   });
+});  
+
+</script>   
+
+<script type="text/javascript">
+$(function(){
+   $("#myAlert").bind('closed.bs.alert', function () {
+      alert("警告消息框被关闭。");
+   });
+});
+</script>
+ 
+        
+    </body>
+    <!--注意两个的顺序-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,265 @@
+body{
+    margin: 0;
+}
+header{
+   background: #EFEFEF; 
+}
+.navbar{
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 18px;
+}
+.navbar img{
+    float: left;
+    margin: 0 30px;
+}
+.navbar ul{
+    list-style: none;
+}
+.navbar li{
+    float: left;
+    margin:-5px 20px 0 ;
+}
+.navbar li a{
+     text-decoration: none;
+    padding: 0 10px 5px 10px;
+    color: #557FAA;  
+}
+.navbar li a:hover{
+     color:#3366FF; 
+    border-bottom: solid 4px #3366FF;
+}
+.banner img{
+    width: 100%;
+    height: 500px;
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -40px;    
+}
+main>div{
+    width: 32%;
+    border: solid 2px #DCDCDC;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.f-1 a:hover,.f-2 a:hover,.f-3 a:hover,footer a:hover{
+    color: blue;
+}
+.f-1 ul{
+    list-style: none;
+    padding-left: 15px;
+}
+.f-1 ul li{
+    overflow: hidden;
+}
+.f-1 li a{
+    text-decoration: none;
+    color: #000;
+    float: left;
+}
+.f-1 li span{
+    float: right;
+    padding-right: 15px;
+}
+.f-1-1{
+    overflow: hidden;
+    border-bottom: dotted 1px #aaa;
+}
+h4{
+    background: #014BD8;
+     color: white;
+     width: 100%;
+     margin: 0;
+     padding: 5px 0 5px 5px;
+     box-sizing: border-box;
+}
+h3{
+     font-weight: 800;
+     font-size: 16px;
+     margin: 5px ;
+}
+.f-1-1 img{
+     width:100px;
+     margin: 5px;
+     float: left;
+}
+.f-1-1 section{
+    width: 350px;
+    float: right;
+    text-align: justify;
+    overflow: hidden;
+}
+.f-1-1 section a{
+    float: right;
+    padding-right: 15px;
+    font-size: 12px;
+    color: #aaa;
+    text-decoration: none;
+}
+main p{
+    margin: 5px 10px 5px 5px;
+}
+.f-2 h4{
+    background:#292929 
+}
+.f-2 ul{
+    padding: 5px 5px 5px 0;
+    text-align:left;
+    list-style: none;
+    margin: 0;
+}
+.f-2 ul li:nth-of-type(1){
+    border-bottom:  dotted 1px #aaa;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.f-2 ul li:nth-of-type(2){
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.f-2  ul a{
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #aaa;
+    text-decoration: none;
+}
+.f-3>div>div{
+    height: 80px;
+    background: url(10.jpg) center top;
+    margin: 15px 10px 0px 10px;
+  
+}
+.f-3 ul{
+    list-style: none;
+    text-align: center;
+    margin:15px 0 0 0;
+}
+.f-3 ul li{
+    display: inline-block;
+    margin: 12px 20px 10px 0;
+    line-height: 35px;
+    background: #ccc;    
+    padding: 0px 30px;
+}
+.f-3 a{
+    text-decoration: none;
+    color: #000;
+}
+footer{
+    width: 100%;
+    background: #FFFFFF;
+    color: #9999BB;
+    overflow: hidden;
+}
+footer div{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+footer div ul{
+    list-style: none;
+    
+}
+footer div p{
+    float: left;
+    margin-top: 0;
+}
+footer div ul a{
+   text-decoration: none;
+   margin: 0 15px;
+   color:#9999BB; 
+}
+footer div ul li{
+    float: right;
+}
+ @media (max-width:360px){
+     .navbar{
+         width: 100vw;
+         font-size: 12px;
+     }
+     .navbar img{
+         width:70vw;
+         /*height: 35px;*/
+         display: block;
+         margin-right: 50px;
+     }
+     .navbar li{
+         float: left;
+         margin:  5px;
+     }
+     .navbar li a{
+         padding: 0px 5px;
+     }
+     .navbar li a:hover{
+         color:#3366FF; 
+         border-bottom: solid 1px #3366FF;
+}
+     .banner img{
+        width: 100vw;
+        height: 50vw;
+}
+main{
+     margin-top: -30px;    
+}
+     main>div{
+         width: 80vw;
+     }
+     h4,h3{
+         font-size: 12px;
+     }
+     .f-1{
+         font-size: 10px;
+     }
+     .f-1-1 section{
+         float: right;
+         width: 65%;    
+     }
+     .f-1-1 img{
+         float: left;
+         width: 30%;
+     }
+     .f-2 ul,.f-3 ul{
+         font-size: 10px;
+     }
+     .f-3>div{
+         width: 80%;
+         margin: 0 auto;
+     }
+     .f-3 ul{
+         padding-left: 20px;
+         
+     }
+     .f-3 ul>li{
+         padding: 5px;
+         /*margin: 5px;*/
+         line-height: 10px;
+     }
+     footer{
+         width: 100vw;
+     }
+     footer p{
+          width: 100%;
+          text-align: center;
+          font-size: 12px;
+     }
+      footer div ul{
+          width: 100%;
+           text-align: center;
+           margin-right: 10px;
+           padding-left: 15px;
+           overflow: hidden;
+      }
+     footer div ul li{
+       float: left;
+       
+}
+     footer div ul a{
+         margin: 2px;
+         font-size: 12px;
+        
+     }
+ }

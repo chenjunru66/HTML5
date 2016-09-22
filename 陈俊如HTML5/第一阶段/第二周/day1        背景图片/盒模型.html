@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>盒模型</title>
+        <style>
+            div{
+                width: 500px;
+                border: 10px solid red;
+                padding: 50px;
+                margin: 50px;
+                /*简写属性：样式名称：多个样式值
+                background,margin,padding,animation(动画：可套很多属性；）；*/
+                /*标签的宽度=内容宽度+内边距+边框值，*/
+                /*设置标签宽度为边框宽度，默认值为content-box：设置的宽度为内容的宽度
+                当设定当前的样式是border-box，*/
+                box-sizing: border-box;
+                box-sizing: content-box;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+             内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+             内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+             内容内容内容
+        </div>
+    </body>
+</html>

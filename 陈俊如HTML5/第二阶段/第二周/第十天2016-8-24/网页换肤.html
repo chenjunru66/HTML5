@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>网页换肤</title>
+        <style>
+            body{
+                margin: 0;
+                 background: lightblue;
+            }
+            .wrapper{
+                width: 50%;
+                margin: 0 auto;
+                margin-top: 50px;
+            }            
+            .f-1 span{
+                display: inline-block;
+                width: 20px;
+                height: 20px; 
+                
+            }
+            .f-1 span:nth-of-type(1){
+                border: 10px solid red;
+                background: red;
+            }
+            .f-1 span:nth-of-type(2){
+                border: 10px solid green;
+                background: green;
+            }
+            .f-1 span:nth-of-type(3){
+                border: 10px solid black;
+                background: black;
+            }
+            ul{
+                list-style: none;
+                color: white;
+                padding: 0;
+               
+            }
+            li{
+                display: inline-block;
+                border: 2px solid white;
+                background: black;               
+                width: 100px;
+                padding: 15px 25px;
+                text-align: center;
+                color: lemonchiffon
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="f-1">
+            <span></span>
+            <span></span>
+            <span></span>
+           </div>
+       <div class="f-2">
+            <ul>
+                <li>新闻</li>
+                <li>娱乐</li>
+                <li>体育</li>
+                <li>电影</li>
+                <li>音乐</li>
+                <li>旅游</li>
+            </ul>
+        </div>
+        </div>        
+    </body>
+    
+    <script>
+          var  body = document.body
+          var spa = document.querySelectorAll('span')
+          var lis = document.querySelectorAll('li')   
+          var cssStyle = document.styleSheets
+        //console.log(cssStyle)  
+        //console.log(cssStyle[0]) 
+          var cssR = cssStyle[0].cssRules        
+        //  console.log(cssR)  
+        // console.log(cssR[0].cssText)           
+           for( var i = 0;i < spa.length;i++){
+               spa[i].index = i                
+               spa[i].onclick = function(){                    
+                   if( this.index == 0){                                                              
+                       cssStyle[0].insertRule( 'body{ background:yellow;}',8)                      
+                       cssStyle[0].insertRule( '.f-1 span:nth-of-type(1){background:white}',9)
+                       cssStyle[0].insertRule( 'li{background:black}',10)
+                       console.log(cssStyle[0])                        
+                   }                   
+                   else if( this.index == 1 ){
+                       cssStyle[0].insertRule( 'body{ background:lemonchiffon;}',8)                       
+                       cssStyle[0].insertRule( '.f-1 span:nth-of-type(2){background:white}',9)
+                    // console.log(cssR[6].cssText)
+                       cssStyle[0].insertRule( 'li{background:gray}',10)  
+                       console.log(cssStyle[0])                      
+                   }                
+                   else if( this.index == 2 ){
+                       cssStyle[0].insertRule( 'body{ background:lightcoral;}',8)
+                       cssStyle[0].insertRule( '.f-1 span:nth-of-type(3){background:white}',9)
+                       cssStyle[0].insertRule( 'li{background:green}',10) 
+                       console.log(cssStyle[0])                       
+                   }
+               }               
+           }
+    </script>
+    
+</html>

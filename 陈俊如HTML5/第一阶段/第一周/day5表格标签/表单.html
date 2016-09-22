@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--文档根元素-->
+<html>
+    <!--供浏览器识别-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title></title>
+        <style>
+            body{
+                width: 100%;
+                margin: 0 auto;
+            }
+          table{
+              position: relative;
+              top: 20px;
+              width:80%;
+              height: 200px;
+              text-align: center;
+              border-collapse: collapse;
+              margin: 0 auto;
+          }
+           .k-1 span{           	
+           	writing-mode: tb-rl;
+           
+           }
+          .q{
+              text-align: left;
+              /*padding-bottom: 0px;
+              border-bottom: none;*/
+          }  
+          #bo{
+             padding-bottom: 0px;
+          }      
+        </style>
+    </head>
+    <body>
+     <table border="1">
+       <tr>
+           <td>会签部门</td>
+           <td>移交事项</td>
+           <td>数量</td>
+           <td>说明</td>
+           <td>移交人</td>
+           <td>接收人</td>
+           </tr>  
+         <tr>
+             <td  rowspan="5" class="k-1">
+                <!--<p>原</p>
+                <p>部</p>
+                
+                <p>门</p>-->
+               <span>原部门</span>
+                     </td>
+             <td class="q">1、工作</td>
+             <td ></td>
+             <td rowspan="4"></td>
+             <td rowspan="4"></td>
+             <td rowspan="4"></td>
+         </tr>
+         <tr>
+             <td class="q" id="bo">2、文件、文档</td>
+             <!--<td></td>-->
+              <td></td>
+             <!--<td></td>-->
+             <!--<td></td>
+             <td></td>-->
+         </tr>
+         <tr>
+             <td class="q">3、客户资料</td>
+             <td></td>
+             <!--<td></td>-->
+             <!--<td></td>-->
+             <!--<td></td>
+             <td></td>-->
+         </tr>
+         <tr>
+             <td class="q">4、工作进展情况说明</td>
+             <td></td>
+             <!--<td></td>-->
+             <!--<td></td>-->
+             <!--<td></td>
+             <td></td>-->
+         </tr>
+         <tr>
+             <td>备注</td>
+             <td colspan="4"></td>
+             <!--<td></td>-->
+             <!--<td></td>
+             <td></td>
+             <td></td>-->
+         </tr>
+     </table>
+    </body>
+</html>

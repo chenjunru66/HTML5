@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>window对象的方法和属性</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div>
+           <span>02</span>分<span>05</span>秒
+        </div>
+        <script>
+            // window的前缀可以省略掉
+            // console.log(window.document)
+            // console.log( document )
+            
+            // 提示框
+            // alert( '这是一个提示框 ' )
+            // alert('有一个提示框')
+            // 点击确定就可以取消掉当前的提示框
+            
+            // 带有确定和取消按钮,点击确定返回true，点击取消返回false，
+            // confirm('是否关闭')
+            // console.log( confirm('是否关闭') )
+            
+            // 可以输入文字的对话框,第一个参数：提示文字信息；第二个参数：默认的输入内容
+            // prompt('是否需要输入文字','021')
+            
+            // 打开新窗口，第一个参数：网址；第二个参数：名称/target属性的值
+            // 第三个值：设置新窗口的属性；
+            // open( 'http://www.baidu.com','baidu','width=300 ,height=300')
+            
+            
+            // 倒计时：setInterval, setTimeout ,clearTimeout, clearInterval
+            
+            // setTimeout(function,time)暂停多少毫秒之后，执行某个函数，执行一次
+            
+            var timer            
+            // timer = setTimeout(function(){alert('暂停2s之后弹出')},2000)
+            // clearTimeout(timer)//清除setTimeout，先设置全局变量timer
+            
+            //setInterval(function,time)每隔多少毫秒之后调用执行函数
+            // timer = setInterval( function(){
+            //     console.log( '11' )
+            // },1000)
+            // clearInterval( timer )//清除setInterval，
+            
+            // var div = document.querySelector('div')
+            // // console.log( div ) //10
+            // var num = div.innerHTML
+            // timer = setInterval( function(){
+            //     num--
+            // //     if( num < 0){
+            // //     return
+            // // }            
+            //     div.innerHTML = num               
+            //     if( num == 0 ){
+            //         clearInterval(timer)
+            //     } 
+            // },1000)
+           
+           var span1 = document.querySelectorAll('span')[0]
+           var span2 = document.querySelectorAll('span')[1]
+           
+           var num1 = span1.innerHTML
+           var num2 = span2.innerHTML
+            
+           setInterval( function(){
+               num2--
+               if( num2 < 0 ){
+                   num1--
+                   if( num1 < 0){
+                       return
+                   }
+                   num1 = num1 < 10 ? '0' + num1 : num1
+                   span1.innerHTML = num1
+                   num2 = 59
+               }
+               num2 = num2 < 10 ? '0' + num2 : num2
+               
+               span2.innerHTML = num2
+               
+               
+           },1000 ) 
+            
+            
+        </script>
+    </body>
+</html>

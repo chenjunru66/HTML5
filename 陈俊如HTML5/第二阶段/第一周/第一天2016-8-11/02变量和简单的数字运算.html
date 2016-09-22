@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>变量和简单的数字运算</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    JS对大小写比较敏感
+    <script>
+        // var 声明或者创建一个变量，a，b是变量名称，用来存储数据的容器
+            // = 赋值的意思，
+           var a = 0.1;
+           var b = 0.2;
+           var c = a + b;
+           var d = c / b;
+           //打开浏览器的控制台中的js和日志（用来存储信息） console.log()在控制台输出值
+           console.log(c);  //0.30000000000000004 可以看出计算机对计算是有误差的
+           console.log(d);  //1.5000000000000002
+    </script>
+    <br> JS数据类型：字符串String; 布尔值Boolean；数字Number; 空Null; 未定义：Undefined <br> 对象Object; 数组Array;
+    <script>
+        // JS特点：弱类型的脚本语言，命名方式为驼峰法（）
+           
+            // 字符串 值是包裹在引号之间
+            var name = 'wang';
+            var keMu = 'HTML5';
+            
+            // 数字
+            var age = 3;
+            //console.log( typeof(age) );//typeof()判断当前变量的数据类型
+            console.log( name + keMu );//wangHTML5
+            var geShi = name + age;//隐式类型转换 wang3
+            //var trans = name - age;//减法的时候减不动NaN
+            // console.log(geshi + ',' + trans);
+            console.log( geShi );
+            // console.log( typeof(geShi) + ',' + geShi );//wang3字符串 
+            // console.log( typeof(trans) + ',' + trans );
+            
+            // 布尔值：true ，false
+            // 逻辑运算：与 或 非；
+            var f1 = true, f2 = false;
+            console.log( true && false ) //false
+            console.log( true || false ) //true
+            console.log( 12 && 13 );
+            
+            //十六进制：0~9 ，A~F,十六进制的表述：0x开始的数据为十六进制
+            var m = 0x1, n = 0x5, q = 0xA, w =0xFE;
+            console.log( w );
+            
+            //空Null,清空变量的值，写在后面，undefined，未定义的变量
+            var name = null;
+            console.log( name );
+            console.log( typeof(name) );
+            
+            //对象  值在{name：value}中，键对值 var.name = value,
+            var newObject = { 'name':'yan', 'sex':'femail', 'age':'3'};
+            console.log( newObject );//Object
+            console.log( newObject.name );
+            
+            //数组 值在[],计数从0开始，name[index]
+            // var newArray = [1,2,3,4,5];
+            var newArray = [ { 'name':'yan', 'sex':'femail', 'age':'3'},
+                             { 'name':'y123n', 'sex':'mail', 'age':'4'},
+                             { 'name':'y3a', 'sex':'femail', 'age':'5'} ]
+            console.log( newArray[2].name );
+            
+    </script>
+</body>
+
+</html>

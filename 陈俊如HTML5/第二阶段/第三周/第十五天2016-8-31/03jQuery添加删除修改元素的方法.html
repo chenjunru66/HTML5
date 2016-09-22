@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>jQuery添加、删除、修改元素的方法</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div>
+            这是已经写好了的div标签
+        </div>
+        <p>这是写好的p标签</p>
+        <p>这依然是写好的p标签</p>
+        <span>这是通过appendTo方法将元素插入到某个位置上</span>
+        <section>即将通过insertAfter方法插入的</section>
+        <main>即将通过insertBefore方法插入</main>
+        <script>
+            
+            $(function(){
+                // 内部插入  
+                // append()在当前的标签内部最后的位置添加新的文本或者标签
+                $("div").append("这是添加的文本内容")
+                $("div").append("<p>这是通过内部插入方法引入的段落标签</p>")
+                
+                // appendTo() 把当前的标签插入到目标标签内的最后位置
+                $("p").appendTo("div")
+                                
+                // prepend()在当前标签的内部最开始的位置添加新的文本或者标签
+                $("div").prepend("这是通过prepend方法插入的内容")
+                $("div").prepend("<p>这是通过prepend方法插入的标签</p>")
+                
+                // prependTo把当前的标签插入到目标标签的起始位置
+                $("p").prependTo("div")
+                                
+                // index:当前标签的索引值；html：当前标签的内容
+                // $("span").append(function(index,html){
+                //     return index = 5
+                // })   
+                
+                // 外部插入 插入的元素是同级元素
+                $("p").after("<span>这是通过after外部插入方法插入的内容") 
+                $("p").before("<span>这是通过before外部插入方法插入的内容") 
+                
+                // 把当前元素插入到目标标签之后
+                $("div").insertAfter("section")
+                
+                // 把当前元素插入到目标标签之前
+                $("main").insertBefore("section")
+                
+                // 包裹  在当前标签外部再加一个元素--增加父级元素
+                $("main").wrap("<div class='m1'> </div>")
+                // 移除当前元素的父级元素
+                $("main").unwrap()
+                
+                // $("span").wrap("<p class='p2'></p>")                
+                // 把所有符合条件的元素摘出来，放到目标标签内
+                $("span").wrapAll("<p class='p3'></p>")
+                
+                // 复制clone
+                $("section").clone().prependTo("div")
+            })
+        </script>
+    </body>
+</html>

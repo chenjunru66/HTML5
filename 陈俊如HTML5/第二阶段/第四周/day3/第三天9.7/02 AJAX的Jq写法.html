@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title> AJAX的基础知识了解 </title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <pre>
+        HTML 超文本标记语言 -- hyper text markup language   == 显示数据
+        HTTP 超文本传输协议 -- hyper text transfer protocol
+        AJAX 异步的Javascript 和 XML  Asynchronous javascript and XML(传输和存储数据)
+        其核心对象：XHR -- XMLHttpRequest：在不重载当前页面的情况下，与服务器进行数据交换
+        
+    </pre>
+    <div>
+        这是原来的内容，即将通过不重载页面的前提下，与服务器进行数据交换
+    </div>
+    <button type="button"> 更新 </button>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                // $("div").load('ceshi.html')
+                // obj = $.ajax({ 
+                //             url:'ceshi2.html', 
+                //             success:function(){
+                //                 $("div").html(obj.responseText)
+                //             }
+                //         })
+                $.ajax({
+                    url:'ceshi.html', 
+                    async:true, 
+                    success:function(result){
+                        $('div').html( result)
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

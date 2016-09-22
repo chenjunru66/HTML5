@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>运算符</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // 赋值运算符  =  把等号右侧的操作数的值赋给左侧的操作数
+            var x = 5
+            var y = x
+            // console.log(y)//5
+           
+            // +=  加法赋值
+            y += x  // y = y + x
+             console.log(y)//10
+             
+            // -=  减法赋值
+            y -= x //y = y - x
+            console.log(y)//5
+            
+            //比较运算符 >,<,>=,<=,!=,==,===,!==,
+            var score = 10
+            if(score < 5){
+                console.log('不及格')
+            } if( score > 5){
+                console.log('及格')
+            } if( score != 5){
+                console.log( '当前分数不为5')
+            } if( score == 10){
+                console.log( '当前分数为10')
+            } if( score === 10){
+                console.log( '100' )
+            }
+            var m = 10
+            var n = '10'
+            if( m == b){
+                console.log('数值相等')
+            }
+            // === 判断变量的数值和类型是否全相等
+            if( m === n){
+                console.log('数值和类型相等')
+            }
+            else { 
+                console.log( '数值和类型不相等')
+            }
+            
+            // 算术运算符 +，-，*，/，%，++，--
+            var a = 10
+            var b = 3
+            console.log( a % b )//1 当a<b,取余为a，a>b,取余为a-b
+            
+            var i = 1;
+            // for(;;;)
+            for( ; i < 5; ){
+                console.log(i)//1,2,3,4
+                i++;                
+            }
+            console.log(i)//5
+            
+            var i = 1
+            for( ; i < 5; ){               
+                console.log(i)//1,2,3,4
+                ++i
+            }
+            
+            var j = i++
+            console.log(j)//5
+            console.log(i)//6
+            var m = ++i
+            console.log(m)//7
+            console.log(i)//7
+            
+            
+        </script>
+    </body>
+</html>

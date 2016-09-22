@@ -1,0 +1,9 @@
+body{
+    background:orange
+}
+span:first-child{
+   background:#fff; 
+}
+li{
+    background:red;
+}

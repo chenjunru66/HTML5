@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>jQuery获取DOM元素</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <p class="p2">通过类名获取的标签</p>
+        <p id="p1">通过id获取的标签</p>
+        <p>通过标签名获取标签</p>
+        <div>通过*选择标签</div>
+        <ul>
+            <li><a href="">通过层级关系选定</a> <span>通过prev + next 选择</span></li>
+        </ul>
+        <script>
+            // 通过id获取标签，js写法
+            var p1 = document.getElementById('p1')
+            console.log( p1 )
+            console.log( document.querySelector('#p1') )
+            // jq写法   id选择器  
+            console.log( $('#p1') )
+            
+            $(function(){
+                // 通过类名选择器获取标签
+                console.log( document.querySelector('.p2') )
+                console.log( $('.p2') )
+                // 通过标签名获取标签
+                console.log( document.getElementsByTagName('p')[2])
+                console.log( $('p')[2] )
+                
+                // 通过*选择标签
+                console.log( $('*')[11] )
+                
+                // 选择多个匹配的标签
+                console.log( $('#p1,.p2') )
+                
+                // 通过层级关系选定
+                console.log( $('ul li a') )
+                
+                // 通过层级关系选中直系标签
+                console.log( $('ul>li>a') )
+                
+                // 通过prev + next 选择
+                console.log( $('a+span'))
+                $('a+span').css('color','red') 
+            })
+        </script>
+    </body>
+</html>

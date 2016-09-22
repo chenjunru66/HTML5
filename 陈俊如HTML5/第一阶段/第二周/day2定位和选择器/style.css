@@ -1,0 +1,186 @@
+body{
+    font-family: 时尚中黑简体;
+}
+main{
+    /*定宽居中*/
+    width: 80%;
+    margin: 0 auto;
+    background: url(wood.png) no-repeat;
+    background-size: 100%;
+    padding: 50px 0;
+    
+}
+main>div{
+    width: 80%;
+    margin: 0 auto;
+    height: 150px;
+    /*border: solid 1px blue;*/
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    /*第一个值：x轴；第二个值：y轴
+    第三个值：模糊度；第四个值：颜色*/
+    box-shadow: 5px 5px 5px black;
+    margin-top: -10px;
+}
+main>div:nth-child(2n+1){
+    margin-left: 50px;
+}
+/*:first-child等价于:nth-child(1)*/
+main>div:first-child{
+    background:#1e1a17; 
+    overflow: hidden;
+    z-index: 9;
+    
+}
+main>div>span{
+    width: 30px;
+    height: 30px;
+    background: url(wood.png);
+    position: absolute;
+    border-radius: 50%;
+    left: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+h1{ 
+    /*h1~h6标题标签具有默认的外边距，字体粗细，字体大小*/
+    font-size: 55px;
+    color: white;
+    /*font-weight: 字体粗细*/
+    font-weight: 100;
+    position: absolute;
+    right: 180px;
+    top: -5px; 
+    margin: 0;
+}
+h2{
+    font-size: 40px;
+    color: purple;
+    position: relative;
+    left: 40px;
+    top: 30px;
+}
+h2 small{
+    /*转化为块元素*/
+    display: block;
+    font-size: 25px;
+    color: white;  
+}
+img{
+    position: absolute;
+    width: 300px;
+    top: -20px;
+    right: -180px;
+}
+main>div:nth-child(2){
+    background: #dededc;
+    z-index: 8;   
+}
+main>div:nth-child(3){
+    background: #c4be66;
+    z-index: 7;   
+}
+h3{
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    top:15px;
+    font-weight: normal;
+    font-size: 26px;
+}
+address,aside{
+    font-style: normal;
+    float: right;
+}
+address p{
+    float: left;
+    text-align: right;
+    margin-right: 40px;
+    font-size: 15px;
+}
+address p:last-child,aside p{
+    margin-top: 50px;
+}
+address p:first-child{
+    margin-top: 28px;
+}
+aside p{
+    float: left;
+    text-align: right;
+    margin-right: 40px;
+}
+main>div:nth-child(4){
+    background: #ba8fba;
+    z-index: 6;  
+}
+main>div:nth-child(5){
+    background: #dc214c;
+    z-index: 5;
+}
+main>div:nth-child(6){
+    background: #e3efc1;
+    z-index: 4;
+}
+main>div:nth-child(4)>h5{
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+main>div:nth-child(7){
+    background: #d5c2d8;
+    z-index: 3; 
+}
+main>div:nth-child(7)>p{
+       
+    margin:20px 80px;
+}
+main>div:nth-child(8){
+    background: #c1c1c1;
+    z-index: 2;
+    /*overflow: hidden;*/
+}
+h4:first-child{
+   margin: 0;
+   position: absolute;
+   font-size: 30px;
+   left: 220px;
+   top: 15px;
+   color: #fff;    
+}
+/*选择第一个文字（英文）*/
+h4:first-child:first-letter{
+    color: blue;
+}
+h4:nth-child(2){
+    margin: 0;
+    position: absolute;
+    font-size: 40px;
+    left: 280px;
+    bottom: 10px;
+    color: #fff;
+}
+main>div:last-child>div:nth-child(3){
+     width:250px;
+     height: 250px;
+     background: rgba(225,225,0,0.6);
+     border-radius: 50%;
+     position: absolute;
+     top: -50px;
+     left: 40px;  
+       /*clip:rect(top,right:,bottom,left);裁剪属性
+       第一个值：裁掉的是上方的范围（从上到下算）
+       第二个值：从左到右被保留的范围（包含左侧裁掉的值）；
+       第三个值：从上到下被保留的范围（包含上部裁掉的值）；
+       第四个值：裁掉的是左方的范围（从左到右算；*/
+     clip: rect(50px,250px,200px,0px);
+     }
+     main>div:last-child>div:nth-child(4){
+         width: 300px;
+         height: 300px;
+         background: rgba(0,0,255,0.6);
+         border-radius: 50%;
+         position: absolute;
+         top: -50px;
+         left: 200px; 
+         clip: rect(50px,300px,200px,0);      
+     }

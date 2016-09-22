@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>对象的常用操作（访问，修改等）</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // 以班级学生为例，添加姓名，性别。年龄。身高。体重
+            
+            var obj = {  }
+            // 给对象添加内容
+            obj.name = '张三'
+            console.log(obj)//Object { name: "张三" }
+            obj.sex = 'nan'
+            obj.age = '20'
+            obj.tall = 185
+            obj.weight = '75kg'
+            console.log(obj)//Object { name: "张三", sex: "nan", age: "20", tall: 185, weight: "75kg" }
+            // 给对象添加方法
+            obj.sing = function(){
+               console.log('唱歌')
+            }
+            console.log(obj)
+            //Object { name: "张三", sex: "nan", age: "20", tall: 185, weight: "75kg", sing: obj.sing() }
+            
+            // 修改元素的值
+            obj.name = "李四"
+            console.log(obj)
+            
+            // 删除属性或方法
+            delete obj.weight
+            console.log(obj)
+            
+            delete obj.sing
+            console.log(obj)
+            // Object { name: "李四", sex: "nan", age: "20", tall: 185, sing: obj.sing() }
+            // Object { name: "李四", sex: "nan", age: "20", tall: 185 }
+            
+            // 获取对象所有的元素:遍历  for in 语句
+            // 循环遍历对象的属性
+            // for( var in object ){
+            //     执行语句
+            // } 
+            // var 属性名称；object：对象名称（要遍历的对象）
+            // 对象的属性可以通过[]进行访问，所以有的时候对象也被叫做关联数组，每个属性都有一个用于访问它的字符串值
+            console.log( obj.name)
+            console.log( obj['name'])
+            
+            var txt = ''
+            var x
+            for( x in obj ){
+                // x属性名称
+                console.log( typeof(x))
+                txt = obj[x]
+                console.log(txt)
+            }
+            
+            // 对象和数组
+            var objLi = {
+                name :'yan',
+                age :3,
+                sing:{
+                    nae : 'han'
+                },
+                men : function(){
+                    alert('唱歌')
+                }
+                
+            }
+            console.log( objLi )
+        </script>
+    </body>
+</html>

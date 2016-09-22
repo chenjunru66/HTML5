@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 星际评分 </title>
+    <style>
+        body{
+            color:#666;
+        }
+        #star{
+            width:600px; margin: 50px auto; position:relative;
+        }
+        #starup{
+            overflow: hidden;
+        }
+        #starup>span{
+            float:left; font-size:14px; line-height:25px;
+        }
+        #list{
+            float:left; list-style:none; margin:0; padding:0; margin-left:10px;
+        }
+        #list li{
+            float:left; width:25px; height:25px; background:url(images/star.png) no-repeat;
+            background-size:80%;
+        }
+        #list li:hover{
+            cursor:pointer;
+        }
+        #list li.on{
+            background-position: 0 -29px;
+        }
+        #list a{
+            display:none;
+        }
+        #star p{
+            margin:0; font-size:12px;
+        }
+        #p1{
+            float:left; line-height: 25px; margin-left:20px;
+        }
+        #p2 {
+            width:200px;position: absolute; left:50px;
+        }
+        #p2 strong, #p1 strong{
+            color:#f60;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div id="star">
+        <div id="starup">
+            <span> 点击星星可以评分 </span>
+            <ul id="list">
+                <li><a> 1 </a> </li>
+                <li><a> 2 </a> </li>
+                <li><a> 3 </a> </li>
+                <li><a> 4 </a> </li>
+                <li><a> 5 </a> </li>
+            </ul>
+            <p id="p1"> <strong>  2分</strong>
+                ( 差得太离谱，与卖家描述的严重不符，非常不满 )  </p>
+        </div>
+
+        <p id="p2"> <strong> 2分  不满意 </strong> <br/> 差得太离谱，与卖家描述的严重不符，非常不满 </p>
+    </div>
+
+    <script>
+        var arr = [
+            "很不满意|差得太离谱，与卖家描述的严重不符，非常不满",
+            "不满意|部分有破损，与卖家描述的不符，不满意",
+            "一般|质量一般，没有卖家描述的那么好",
+            "满意|质量不错，与卖家描述的基本一致，还是挺满意的",
+            "非常满意|质量非常好，与卖家描述的完全一致，非常满意"
+        ]
+        var arr1 = [
+                '很不满意', '不满意', '一般', '满意', '非常满意'
+        ]
+        var arr2 = [
+                '差得太离谱，与卖家描述的严重不符，非常不满',
+                '部分有破损，与卖家描述的不符，不满意',
+                '质量一般，没有卖家描述的那么好',
+                '质量不错，与卖家描述的基本一致，还是挺满意的',
+                '质量非常好，与卖家描述的完全一致，非常满意'
+        ]
+        var score = 0
+//        console.log( $('#list li').length )
+        $('#list li').each(function(index){
+
+            $(this).hover(function(){
+//                console.log(index)
+                num = index + 1
+                show(num)
+                $('#p2').html( '<strong>' + num+ '分 '   + arr1[index] + '</strong> <br />' + arr2[index]   )
+            }, function(){
+                show(score)
+                $('#p2').empty()
+            })
+            $(this).click(function(){
+                score = index + 1
+                show(score)
+                $('#p1').html( '<strong>' + num+ '分 '   +  '</strong> (' + arr2[index] + ')' )
+            })
+        })
+        function show(index){
+            for( var i = 0; i < $('#list li').length; i++ ){
+                if( i < index ){
+                    $('#list li').eq(i).addClass('on')
+
+                } else {
+                    $('#list li').eq(i).removeClass('on')
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title></title>
+        <style>
+            body{
+                background-color: gray;
+                position: relative;               
+               
+            }
+           #zhengti{
+                /*z-index: 5;*/
+                background-color:white;
+                position: absolute; 
+                top: 0px; 
+                left: 25%;
+                width: 50%;
+                margin: 0px auto; 
+           }
+           #head>h1{
+               font-size: 50px;
+               text-align: center;
+           } 
+           #head>address{
+               font-style: normal;
+               font-size: 25px;
+               text-align: center;
+           }
+           #kuohao{
+               quotes: '('')';
+                font-size: 25px;
+                position: relative;
+                left: 25%;       
+           }
+           .ziti1{
+               font-size: 25px;
+               margin: 0px;
+               
+           }
+           .ziti2{
+               font-size: 25px;
+               text-align: center;
+           }
+           .ziti3{
+              
+               text-align: center;
+           }
+           .ziti4{
+              
+              font-size: 25px;
+           }
+           .kuohao1{
+               quotes: '['']';
+           }
+           .kuohao2{
+               quotes: '('')';
+           }
+           .kuohao3{
+               quotes: '<''>';
+           }
+           .shenluehao{
+               quotes: '...''...';
+           }
+           #tu1{
+               width: 100%;
+               height: 980px;
+               background-image: url("1.png");
+               background-size: 100%;
+           }
+           #tu2{
+               width: 30%;
+               height: 120px;
+               background-image: url("2.png");
+               background-size: 100%;
+               margin: 0px auto;
+               
+           }
+           #footer{
+               list-style: none;
+           }
+           ul{
+               padding-left: 0px;
+           }
+        </style>
+    </head>
+    <body> 
+     
+        <div id="zhengti">       
+        <div id="head">
+        <h1>基于 HTML5 的移动阅读内容展示方式</h1>
+        <address>李青，王晨升</address>
+        <q id="kuohao">北京邮电大学自动化学院，北京  100876</q><br>
+        </div>
+        <div>
+            <p class="ziti1">
+            <strong>摘要：</strong>据“2014中国数字阅读白皮书”的大数据显示,在2014年底,手机阅读用户接近3个亿,手机阅读明显已经成为手机网民在重拾碎片时间中的主要活动之一。目前的移动阅读平台由Native App主导,Native App 生命周期短、占据用户设备内存资源、上架审核流程复杂、版本更新慢的劣势日益显现。基于<abbr title="HyperText Markup Language">HTML</abbr>的移动阅读Web App，采用自适应的网页布局方式，自动识别设备屏幕宽度，适配不同分辨率的设备填充文本内容， 对内容资源进行版式与流式的排版展现。满足了用户打开移动设备浏览器就能进行阅读的需求，提升阅读体验。
+            </p>
+            <p class="ziti1">
+                <strong>关键词：</strong>Web；Native App；Web App；阅读
+            </p>
+            <p class="ziti1">
+                <strong>中图分类号：</strong>TP303.2
+            </p>            
+        </div>
+        <div>
+           <h1 class="ziti3" >&#x3000;&nbsp;The Content Display Method of Mobile Reading Based on  
+               HTML5</h1> 
+           <address class="ziti2">LI Qing, WANG Chensheng </address>
+        </div>
+        <div>
+            <p class="ziti4" >
+                &#x3000;<q class="kuohao2">Automation School,Beijing University of Posts  and Telecommunications, Beijing 100876</q>
+Abstract:According to the "2014 China Digital Reading white paper",at the end of 2014, the mobile phone users to read nearly 3 hundred million, mobile phone reading has become one of the main activities of mobile users in the time of repicking up the debris. The current mobile reading platform is dominated by App Native, the App Native has a short life cycle, which has the disadvantages of occupying user's device memory resource, the complexity of the audit process and the slow version of the update. The Mobile reading Web App,which is based on HTML5,adapt of different resolutions of the device to fill the text content. It meets the needs of the user to open the mobile browser to read the mobile device to enhance the reading experience.
+ <br><strong> Key words:</strong> Web; Native App; Web App; reading
+            </p>
+        </div>
+        <div>
+         <strong class="ziti2" >   0  引言</strong>
+         <p>
+   &#x3000; &#x3000;随着 Wifi、4G 等网络技术的不断发展，数据网络传输变得更加快捷与便利,带动了移动设备的智能化发展、智能移动设备应用的爆发性增长。在应用市场中，移动阅读相关应用市场占有量突出。目前的移动阅读平台由都Native app主导。而Native App应用的劣势也日益显现。对于开发者而言，Native App 应用需要针对各种手机操作系统开发多个版本，同时Android版本碎片化问题给开发带来了更大的阻力。随着 W3C 对 HTML5 规范的制<span><sup><q class="kuohao1"><span>1</span></sup></span></q>,web app使用的网页语言在大部分操作系统和浏览器中都兼容，有效节省了开发成本，跨平台性、 35版本迭代更新简单等巨大优势显现。基于 HTML5 的移动阅读应用使用户只需打开浏览器，便能随时随地看书<span><sup><q class="kuohao1"><span >2</span></sup></span></q>
+         &#x3000; &#x3000;Web App开发的重要特性是一套代码适配所有手机设备。但是，移动端设备屏幕尺寸碎片化严重。对于 Android 主流的分辨率就有 480x800、480x854、540x960、720x1280、1080x1920。随着苹果公司推出iPhone6与iPhone6 Plus，iPhone系列分辨率有以下几种：40640x960、640x1136、750x1334、1242x2208。Ethan Marcotte在2010提出了“自适应网页设计”，即自动识别设备屏幕宽度、做出相应网页调整。
+         <br>&#x3000;&#x3000;数字阅读终端内容可分为纯图片与图文混排两种内容形式。内容展示过程中的滑屏效果
+需要表现的类似于纸质书籍阅读的效果，更贴近用户需求。本文主要针对版式排版的展示效
+果实现与流式排版展示效果实现加以说明.
+         </p>      
+        </div>
+        <div>
+          <strong class="ziti2" >   1 用户触摸屏事件 </strong> <br> 
+            <h3>1.1  Touch 事件处理机制</h3>
+            <p>
+&#x3000; &#x3000;移动阅读要实现和纸质类书籍阅读类似的阅读体验，需要对用户触摸屏动作做出滑屏或
+者翻页的效果处理。处理过程即设备屏幕受到用户滑动屏幕后，页面试图区域随手指的移动而移动，手指抬起时根据移动方向判断用户进行上页或是下页的操作，自动移动切换到目标页面。<br>
+    &#x3000; &#x3000;用户点按触摸屏设备，会触发Touch事件<span><sup><q class="kuohao1"><span >3</span></sup></span></q>。Touch 事件包含了 Touchstart<q class="kuohao2">手指触摸
+屏幕上的时候触发</q>、Touchmove <q class="kuohao2">手指在屏幕上移动的时候触发</q>和 Touchend <q class="kuohao2">手指从屏
+幕上拿起的时候触发</q>、Touchcancel<q class="kuohao2">系统取消touch事件的时候触发</q>。在这一系列的
+Touch 事件触发过程中，伴随有页面的移动，移动效果的处理过程可使用 css3 中的 translate 55<q class="kuohao2"></q>方法实现。由于用户在触摸屏设备的屏幕上进行滑动或多点手势操作时往往会触发浏览器行为，例如滚动和缩放。为保证对用户触摸屏事件处理的可控性，需要在html文档的头部加上<br>&#x3000; &#x3000;<q class="kuohao3">meta name="viewport" content="width=device-width,<br>&#x3000; &#x3000;minimum-scale=1.0,maximum-scale=1.0user-scalable=no"/
+</q><br>&#x3000; &#x3000;禁止视图区域滚动和缩放。
+            </p>
+        </div>
+        <div>
+          <h3>1.2  Click 事件处理机制 </h3>    
+           <p>
+            &#x3000; &#x3000;点击事件的处理较容易处理。只需判断用户触摸屏事件位置，根据设定的阈值，判断用
+户想要实现的翻页效果，以切换页面前翻/后翻。本文将屏幕宽度的 1/3/、2/3 位置值作为阈
+值，当点击事件发生在 1/3 位置左侧区域时，页面切换进入下一页，中间未知区域不做变化， 
+当点击事件发生在 2/3 位置右侧区域时，页面切换至前一页。   
+           </p> 
+        </div>
+        <div>
+          <strong class="ziti2" >   2  页面切换效果实现方法的比对 </strong> <br> 
+            <h3>2.1  Touch 事件与 translate<q class="kuohao2"></q>方法实现</h3>  <p>
+                对应的 html 文档层级关系如下：<br>
+&#x3000; &#x3000;<q class="kuohao3">div class="wrap" id="viewBox" </q>      &#x3000; &#x3000;//视图区域 <br> 
+&#x3000; &#x3000;&#x3000;<q class="kuohao3">div id="readFld"</q>    &#x3000; &#x3000;//内容填充区域<br>
+&#x3000;&#x3000;&#x3000;&#x3000;<q class="shenluehao"> </q><br>
+&#x3000;&#x3000; &#x3000;<q class="kuohao3">/div</q> <br>
+&#x3000; &#x3000;<q class="kuohao3">/div</q><br>
+&#x3000; &#x3000;触摸屏检测到用户 touch 操作时，首先初始化数据，记录当前页面的触摸位置等信息， 75
+继续监听用户 Touchmove 操作，如果 Touchmove 未发生，恢复初始状态，页面不做处理。
+若发生了，则继续监听用户 Touchend 事件，Touchend 时间的触发表示用户操作结束，判断
+当前用户手势的相对位移，将该值与设定的阈值进行比较，超出阈值进行翻页处理，否则页
+面恢复到原始状态。Touchmove 与 Touchend 事件的触发过程中均有页面视图的平移效果，
+具体实现依赖于 translate<q class="kuohao2"> </q>方法与相对位移的大小。<br>
+具体实现的流程图如图 1 所示：   
+            </p>
+            <div id="tu1">
+            </div>
+            <address class="ziti3">图 1    用户触摸屏事件翻页效果处理<br>
+Fig. 1    The processing of page-flipping because of the touches event </address><br>
+&#x3000; &#x3000;整个事件监听中，手指拖动屏幕的滑屏效果的处理关键要素即为手指滑动的相对位移。
+在手指初始按压屏幕时即 Touchstart 事件触发时，记录初始屏幕位置， startX = 
+event.touches[0]. pageX,startY = event.touches[0].pageY;  在拖动屏幕时触发 Touchmove 事件，
+会产生新的位置值，记录此刻屏幕位置， nowX =  event.touches[0].pageX,nowY =  90
+event.touches[0].pageY;首先应该根据水平与垂直位移的变化值判断用户行为，是左右翻页，
+还是想要上下滑动。 由于是针对翻页的处理，所以当用户表现出上下滑屏的倾向时，不作处
+理。对于左右滑动， 依据相对位移的正负值判定方向， 将相对位移大小值传入 translate 方法，
+展现滑屏效果。 
+        </div>
+        <div>
+           <h3>2.2  借助 Swiper 插件实现  </h3>  
+           <p>&#x3000;&#x3000; 由于整个 touch 事件的处理基于用户行为的位移测算，过程复杂，容易出错。对于用户
+的快速滑屏行为处理较为棘手，会出现跳页等问题。Swiper 插件的引入，简化了 touch 事件
+处理过程且效果较为理想。Swiper 是一款轻量级的移动设备触控滑块 js 框架，主要使用于
+移动端的网站、移动 web apps，native apps 和 hybrid apps。在 IOS、Android、WP8 系统都
+有着良好的用户体验。swiper 插件实际封装了 touch 事件对用户触屏事件的 translate 处理， 100
+实现了平滑、流畅的滑屏与切换功能，结合 Swiper 中回调函数的使用，可实现版式阅读的
+流畅翻页阅读效果。<br>
+&#x3000;&#x3000;Swiper 可以处理多个滑块内容，其中添加与删除滑块是常用到的方法。Swiper 对象的
+prependSlide<q class="kuohao2"> </q>方法可以为新增滑块到滑块组的第一个位置，appendSlide<q class="kuohao2"> </q>方法将新增
+滑块到滑块组的最末位位置。对应的删除滑块方法为 removeSlide<q class="kuohao2"> index</q>方法，index 为目标 105
+滑块在滑块组的索引值。<br>
+&#x3000;&#x3000;在使用 Swiper 进行阅读翻页效果处理时，实现要进行初始化。初始化过程规定页面滑
+块组中滑块个数确定视图区域的滑块索引值。 为减少页面加载过程中用户等待的时长，提升
+加载效率，本文在初始化时为 Swiper 添加<q>左</q>,<q>中</q>,<q>右</q>三个 slide 页面，确定<q>中</q>为视图区
+域，为视图区域加载页面，页面 id=pageid。<q>左</q>,<q>右</q>分别加载 id=pageid-1，id=pageid+1 页 110
+面。初始化如图 2 所示，其中着色区域为视图区域。</p>
+<div id="tu2"></div>
+<address class="ziti3">图 2    页面初始化处理
+Fig.2<br>    The processing of Page initialization </address>
+&#x3000;&#x3000;其中对应的 html 层级关系如下图所示：<br>
+&#x3000;&#x3000;<q class="kuohao3">div class="swiper-container" id="swipeBox"</q><br>
+&#x3000;&#x3000;&#x3000;&#x3000;<q class="kuohao3">div class="swiper-wrapper"</q><br>
+&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;<q class="kuohao3">div class="swiper-slide" id='  pageId_" + (pageid-1)+ " ' </q><br>&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;<q class="kuohao3">a</q>…<q class="kuohao3">/a</q><q class="kuohao3">/div</q><br>
+&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;<q class="kuohao3">div class="swiper-slide" id='  pageId_" + (pageid)+ " '  </q><q class="kuohao3">a</q>…<q class="kuohao3">/a</q><q class="kuohao3">/div</q> <br> 
+<q class="kuohao3">div class="swiper-slide" id='  pageId_" + (pageid+1)+ " ' </q><q class="kuohao3">a</q>…<q class="kuohao3">/a</q><q class="kuohao3">/div</q><br>
+&#x3000;&#x3000;<q class="kuohao3">/div</q><br>
+&#x3000;&#x3000;<q class="kuohao3">/div</q><br>
+初始化设置 Swiper 的视图区域为第二个（中间位置）页面<br>
+<q class="kuohao3">script language="javascript"</q><br>    
+&#x3000;&#x3000;var mySwiper = new Swiper('.swiper-container',{<br>
+&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;initialSlide :1<br>
+})<br>
+<q class="kuohao3">/script</q><br>
+        </div>
+        <div>
+          <h3>2.3  图文混排内容资源的特殊处理 </h3> 
+          <p>
+             &#x3000;&#x3000;对于内容资源为 html 标签元素包含的文本与图片内容资源
+<span><sup><q class="kuohao1"><span >5</span></sup></span></q>,
+考虑采用流式排版的处理
+方法。请求资源在前端的展示，需要首先在页面引入自定义样式 css 来限制图片大小在视图
+区域内，调整展示效果。对于文本字体大小，采用自适应页面规则，检测设备屏幕大小，根
+据不同屏幕分辨率设置不同大小
+<span><sup><q class="kuohao1"><span >6</span></sup></span></q>。采用的方法即为媒体查询，与不同设备引入不同的 css
+样式的方法。在使用 javascript 进行用户视图界面填充时，首先判断节点类型，按节点来填 205
+充。 当填充内容不足或刚刚可以填满视图区域时，进行节点的顺次填放。 当检测到填充内容
+超出视图区域时， 对最后的节点进行分析，如果是图片类型的节点，就对图片进行下页填放。
+如果是段落节点，就将节点内容进行二分法拆分， 将内容按字节进行填充， 直到填满视图区
+域，多出内容下页填放。 
+          </p>  
+        </div>
+        <div>
+          <h3>3  结论 </h3> 
+          <p>
+              &#x3000;&#x3000;本文给出了基于 HTML5 的移动阅读内容展示方式
+<span><sup><q class="kuohao1"><span >7</span></sup></span></q>
+。分析比较了采用原生的 javascript
+代码实现的翻页阅读效果与借助 Swiper 插件实现的翻页阅读展现效果。Swiper 简化了用户
+触摸屏位移处理，利用基本的回调函数即可实现平滑过渡，效率高且不易出错。本文还对同
+时包含图片与文本的内容资源进行了流式排版处理，按节点在视图区域内填放内容，可达到
+适配各设备尺寸的自适应效果。 
+          </p>  
+        </div>
+        <div>
+            <h3><span><sup><q class="kuohao1"><span >参考文献 </span></sup></span></q> <br></h3> 
+            <ul id="footer">              
+                <li><q class="kuohao1">1</q>刘华星,  韩庚. HTML5--下一代 Web 开发标准研究<q class="kuohao1">J</q>.  计算机技术与发展, 2011，21<q class="kuohao2">8</q>：54-59.</li>
+                <li><q class="kuohao1">2</q>王兆,  胡锦.  从用户需求分析如何初步定义产品功能<q class="kuohao1">J</q>.  艺术与设计<q class="kuohao2">理论</q>，  2011：203-205</li>
+                <li><q class="kuohao1">3</q>黄競.  基于 jQuery 框架的 Web 前端系统构建方法的研究与应用<q class="kuohao1">D</q>.北京：北京邮电大学, 2012.</li>
+                <li><q class="kuohao1">4</q>黄永慧,陈程凯.HTML5 在移动应用开发上的应用前景<q class="kuohao1">J</q>.  计算机技术与发展,，2013，<q class="kuohao2">7</q>：207-210 </li>
+                <li><q class="kuohao1">5</q>朱聚豹.  移动 Web 前端性能与图片优化的研究<q class="kuohao1">D</q>.  武汉：华中师范大学，  2013.</li>
+                <li><q class="kuohao1">6</q>戚琪.  移动平台网页自适应云转换机制研究<q class="kuohao1">D</q>.武汉：华中科技大学，  2013</li>
+                <li><q class="kuohao1">7</q>刘斌.HTML5-未来网络应用的核心技术研究<q class="kuohao1">J</q>.自动化与仪器仪表，  2010，<q class="kuohao2">4</q>：30-33</li>
+            </ul>
+        </div>
+         </div>
+      
+    </body>
+</html>

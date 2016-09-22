@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>二级导航</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            header{
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+            }
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                background: lightblue;
+            }
+            li{
+                display: inline-block;
+                background: green;
+                margin: 5px 5px;
+                border-radius: 5px;
+            }
+            /*span{
+                color: white;
+            }*/
+            a{  
+                display: inline-block;
+                padding: 5px 30px;               
+                text-decoration: none;
+                color: white;
+                            
+            }
+            header li:hover{
+                background: blue;
+            }
+            img{
+                width: 100%;
+            }
+            .nav2{
+                /*background: none;*/
+                position: absolute;
+                display: none;
+                /*visibility: hidden;*/
+            }
+            .nav2 li{
+                display: block;
+            }
+            li:hover .nav2{
+               display: block;
+               /*visibility: visible;
+               这个是可见性，效果跟上方是一样的*/
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+        <ul>
+            <li class="nav1">
+                <a href=""><span>关于祥博</span></a>
+             <ul class="nav2">
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+             </ul>
+             </li>
+            <li>
+                <a href=""><span>行业动态</span></a>
+                <ul class="nav2">
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+             </ul>
+                </li>
+            <li>
+                <a href=""><span>产品信息</span></a>
+                <ul class="nav2">
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+             </ul>
+                </li>
+            <li>
+                <a href=""><span>应用领域</span></a>
+                <ul class="nav2">
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+             </ul>
+                </li>
+            <li>
+                <a href=""><span>技术交流</span></a>
+                <ul class="nav2">
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+             </ul>
+                </li>
+            <li>
+                <a href=""><span>数据库</span></a>
+                <ul class="nav2">
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+             </ul>
+                </li>
+            <li>
+                <a href=""><span>联系我们</span></a>
+                <ul class="nav2">
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+                 <li><a href="">大事记</a></li>
+             </ul>
+                </li>
+        </ul>
+        </header>
+        <img src="2.jpg" alt="">
+    </body>
+</html>

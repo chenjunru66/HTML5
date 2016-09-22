@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>CSS伪类</title>
+        <style>
+            a{
+                /*去掉文本本身自带的下划线*/
+                text-decoration: none;
+            }
+            /*当鼠标掠过链接元素上方时，链接元素的内容颜色发生改变*/
+            /*:hover当鼠标悬浮在元素上方时，向元素添加样式*/
+            a:hover{
+                color: red;
+                font-size: 36px;
+                
+            }
+            /*向已被访问过的元素添加样式*/
+            a:visited{
+                color: blue;
+            }
+            #yihaodian{
+                /*去掉前面的小圆点*/
+                list-style: none;
+            }
+            #yihaodian>li{
+                /*是列表子项水平排列*/
+                float: left;
+              
+            }
+            #tu1{
+                width: 550px;
+                height: 340px;
+                position: relative;        
+                left: 200px;
+                top:  300px;
+                background-image: url("2.jpg");
+                border: 8px solid red;
+                border-radius: 50% ;
+                box-shadow: 2px;
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+       <a href="http:/www.baidu.com">百度一下</a> 
+       <!--有序列表-->
+       <ol>
+           <li>列表子项</li>
+           <li>列表子项</li>
+           <li>列表子项</li>
+       </ol>
+       <!--无序列表-->
+       <ul>
+           <li>列表子项</li>
+           <li>列表子项</li>
+           <li>列表子项</li>
+       </ul>
+       <ul id="yihaodian">
+           <li><a href="#">我的一号店&#x3000;</a></li>
+           <li>收藏夹&#x3000;</li>
+           <li>掌上一号店</li>
+       </ul>
+       <div id="tu1"></div>
+       <!--图片居中-->
+       <!--使用文本对齐方式处理-->
+       <!--<div style="text-align:center;"> 
+           <img src="2.jpg" alt="img">
+       </div>-->
+       <!--使用宽度和外边距处理-->
+       <!--外层div负责居中，确定显示宽度，内部图片采用百分百宽度-->
+       <!--<div style="width:550px;margin:10px auto;"> 
+           <img src="2.jpg" alt="img" style="width:100%;">
+       </div>-->
+       <ul>
+           <li><a href="#diyige">q</a></li>
+              <li><a href="#dierge">w</a></li>
+                 <li><a href="#disange">e</a></li>
+       </ul>
+       <h2 id="diyige">2</h2>
+       <h2 id="dierge">3</h2>
+       <h2 id="disange">4</h2>
+    </body>
+</html>

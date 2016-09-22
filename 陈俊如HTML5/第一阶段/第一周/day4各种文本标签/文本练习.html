@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>论文</title>
+        <style>
+            body{
+                background-color: #333;
+            }
+            article{
+                width: 80%;
+                /*height: 2000px;*/
+                margin: 20px auto;
+                background-color: white;
+                text-align: center;
+                /*内边距*/
+                padding: 80px;
+                /*内容显示模式，让内容显示的宽度=外边距+内容宽度+内边距*/
+                box-sizing: border-box;
+            }
+            .k-1{
+            	display: block;
+            }
+            h1,address{
+                text-align: center;
+            }
+            p{
+                text-indent: 2em;
+                /*justify两边对齐*/
+                text-align: justify;
+                /*行间距*/
+                line-height: 180%;
+            }
+            figure{
+                text-align: center;
+            }
+            figure>img{
+                width: 50%;
+                
+            }
+            /*插入的内容无法被选中*/
+            #special:before{
+                content: "这是前面的内容--"
+            }
+            #special:after{                
+                content: "--这是后面的内容"
+                
+            }
+        </style>
+    </head>
+    <body>
+        <!--article文章-->
+       <article>
+           <!--header标题引言部分相关-->
+           <header>             
+<h1>基于 HTML5 的移动阅读内容展示方式</h1>
+<address>李青，王晨升
+       <span class="k-1">
+       	北京邮电大学自动化学院，北京 100876
+       </span>
+</address>
+<p>摘要：据“2014中国数字阅读白皮书”的大数据显示,在2014年底,手机阅读用户接近3个亿,手机阅读明显已经成为手机网民在重拾碎片时间中的主要活动之一。目前的移动阅读平台由 Native  App主导,Native App 生命周期短、占据用户设备内存资源、上架审核流程复杂、版本更新慢的劣势日益显现。基于HTML的移动阅读Web App，采用自适应的网页布局方式，自动识别设备屏幕宽度，适配不同分辨率的设备填充文本内容， 对内容资源进行版式与流式的排版展现。满足了用户打开移动设备浏览器就能进行阅读的需求，提升阅读体验。</p>
+
+关键词：Web；Native App；Web App；阅读
+
+中图分类号：TP303.2
+ 
+           </header>
+           <!--main论文主要部分-->
+           <main>
+               <!--figure、figcaption-->
+               <!--figure:内容居中处理当图片过大的时候配合设置img的width百分比-->
+               <figure>
+                   <img src="1.png" alt="这个是图片">
+                   <figcaption>图片标题</figcaption>
+               </figure>
+                <figure>
+                   <img src="2.png" alt="这个是图片">
+                   <figcaption>图片标题</figcaption>
+               </figure>
+           </main>
+           <!--footer参考文献-->
+           <footer>
+               <p id="special">本文给出了基于 HTML5 的移动阅读内容展示方式 "7" 。分析比较了采用原生的 javascript 代码实现的翻页阅读效果与借助 Swiper 插件实现的翻页阅读展现效果。Swiper 简化了用户 触摸屏位移处理，利用基本的回调函数即可实现平滑过渡，效率高且不易出错。本文还对同 时包含图片与文本的内容资源进行了流式排版处理，按节点在视图区域内填放内容，可达到 适配各设备尺寸的自适应效果。 </p>
+              <div id="special"><img src="2.png" alt="这个是图片"></div> 
+           </footer>
+       </article> 
+    </body>
+</html>

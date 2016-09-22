@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>标签的大小和位置</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            main{
+                width: 300px;
+                height: 300px;
+                background: red;
+                border: solid 20px green;
+                margin: 20px;
+                line-height: 200px;
+                overflow: auto;
+                /*box-sizing: border-box;*/
+                /*padding: 20px;*/
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            当前元素位置和大小当前元素位置和大小当前元素位置和大小当前元素位置和大小
+        </main>
+        <script>
+            var main = document.querySelector('main')
+            // 输出的是标签内容的大小(不包括边框和外边距)
+            console.log( main.clientWidth )
+            console.log( main.clientHeight )
+            
+            //输出的是标签的正常大小 
+            console.log( main.offsetWidth)
+            console.log( main.offsetHeight )
+            
+            // 返回整个元素的宽度和高度（包括带滚动条的隐蔽的地方）
+            console.log( main.scrollWidth )
+            console.log( main.scrollHeight )
+            // 返回当前视图中的实际元素的顶部边缘和顶部边缘之间的距离
+            console.log( main.scrollTop )
+            console.log( main.scrollLeft )
+        </script>
+    </body>
+</html>

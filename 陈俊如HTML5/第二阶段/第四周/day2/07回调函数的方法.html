@@ -1,0 +1,78 @@
+   <!DOCTYPE html>
+   <html>
+       <head>
+           <meta charset="utf-8">
+           <meta name="author" content="陈俊如">
+           <title>回调函数的方法</title>
+           <script src="jquery.js"></script>
+           <style>
+               
+           </style>
+       </head>
+       <body>
+           
+           
+           
+           
+           <script>
+               function f1(){
+                   console.log("111")
+               }
+               function f2(cb){
+                   console.log("222")
+                   cb()
+               }
+            //    f2(f1)
+               
+               function f3(){
+                   console.log("333")
+               }
+            //    f3()
+            
+            // Callbacks()提供了回调函数的多种用途，管理回调函数的队列列表
+            // console.log( jQuery.Callbacks() )
+            var callback = $.Callbacks()
+            // console.log(callback.has())//false --空列表
+            callback.add(f1,f3)
+            // has(f1)判断某个回调函数是否在队列中，返回的是Boolean
+            // has()没有参数的情况下，判断当前队列是否有函数
+            // console.log(callback.has(f1,f3))//true
+            
+            function f4(a,b){
+                console.log(a+b)
+            }
+           
+            
+            function f5(c){
+                console.log(c)
+            }
+             callback.add(f4,f5)
+            // .fire()里面没有参数的时候，按顺序执行队列中的回调函数，如果含有参数，把参数按顺序传递给队列中的有参函数；
+            // callback.fire(2,2)//输出了4
+            // callback.fire(3,11,8)
+            console.log("删除后的结果")
+            //删除某个函数
+            callback.remove(f5)
+            // callback.fire(3,11,8)
+            // 清空当前队列中的函数
+            // callback.empty()
+            // console.log(callback.has())
+            // fired()判断队列中的函数是否被执行，返回值--Boolean
+            console.log(callback.fired())//true
+            
+            function f6(){
+                console.log(this)
+                
+            }
+            callback.add(f6)
+            // fireWith()能够改变函数执行上下文，当前的this指向的是谁
+            // fire中this指向的始终是callback对象
+            // firewith中指向的是里面的参数中调用的函数
+            callback.fire()//this--callback对象
+            callback.fireWith(window)//this -- window对象
+            callback.fireWith(f1)//this--f1
+            callback.fireWith(f3)//this--f3
+            callback.fireWith()//this--window对象
+           </script>
+       </body>
+   </html>

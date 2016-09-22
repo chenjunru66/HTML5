@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+        <meta name="author" content="陈俊如">
+        <title>适配/响应式网站</title>
+        <style>
+            body{
+                margin: 0;
+                /*text-align: center;*/
+            }
+           img{
+               /*width: 50vw;*/
+               height: 50vh;
+               border-radius: 50%;              
+               margin: 5vw auto;
+               display: block;
+               /*height: 40vh;浏览器视窗的高度的40%:高度尽量别设*/              
+               /*vw:viewport width;vh：viewport height;*/
+               
+           } 
+          div{
+              /*border: 2px solid red;*/
+              /*height: 100vh;*/
+              width: 800px;
+              margin: 0 auto;
+              line-height: 28px;
+          }
+          /*@media:媒体查询；max-width：屏幕分辨率
+          根据不同的屏幕分辨率尺寸，确定标签的样式列表*/
+          @media (max-width:1366px) and (min-width:900px){
+              div{
+                  width: 900px;
+                  
+              }
+              img{
+                  height:50vw; 
+              }
+          }
+           @media (max-width:800px){
+              div{
+                  width: 900px;
+                  
+              }
+              img{
+                  height:30vw; 
+              }
+          }
+        </style>
+    </head>
+    <body>  
+        <img src="4.jpg" alt="">    
+        
+        <div>
+            适配网站测试name 属性提供了名称/值对中的名称。HTML 和 XHTML 标签都没有指定任何预先定义的  名称。通常情况下，您可以自由使用对自己和源文档的读者来说富有意义的名称。"keywords" 是一个经常被用到的名称。它为文档定义了一组关键字。某些搜索引擎在遇到这些关键字时，会用这些关键字对文档进行分类。类似这样的 meta 标签可能对于进入搜索引擎的索引有帮助：
+             适配网站测试name 属性提供了名称/值对中的名称。HTML 和 XHTML 标签都没有指定任何预先定义的 
+        </div>
+    </body>
+</html>

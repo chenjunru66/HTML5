@@ -1,0 +1,89 @@
+http://www.baidu.com
+火狐获取百度首页的操作
+
+1)把域名转化为IP地址（DNS）
+DNS：domain name system 域名解析系统；
+域名方便记忆，真正使用的还是ip地址
+ip地址标记互联网上每一台设备。
+
+2）根据ip地址找到百度的服务器
+服务器：从硬件角度，服务器就是计算机组，容量大、安全性高、性能好
+	从软件角度，服务器端开发、运行的软件。
+	存储、处理数据的一方
+客户端：使用数据的一方；
+
+3）建立连接
+
+4）客户端（火狐浏览器）发请求
+
+5）服务器接到请求，分析处理
+
+6）服务器反馈数据到客户端
+
+7）客户端(浏览器) 拿到数据（html）,解析、渲染，显示页面
+
+8）继续多次发请求，获取需要的img、css、js、audio、vedio、flash
+
+9）断开连接
+
+
+请求（request）
+
+请求行： 请求方法  资源路径?参数  协议名称/协议版本
+请求头：字段信息
+空行
+请求体（请求数据区）
+
+
+GET / HTTP/1.1
+Host: www.baidu.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+
+响应（response）
+响应行：协议/协议版本 状态码 状态信息
+响应头：字段信息
+空行
+响应体（响应数据区）
+
+HTTP/1.1 200 OK
+Server: bfe/1.0.8.14
+Date: Tue, 21 Jun 2016 07:29:56 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Set-Cookie: BAIDUID=12CEDD1812B3AADFFEBAFE4B779B413D:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com
+BIDUPSID=12CEDD1812B3AADFFEBAFE4B779B413D; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com
+PSTM=1466494195; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com
+BDSVRTM=14; path=/
+BD_HOME=0; path=/
+H_PS_PSSID=20140_1452_20317_18241_20369_17945_20388_19690_20417_19861_15075_11976; path=/; domain=.baidu.com
+__bsi=13222549744940046217_00_205_N_N_25_0303_C02F_N_N_Y_0; expires=Tue, 21-Jun-16 07:30:01 GMT; domain=www.baidu.com; path=/
+P3P: CP=" OTI DSP COR IVA OUR IND COM "
+Cache-Control: private
+Cxy_all: baidu+a80de91455ea738302dce1571e56d7ed
+Expires: Tue, 21 Jun 2016 07:29:56 GMT
+X-Powered-By: HPHP
+X-UA-Compatible: IE=Edge,chrome=1
+Strict-Transport-Security: max-age=604800
+BDPAGETYPE: 1
+BDQID: 0xb745a9ae0000a8fb
+BDUSERID: 0
+Content-Encoding: gzip
+
+
+
+
+
+
+
+
+
+
+
+

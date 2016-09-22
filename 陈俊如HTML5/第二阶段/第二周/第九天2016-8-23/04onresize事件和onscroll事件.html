@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>onresize事件和onscroll事件</title>
+        <style>
+          div{
+              width: 600px;height:1000px;color: red;background: blue;
+          }  
+          section{
+              background: yellow;
+          }
+        </style>
+        <script>
+              window.onload = function(){
+                  alert('111')
+                var sec = document.querySelector('section')
+                sec.innerHTML = '加载完成之后更改的内容'
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            窗口大小触发的事件以及滚动条滚动的时候触发的事件
+        </div>
+        <section>
+            这是已经放进去的内容
+        </section>
+        <script>
+            // var div = document.querySelector('div')
+            // window.onresize = function(){
+            //     div.style.transform = 'rotate(60deg)'
+            // }
+            // window.onscroll = function(){
+            //     document.body.style.background = '#000'
+            // }
+          
+        </script>
+    </body>
+</html>

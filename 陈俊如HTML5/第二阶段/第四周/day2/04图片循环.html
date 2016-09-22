@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>图片循环</title>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <script src="jquery.js"></script>
+        <style>
+            body{
+                margin: 0;
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .wrapper{
+                width: 700px;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
+                margin-top: 50px;
+            }
+            .active{
+                width: 50px;
+                height: 200px;
+                background: gray;
+                font-size: 50px;
+                text-align: center;
+                float: left;
+                /*position: relative;*/
+                line-height:200px;
+                color: white;
+                cursor: pointer;
+            }
+            .active:hover{
+                background: black;
+            }
+            .actives{
+                width: 600px;
+                float: left;
+                overflow: hidden;
+            }
+            .actives img{
+                width: 200px;
+                height: 200px;
+                display: block;
+                margin-right: 5px;
+            }
+            #thumbs{
+                width: 1500px;
+                height: 200px;
+                position: relative;
+                overflow: hidden;
+            }
+            #thumbs li{
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="active" id="angle1"><span class=" fa fa-angle-left"></span></div>
+            <div class="actives">
+                <ul id="thumbs">
+                    <li><img src="imgs/1.jpg" alt=""></li>
+                    <li><img src="imgs/2.jpg" alt=""></li>
+                    <li><img src="imgs/3.jpg" alt=""></li>
+                    <li><img src="imgs/4.jpg" alt=""></li>
+                    <li><img src="imgs/5.jpg" alt=""></li>
+                    <li><img src="imgs/6.jpg" alt=""></li>
+                    
+                </ul>
+            </div>
+           <div class="active" id="angle2"><span class="fa fa-angle-right"></span></div>  
+            
+        </div>
+        
+        <script>
+             $(function(){
+                //  var count = 0             
+                 var s_length =$("#thumbs li").length
+                 var len = $("#thumbs li").width()
+                 $("#thumbs").css("width",len * s_length)
+                //  console.log($("#thumbs").width())
+                //  console.log(len)
+                // function show(){
+                //      $("#thumbs").append($("li").eq(0))
+                     
+                // }
+                // function play(){
+                //     $("#thumbs").prepend($("li").eq(5))
+                // }
+                 $("#angle1").click(function(){
+                     
+                      
+                     $("#thumbs").animate({
+                         left:-s_length
+                     },300,function(){
+                         
+                         $("#thumbs").css("left","0").append($("li").eq(0))
+                        //  $("#thumbs").append($("li").eq(0))
+                     })
+                   
+                 })
+                 
+                 $("#angle2").click(function(){
+                     
+                     $("#thumbs").animate({
+                         left:s_length
+                     },300,function(){
+                         $("#thumbs").prepend($("li").eq(5))
+                         $("#thumbs").css("left","0")
+                         
+                     })
+                 })
+                 
+             })
+            
+        </script>
+    </body>
+</html>

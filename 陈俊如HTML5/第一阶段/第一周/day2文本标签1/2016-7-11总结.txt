@@ -1,0 +1,62 @@
+"HTML文档基本结构": {
+		
+"prefix": "go",
+		
+"body": [
+			
+"<!DOCTYPE html>",
+			
+"<html>",
+            
+"\t<head>",
+            
+"\t\t<meta charset=\"utf-8\">",
+            
+"\t\t<meta name=\"author\" content=\"陈俊如\">",
+            
+"\t\t<title>$1</title>",
+           
+ "\t\t<style>",
+    
+"\t\t\t",
+            
+"\t\t</style>",
+            
+"\t</head>",
+            
+"\t<body>",
+            
+"\t\t$2",
+            
+"\t</body>",
+            
+"</html>"
+		],
+		
+"description": "HTML文档基本结构"
+	
+}
+这是一个简单的html文档结构，将其粘帖到VS CODE用户代码片段（html）中；
+CTRL+/注释选定的部分。  
+TAB键为智能加标签。CTRL+SHIFT+L为选定所有的同一代码；
+charset=“utf-8”为表示当前文档的字符集是采用utf-8的字符，也就是我们常说英文字符集。
+text-indent：2em表示首行缩进2字节；
+font-weight:bold;粗体属性；
+font-family：“”；规定字体的系列（从系统中的字体样式中选择）
+css样式选择器：
+p：nth-child(2){}表示选择选择父元素的第二个子元素的每个<p>,即为父元素下面跟着的第二个子元素（此元素可能不是<p>）;
+p:nth-of-type(2){}表示选择属于其父元素第二个子元素的每个<p>元素
+div>p{}表示选择父元素为<div>元素内的所有<p>元素
+div p表示选择<div>元素内部的所有<p>元素
+div，p表示选择所有<div>和所有<p>元素
+div+p表示选择紧接在<div>元素之后的所有<p>元素
+id选择器：适用于唯一的元素，需对元素进行设置id：<p id="名字">内容</p>
+class类名选择器： <p class="cuti">们在默默的学习这仅有的几个标签</p>
+<p class="cuti">p标签主要用语定义文章段落的标签</p>
+.cuti{
+                font-weight: bold;｝需先对元素进行类命名
+font-style: italic;表示斜体文字
+<span>文本</span>     <strong>文本</strong> 语义是强调，加粗字体；<em>文本</em>使字体斜体
+<q>引用内容</q> 这是加双引号的意思。
+<blockquote>引用内容</blockquote>引用长文本，并进行缩进；
+<br/>换行  <hr/>添加水平横线

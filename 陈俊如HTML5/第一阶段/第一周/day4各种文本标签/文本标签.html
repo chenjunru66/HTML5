@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>文本标签</title>
+        <style>
+            #jiacu{
+                /*设置字体粗细*/
+                font-weight: bold;
+            }
+            #xieti{
+                /*斜体*/
+                font-style: italic;
+            }
+            #xiahuaxian{
+                /*下划线*/
+                text-decoration: underline;
+            }
+            #shanchuxian{
+                /*删除线*/
+                text-decoration: line-through;
+            }
+            #yinhao{
+                /*quotes属性，属性值成对出现，假如需要多对引号，那么最前面那对引号是内容最外侧的引号*/
+                quotes: '['']''{''}';
+            }
+        </style>
+    </head>
+    <body>
+        <!--<br>换行-->
+        普通文本<br>
+        <span>span普通文本</span><br>
+        <strong>强调意义（加粗文本）</strong>
+        <b>加粗文本</b><br>
+        <span id="jiacu">样式设置去实现加粗效果</span><br>
+        <i>斜体</i><br>
+        <em>em斜体</em><br>
+        <span id="xieti">用样式实现斜体效果</span><br>
+        <u>u下划线</u><br>
+        <ins>ins下划线（表示新增的内容）</ins><br>
+        <span id="xiahuaxian">用text-decoration: underline;样式设置下划线</span><br>
+        <span id="shanchuxian">用text-decoration: line-through；样式实现删除线</span><br>
+        <del>del删除线</del><br>
+        <s>s删除线</s><br>
+        <small>小字号</small><br>
+        <big>大字号</big><br>
+        <span>通过font-size处理</span><br>
+        <span>基础文本<sup>sup上标</sup></span><br>
+        <span>基础文本<sub>sub下标</sub></span><br>
+        <q>quote带有引号的文本</q><br>
+        <q>带有引号的文本<q>带有引号的文本</q>引号后</q><br>
+        <q id="yinhao">自定义引号<q>二级引号</q></q><br>
+        <!--abbr:缩写标签，title部分写内容的全称-->
+        <abbr title="HyperText Markup Language">HTML</abbr><br>
+        <!--小于好用&lt;大于号用&gt；-->
+        <pre>
+            &lt;abbr title="HyperText Markup Language" &lt;HTML&gt&lt;/abbr&gt;
+        </pre>
+    </body>
+</html>

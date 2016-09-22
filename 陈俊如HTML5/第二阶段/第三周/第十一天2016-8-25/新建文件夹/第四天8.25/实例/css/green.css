@@ -1,0 +1,9 @@
+body{
+    background:lightpurple;
+}
+span:nth-child(2){
+background:#fff;
+}
+li{
+    background:green;
+}

@@ -1,0 +1,187 @@
+/*先处理外边距，高度不需要写*/
+body{
+    margin: 0;
+}
+/*全局样式*/
+ul{
+   list-style: none;
+   margin: 0;
+   padding: 0; 
+}
+/**/
+header{
+    width: 100%;
+    background: #F7F3F0;
+    box-shadow: 0 2px 5px #000;
+    /*清除浮动,因为使用了浮动，ul和img浮动在div上方，导致div无法撑开，所以父级div定义 overflow:hidden清除浮动；原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度
+优点：简单、代码少、浏览器支持好
+缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。*/
+    overflow: hidden;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+}
+header div{ 
+       /*定宽居中*/
+    width: 80%;
+    margin: 0 auto;
+    /*overflow: hidden;*/
+}
+header img{
+    width:160px;
+    margin: 20px;
+    float: left;
+}
+header ul{
+    float: right;    
+}
+header ul li{
+    /*float: left;都可以实现*/
+    display: inline-block;
+    /*padding: 10px 20px;*/
+}
+header ul li a{
+    display: block;
+    padding: 50px 0;
+    text-decoration: none;
+    color: black;        
+}
+header ul li a span{
+    display: block;
+    padding: 0 15px;
+    border-right: solid 2px #aaa;
+    
+}
+header ul li:last-child a span{
+    border-right: none;
+}
+header ul li a:hover{
+    color: green;
+}
+.banner img{
+    width: 100%;
+    height: 500px;
+}
+.banner ul li a{
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    display: block;
+    padding:5px 5px;    
+}
+.banner{
+    margin-top: 137px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.banner ul{
+    position: absolute;
+    bottom: 15px;
+    /*calc()计算：四则运算：不同单位间的计算；运算符钱打空格
+    50%（百分比都是父级元素的）是父级元素的宽度的一半；20px是ul本身的宽度的一半*/
+    left:calc(50% - 20px);
+}
+.banner ul li{
+    display: inline-block;
+    margin: 5px;
+}
+.banner ul li a:hover{
+    background: red;
+}
+main{
+    /*display: none;*/
+    width: 80%;
+    margin: 0 auto;
+    /*清除浮动*/
+    overflow: hidden;
+}
+main ul li{
+    width: 22%;
+    float: left;
+    margin-right: 20px;
+}
+main ul li:last-child{
+    margin-right: 0;
+}
+main ul li img{
+    width: 100%;
+    height: 200px;
+}
+main ul {
+    position: relative;
+    right: -50px;
+}
+main h3{
+    font-weight: normal;
+    color: #666;
+    border-bottom: solid 1px #666;
+    padding-bottom: 10px;
+}
+main h3 small{
+    margin-left: 10px;
+}
+p{
+    color: #777;
+    font-size: 12px;
+    /*调试字跟字间的距离*/
+    letter-spacing: 2px;
+    text-indent: 2em;
+}
+footer{
+    width: 100%;
+    background: #efefef;
+    
+}
+.f-1{
+    background: #eaeaea;
+}
+.f-1 div{
+    width: 80%;
+    margin: 0 auto;
+}
+.f-1 li,.f-2 li {
+    display: inline-block;
+    line-height: 50px;    
+}.f-1 li{
+    position: relative;
+    left: 25px;
+}
+.f-1 li a,.f-2 li a{
+    text-decoration: none;
+    color: black;
+    padding:0 15px;
+    display: block;     
+}
+.f-1 a:hover{
+     color: blue;
+}
+.f-2{
+    width: 80%;
+    margin: 0 auto;    
+    background:#efefef;
+    overflow: hidden; 
+}
+.f-2 p{
+     float: left;
+     color: black;
+     position: relative;
+     left: 15px;
+}
+.f-2 ul li{
+    float: right;   
+}
+.f-2 a:hover{
+    color: red;
+}
+.f-2 ul li span{
+    display: inline;
+    padding: 0 15px;
+    border-right: solid 2px #aaa;
+    position: relative;
+    right: 35px;
+}
+.f-2 ul li:first-child a span{
+    border-right: none;
+}
+

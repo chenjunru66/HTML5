@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>表单标签</title>
+    <style>
+          
+    </style>
+</head>
+
+<body>
+    <!--form表单：包含表单元素的区域；输入框、文本域、单选框、复选框等-->
+    <form action="">
+        <!--input:输入框，type后面跟着类型；placeholder:预留的提示信息
+        required:提交表单前必须输入字段；-->
+     <input type="text" placeholder="输入账号名称" required>
+     <!--文本域：-->
+     <textarea name="" id="" cols="30" rows="10"></textarea>
+     <!--单选框：name一致的时候可以进行单选
+     checked：默认选中预留的选项-->
+     <input type="radio" name="sex" value="male">male
+     <input type="radio" name="sex" value="female">female
+     <input type="radio" name="sex" value="pig" checked>pig
+     
+     <!--复选框-->
+     <input type="checkbox" name="choice" value="baoma">宝马
+     <input type="checkbox" name="choice" value="aodi" >奥迪
+     <input type="checkbox" name="choice" value="bentian">本田
+     
+     <!--提交按钮-->
+     <input type="submit" value="提交">
+     <!--button类型：创建按钮-->
+     <input type="button"value="播放">
+     <!--button标签定义一个提交按钮-->
+     <button>暂停</button>
+     
+     <!--select定义下拉列表
+     option:选项-->
+     <select name="" id="">
+         <option value="baoma">baoma</option>
+         <option value="aodi" selected>aodi</option>
+         <option value="bentian">bentian</option>
+     </select>
+     
+     <select name="" id="">
+          <!--optgroup选项组:相关的选项归类在一起，label：标记每一类的描述总称
+          selected：预留的默认的被选中的选项-->
+         <optgroup label="cars1">
+           <option value="baoma">baoma</option>
+         <option value="aodi" selected>aodi</option>
+         <option value="bentian">bentian</option> 
+         </optgroup>
+         <optgroup label="cars2">
+           <option value="baoma">baoma</option>
+         <option value="aodi" selected>aodi</option>
+         <option value="bentian">bentian</option> 
+         </optgroup>
+     </select>
+     <br>
+     <!--label标签：标记相对应的input标签；for=“id名”将当前label与对应的id名的标签绑定-->
+      <label for="demo2">姓名</label> <input id="demo1" type="text" placeholder="请输入名称"> <br>
+      <label for="demo1">密码</label> <input id="demo2" type="text" placeholder="请输入密码">    
+    </form>
+</body>
+
+</html>

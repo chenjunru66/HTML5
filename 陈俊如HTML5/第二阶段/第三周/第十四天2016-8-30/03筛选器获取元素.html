@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>筛选器获取元素</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>第一个标签</li>
+            <li>第二个标签</li>
+            <li>第三个标签</li>
+            <li>第四个标签</li>
+            <li class="li5">第五个标签</li>
+            
+        </ul>
+        <p>内容
+            <span>去除标签元素</span>
+        </p>
+        <span>内容2</span>
+        <script>
+            $(function(){
+                // css( name,value )改变一个样式
+                // 改变多个样式css({name:value,name:value})
+                // $('li:first').css('color','red')
+                // 选中第一个标签
+                $('li:first').css({
+                    'background':'red',
+                    'color':'blue'})  
+                    // 选中最后一个标签
+                $('li:last').css({
+                    'background':'black',
+                    'color':'red'
+                })   
+                
+                // :not(selector)排除法 排除符合selector的所有选择器
+                $('span:not(p span)').css('color','red')
+                
+                //:eq(index)选择的是索引值为index的元素
+                $('li:eq(2)').css('font-size','24px') 
+                
+                // :gt(index)选中的是大于当前索引值的所有元素
+                $('li:gt(3)').css('font-size','30px')
+                
+                // :even() 匹配索引值为偶数的所有元素
+                $('li:even').css('background','gray')
+                
+                // :odd()匹配索引值为奇数的所有元素
+                $('li:odd').css('background','lightblue')
+                
+                // :contains(text)匹配与内容相同的元素
+                $("li:contains('第一个')").css('color','yellow')
+                
+                // 属性选择器选中元素
+                $("li[class]").css("background","yellow")
+                $("li[class=li5]").css("background","green")
+            })
+        </script>
+    </body>
+</html>

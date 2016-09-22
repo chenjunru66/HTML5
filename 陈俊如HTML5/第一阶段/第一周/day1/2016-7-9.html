@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title></title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" width="1024" height="768" style="border:1px solid #aaa;
+        display:block;
+        margin:50px auto;"></canvas>
+
+        <script>
+            //  var tangram=[
+            //      {p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:"#caff67"},
+            //      {p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:"#67becf"},
+            //      {p:[{x:880,y:0},{x:800,y:440},{x:600,y:600},{x:600,y:200}],color:"#ef3d61"},
+            //      {p:[{x:660,y:200},{x:600,y:600},{x:400,y:400}],color:"#f9f51a"},
+            //       {p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:"#a594c0"},
+            //        {p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:"#fa8ecc"},
+            //         {p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:"#f6ca29"},
+
+            //  ]
+
+
+        window.onload= function(){
+            var canvas=document.getElementById("canvas");
+
+
+            canvas.width=1024;
+            canvas.height=768;
+       var context=canvas.getContext("2d")
+       context.moveTo(100,100)
+       context.lineTo(700,700)
+       context.lineTo(100,700)
+       context.lineTo(100,100)
+       context.closePath()
+
+       context.lineWidth=5
+       context.strokeStyle="red"
+       context.stroke()
+
+       context.beginPath()
+       context.moveTo(200,100)
+       context.lineTo(700,600)
+       context.closePath()
+       context.strokeStyle="black"
+       context.stroke()
+
+            // if(canvas.getContext("2d")){
+            //    var context=canvas.getContext("2d")
+            // // 使用context设置
+
+            // }
+            // else{
+            //     alert（‘当前浏览器不支持canvas，请跟换浏览器后再试’）
+            // }
+            
+        }
+    </script>
+    </body>
+    
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--定义标签内语言格式-->
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <!--设置IE浏览器的兼容性，以最新的版本兼容当前的-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--对视扣得，宽 度为当前的设备的宽度；出事的缩放比例；最初的缩放比例为1，用户是否缩放，用户是否可以缩放，-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="陈俊如">
+        <title>Bootstrap轮播图</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            img{
+                width: 100%;                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <div id="myCarousel" class="carousel slide  data-ride=carousel">
+   <!-- 轮播（Carousel）指标 -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="carousel-inner">
+      <div class="item active">
+         <img src="6.jpg" alt="First slide">
+         <div class="carousel-caption">标题 1</div>
+      </div>
+      <div class="item">
+         <img src="4.jpg" alt="Second slide">
+         <div class="carousel-caption">标题 2</div>
+      </div>
+      <div class="item">
+         <img src="5.jpg" alt="Third slide">
+         <div class="carousel-caption">标题3</div>
+      </div>
+   </div>
+   <!-- 轮播（Carousel）导航 -->
+   <a class="carousel-control left" href="#myCarousel" 
+      data-slide="prev"> <span class="glyphicon glyphicon-chevron-left " aria-hidden="true"></span></a>
+   <a class="carousel-control right" href="#myCarousel" 
+      data-slide="next"><span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span></a>
+</div> 
+</div> 
+    </body>
+    
+    <!--注意两个的顺序-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+        $('#myCarousel').carousel({
+  interval: 2000
+})
+    </script>
+</html>

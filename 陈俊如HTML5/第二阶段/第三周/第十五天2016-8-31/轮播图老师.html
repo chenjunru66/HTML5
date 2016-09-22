@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>轮播图</title>
+        <script src="jquery.js"></script>
+        <style>
+           body {
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .banner {
+            width: 600px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+        }       
+        img {
+            width: 600px;
+            height: 200px;
+        }
+        .count1 li{
+            position: absolute;
+            opacity: 0;
+        }
+        .count1 li:nth-of-type(1){
+            opacity: 1;
+        }
+        .count2{
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+        }
+        .count2 li {
+            float: left;           
+            width: 20px;
+            height: 20px;
+            background:#f90;
+            color:#fff;  
+            margin-left: 5px;
+            text-align: center;
+            border-radius: 20px;            
+            cursor: pointer;         
+        }      
+        .current{
+            background: yellow !important;
+            color: black !important;
+        }
+        .active{
+            opacity: 1;
+        } 
+        </style>
+    </head>
+    <body>
+        <div class="banner">
+        <ul class="count1">
+            <li><img src="imgs/1.jpg" alt=""></li>
+            <li><img src="imgs/2.jpg" alt=""></li>
+            <li><img src="imgs/3.jpg" alt=""></li>
+            <li><img src="imgs/4.jpg" alt=""></li>
+        </ul>
+        <ul class="count2">
+            <li class="a">1</li>
+            <li class="a">2</li>
+            <li class="a">3</li>
+            <li class="a">4</li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            // 初始化当前的轮播图显示
+            $(".count1 li").first().css("opacity",'1')
+            $(".count2 li").first().addClass("current")
+            
+             // 自动轮播
+            var num = 0
+            var len = $(".count2 li").length
+            
+            function active(){
+                num++
+                if( num >= len){
+                    num = 0
+                }
+                $(".count2>li").eq(num).addClass("current").siblings().removeClass("current") 
+                 $(".count1>li").eq(num).css('opacity',1).siblings().css('opacity',0) 
+                 
+            }
+            timer = setInterval( active,1000 )
+            
+            // 手动轮播
+            $(".count2 li").each(function(){
+                $(this).hover(function(){
+                    clearInterval(timer)
+                 $(".count2>li").eq( $(this).index()).addClass("current").siblings().removeClass("current") 
+                  $(".count1>li").eq( $(this).index()).css('opacity', 1 ).siblings().css('opacity',0 ) 
+                },
+                function(){
+                    num = $(this).index() + 1
+                    timer = setInterval( active,1000 )
+                })
+            })
+            
+           
+        })
+    </script>
+    </body>
+</html>

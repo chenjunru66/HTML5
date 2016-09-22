@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>倒计时</title>
+    <style>
+         body{
+             margin: 0;
+             height: 100vh;
+         }
+         .wrapper{
+             height: 100vh; 
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+         main{
+             border-radius: 15px;
+             width: 400px;
+             height: 250px;
+             background: #444444;
+         }
+         .f-1{
+             text-align: center;
+         }
+         button{
+             width: 100px;
+             height: 50px; 
+             border-radius: 5px;
+             display: inline-block;
+             margin: 20px 0;              
+             font-size: 20px;
+         }
+         #demo{
+             margin: 30px 0;
+             font-size: 20px;
+         }
+         #demo span{             
+             background: white;
+             padding: 10px 20px;
+             display: inline-block;
+             border-radius: 10px;            
+         }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <main>
+            <div class="f-1">
+                <p id="demo">
+                    <span id="fen">02</span>分<span id="miao">59</span>秒</p>
+                <button type="button" onclick="start()">开始</button>
+                <button type="button" onclick="stop()">暂停</button>
+            </div>
+        </main>
+    </div>
+</body>
+ <script src="time2.js"></script>
+</html>

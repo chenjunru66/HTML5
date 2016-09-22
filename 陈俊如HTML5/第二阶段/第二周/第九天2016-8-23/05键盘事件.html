@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>键盘事件</title>
+        <style>
+            div{
+                width: 300px;
+                height: 300px;
+                background: red;
+                color: #fff;
+                font-size: 200px;
+                line-height: 300px;
+                margin: 0 auto;
+                border-radius: 50%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+            onkeyup按键松开的时候触发的事件
+            onkeydown按键按下的时候触发的事件
+            onkeypress按键按下被按下后松开触发的事件
+        </pre>
+        <div>
+            A
+        </div>
+        <script>
+            // 刷新页面随机显示26个大写英文字母，当按下的键与显示的一致，弹出输入正确的字母，否则重新按键
+            var div = document.querySelector('div')
+            var char
+            
+            function active(){
+                 // 第一步：获取随机数26个
+            var code = Math.floor( Math.random() * 26 )//0,1,...25
+            // alert(code)
+             char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.charAt(code)
+            // alert(char)
+            div.innerHTML = char
+            }
+            active()
+            window.onkeydown = function(ev){//这里的ev指该事件，用来存储数据
+                // alert(ev.key)        
+                var chars = ev.key.toUpperCase()
+                // alert(chars)
+                if( chars == char){
+                    div.style.color = 'yellow'
+                    active()
+                }
+                else{
+                    alert('输入错误的字母')
+                    div.style.fontSize = '250px'
+                }
+            }
+        </script>
+    </body>
+</html>

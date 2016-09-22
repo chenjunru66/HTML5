@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>新闻</title>
+        <!--<!--样式- 
+        一、行间样式表（偶尔使用）:<h1 style="color:green;">论第一天的尴尬</h1>  ;
+        二、内部样式表（便于管理样式，调试）：h1{font-size: 50px;}；
+        三、外部样式表（便于重复使用样式表文件）：  <link rel="stylesheet" href="style.css">
+        将css样式代码单独放入在一个外部文件中，后缀是.css,再用网页进行调用->-->
+      
+        <style>
+            h1{font-size: 50px;
+            text-align: center;
+            }  
+            /*对应的选择器｛
+            对应的样式属性：属性值；
+            ｝*/
+            /*第一种：直接通过标签选择器找元素*/
+            address{
+                /*粗体*/
+                font-weight: bold;
+                /*字体样式：正常、斜体*/
+                font-style: normal;
+                text-align: center;
+                /*字体大小*/
+                font-size:30px;
+                /*字体颜色*/
+                color:grey;
+                /*字体*/
+                font-family: "行书"；
+                
+            }
+            p{
+                text-indent: 2em;
+            }
+            /*:nth-child()只有在所属标签是才用，p元素相对于父元素中所有的元素的位置；在有其他元素标签的情况下使用nth-of-type（）
+            p:nth-child(1){
+                color: green;
+                
+            }
+            /* 	选择属于其父元素的第二个子元素的每个 <p> 元素。如下面body为父元素，p标签前面有其他标签就是为第二个，除非前面没有
+            p:nth-child(2){
+                color: yellow;
+            }
+          p:nth-child(3){
+                color: red;
+            }*/
+            /*位置：p元素相对于父元素中所有的p元素的位置
+            p:nth-of-type(1){
+                color: green;
+            }
+             p:nth-of-type(2){
+                color: yellow;
+            }
+             p:nth-of-type(3){
+                color: blue;
+            }
+             p:nth-of-type(4){
+                color: red;
+            }
+            /*id选择器：适用于唯一的元素,要对元素进行设置id：<p id="firstp">我们在默默的学习这仅有的几个标签</p>
+            #id名字*/
+            #firstp{
+                color:red;
+                
+            }
+            #secondp{
+                color: blue;
+            }
+             #thirdp{
+                color: red;
+            }
+             #fourthp{
+                color: purple;
+            }
+            /*类名选择器：.类名,学先在元素内设置类名，*/
+            .cuti{
+                font-weight: bold;
+            }
+            .xieti{
+                font-style: italic;
+                color: red;
+            }
+            /*选择器总结：标签选择器；
+            id选择器
+            类名选择器*/
+        </style>
+    </head>
+    <body>
+        <!--<h1>一级标题标签</h1>
+        <h2>二级标题标签</h2>
+        <h3>三级标题标签</h3>
+        <h4>四级标题标签</h4>
+        <h5>五级标题标签</h5>
+        <h6>六级标题标签</h6>
+        <address>显示消息来源</address>
+        <p>用于声明一个段落</p>-->
+        <h1>论第一天的尴尬</h1>
+        <address>2016.7.11 14:21:25</address>
+        <p id="firstp">我们在默默的学习这仅有的几个标签</p>
+        <p id="secondp">h1标签，是一级标题标签</p>
+        <p id="thirdp">address标签，是用来显示消息来源、时间、以及作者信息的标签</p>
+        <p id="fourthp">p标签主要用语定义文章段落的标签</p>
+        <p class="cuti">们在默默的学习这仅有的几个标签</p>
+        <p class="xieti">h1标签，是一级标题标签</p>
+         <p class="cuti">p标签主要用语定义文章段落的标签</p>
+    </body>
+</html>

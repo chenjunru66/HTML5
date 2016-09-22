@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title></title>
+    <!--样式-->
+    <style>
+        body {
+            /*清除body默认的8px的外边距*/
+            margin: 0px;
+        }
+        /*导航条容器样式*/
+        
+        #header {
+            height: 60px;
+            width: 100%;
+            background-color: gray;
+            position: fixed;
+            top: 0px;
+            z-index: 1px;
+        }
+        
+        #header_img {
+            height: 100%;
+            width: 200px;
+            /*修改显示属性为行内快元素，让其右侧空间可以被利用*/
+            display: inline-block;
+        }
+        
+        #header_img>img {
+            /*让图片的高度是器父元素的高度*/
+            height: 100%;
+            position: relative;
+            left: 50px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        
+        #header_navber {
+            /*让导航条菜单浮动到导航条的右侧*/
+            float: right;
+            position: relative;
+            right: 100px;
+            margin: 8px 0px;
+        }
+        
+        #header_navber>a {
+            font-size: 26px;
+            /*去掉文本装饰*/
+            text-decoration: none;
+            /*修改字体颜色*/
+            color: black;
+        }
+        
+        #header_navber>a:hover {
+            color: gold;
+        }
+        
+        #neirong {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        #special {
+            /*让div定宽居中*/
+            width: 60%;
+            height: 500px;
+            margin: 10px auto;
+            /*填充背景图片*/
+            background-image: url("images/6.jpg");
+            /*防止图片重复*/
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        #special>img:nth-of-type(1) {
+            width: 120px;
+            height: 120px;
+            border: 2px solid white;
+            border-radius: 50%;
+            position: absolute;
+            left: 450px;
+            top: 250px;
+        }
+        
+        #special>img:nth-of-type(2) {
+            width: 120px;
+            height: 120px;
+            border: 2px solid white;
+            border-radius: 50%;
+            position: absolute;
+            left: 1250px;
+            top: 200px;
+        }
+        
+        #special>img:nth-of-type(3) {
+            width: 120px;
+            height: 120px;
+            border: 3px solid white;
+            border-radius: 50%;
+            position: absolute;
+            left: 650px;
+            top: 150px;
+        }
+        /*#special2{
+               width: 60%;
+               height: 500px;
+               background-image: url("images/14.jpg")
+           }*/
+        
+        #foot {
+            width: 100%;
+            height: 130px;
+            background-color: wheat;
+            position: absolute;
+            bottom: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--分成三个部分-->
+    <!--id选择器：用于标记页面中的唯一的元素-->
+    <!--头部导航条-->
+    <section id="header">
+        <!--/左侧图片-->
+        <div id="header_img">
+            <!--src:图片的路径（最好让图片资源与html文件处于同一级目录）；
+                alt：当图片未能正常显示的时候，给用户一个有意义的提示-->
+            <img src="images/5.png" alt="这是一个logo">
+        </div>
+        <!--右侧导航菜单选项-->
+        <div id="header_navber">
+            <a href="#jieshao">我的介绍&#x3000;&#x3000;</a>
+            <a href="">我的生活&#x3000;&#x3000;</a>
+            <a href="">我的近况&#x3000;&#x3000;</a>
+        </div>
+    </section>
+    <!--内容部分展示-->
+    <section>
+        <div>
+            <h3 id="jieshao">我的介绍</h3>
+            <!--<img src="images/2.jpg" alt="">-->
+            <div id="special">
+                <img src="images/1.jpg" alt="">
+                <img src="images/2.jpg" alt="">
+                <img src="images/12.jpg" alt="">
+            </div>
+            <!--lorem快速测试填充-->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate quidem dolore repellendus in reiciendis
+                pariatur dolorum illo quae ut facere adipisci reprehenderit, temporibus iusto est placeat consectetur. Nisi,
+                unde.</p>
+        </div>
+        <!--<div id="neirong">
+                <h3 id="life">我的生活</h3>-->
+
+        <!--<img src="images/2.jpg" alt="">-->
+        <!--<div id="special2 ">                                   
+                </div>-->
+        <!--lorem快速测试填充-->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate quidem dolore repellendus in reiciendis
+            pariatur dolorum illo quae ut facere adipisci reprehenderit, temporibus iusto est placeat consectetur. Nisi,
+            unde.</p>
+        </div>
+        <div id="special2 ">
+    </section>
+    <hr>
+    <!--页脚版权信息声明-->
+    <section id="foot">
+        <span>@copyright 版权信息归个人所有</span>
+        <br/>
+        <span>&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;作者陈俊如</span>
+    </section>
+</body>
+
+</html>

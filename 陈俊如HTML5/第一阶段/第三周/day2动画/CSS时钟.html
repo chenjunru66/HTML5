@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>CSS时钟</title>
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            background: #000;
+        }
+        
+        main {
+            width: 100%;
+            height: 100%;
+            /*width: 1000px;
+            height: 1000px;*/
+            /*border: 5px solid white;
+            position: relative;
+            left: calc(50% - 500px);
+            top: calc(50% - 500px);*/
+        }
+        
+        div {
+            position: absolute;
+            /*height: 900px;*/
+        }
+        
+        #shizhen {
+            height: 600px;
+            width: 20px;
+            /*background: white;*/
+            left: calc(50% - 10px);
+            top: calc(50% - 300px);
+            /*transform: rotate(30deg);*/
+            animation: rotate 43200s infinite linear;
+            animation-delay: -43200s;
+        }
+        
+        #fenzhen {
+            height: 800px;
+            width: 14px;
+            /*background: blue;*/
+            left: calc(50% - 7px);
+            top: calc(50% - 400px);
+            /*transform: rotate(10deg);*/
+            animation: rotate 3600s infinite linear;
+            animation-delay: -3600s;
+        }
+        
+        #miaozhen {
+            height: 900px;
+            width: 8px;
+            /*background: yellow;*/
+            left: calc(50% - 4px);
+            top: calc(50% - 450px);
+            /*transform: rotate(60deg);*/
+            /*infinite:无限循环 linear:匀速*/
+            animation: rotate 60s infinite linear;
+            animation-delay: -60s;
+            /*正值：延迟多少秒之后开始执行动画；
+            负值：已经完成的过程的时间，作用：改变当前动画的初始状态*/
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        #yuan {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            left: calc(50% - 25px);
+            top: calc(50% - 25px);
+        }
+        
+        section {
+            width: 100%;
+            border-radius: 10px 10px;
+        }
+        
+        #shizhen>section {
+            height: 60%;
+            background: red;
+        }
+        
+        #fenzhen>section {
+            height: 58%;
+            background: blue;
+        }
+        
+        #miaozhen>section {
+            height: 56%;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="shizhen">
+            <section>
+
+            </section>
+        </div>
+        <div id="fenzhen">
+            <section>
+
+            </section>
+        </div>
+        <div id="miaozhen">
+            <section>
+
+            </section>
+        </div>
+        <div id="yuan">
+            <section>
+
+            </section>
+        </div>
+    </main>
+</body>
+<script src="time.js"></script>
+
+</html>

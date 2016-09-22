@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 圆形布局的方法 </title>
+</head>
+
+<body>
+    Math.PI 返回的是圆周率 
+    弧度两条射线从圆心向圆周射出，形成一 个夹角和夹角正对的一段弧。当这段弧长正好等于圆的半径时，两条射线的夹角大小为 1 弧 度
+    角(弧度) = 弧长/ 半径
+    圆的周长 = 2 πr，因此 π相当于180度对应的弧度 ， 60度 = Math.PI / 3
+
+    <script>
+        var initDeg  = Math.PI / 4   // 45
+        var deg = Math.PI / 3   // 60
+        var R = 150
+        var offsetX = 250
+        var offsetY = 250
+        var r = 100
+        for( var i = 0; i < 6 ; i ++ ){
+            var div = document.createElement('div')
+            div.style.width = r + 'px'
+            div.style.height =  r + 'px'
+            div.style.backgroundColor= 'hsl(' + i * 60 + ', 100%, 50%'
+            div.style.position = 'absolute'
+            div.style.borderRadius = '50%'
+
+            div.style.top = offsetY + R * Math.cos(initDeg + deg * i) + 'px'
+				div.style.left = offsetX + R * Math.sin(initDeg + deg * i) + 'px'
+            document.body.appendChild(div)   
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+1.npm init --初始化当前的包管理工具，设置属性：名称、描述、作者、等信息
+2.npm install express --save -- 安装express框架
+3.在js文件中，搭建服务器  输入node server.js
+
+
+
+之前的JS运行在浏览器，
+Nodejs是一个JS运行的环境，是对chrome V8引擎的封装
+
+
+npm--node package manager：包管理工具-node js 内部的各种模块包
+
+
+cd  ：打开文件路径
+e：切换到e盘
+cd..  返回到上一级
+
+ipconfig  获取本机ip地址
+
+
+npm init 初始化一个包管理工具的配置文件
+
+npm install express   安装模块包
+
+npm install express --save  在配置文件中添加依赖项
+
+npm install multer --save
+
+
+
+npm install cookie-parser
+
+
+node index.js启动服务器
+
+ctrl + c关闭服务器
+
+方向键朝上 ：返回到上一个指令
+
+node install body-parser --save配置body-parser模块

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>天气预报</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div></div>
+
+<script>
+   console.log($.ajax())//返回的是xhr对象
+ $.ajax('http://apis.baidu.com/3023/weather/weather?id=101180101', {
+   headers:{
+       apikey:'fc00d73a809bd592adcea5d0829833d0'
+    },
+    success:function(data){
+        console.log(data)
+       var datas = JSON.stringify(data)
+        console.log(datas)
+        $('div').html(datas)
+       var weather = data.weather
+        console.log(weather)
+        var now = weather[0].info
+       console.log(now)
+    }
+}
+)
+
+
+</script>
+
+</body>
+</html>

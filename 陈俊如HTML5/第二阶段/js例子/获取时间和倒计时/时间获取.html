@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>时间获取</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        main {
+            height: 500px;
+            width: 60%;
+            background: lightblue;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+        .f-1{
+            width: 300px;
+            border-radius: 50%;
+            background: #227CCA;            
+            height: 300px;
+            float: left;
+            position: relative;
+            top: calc(50% - 150px);
+            left: 50px;
+        }
+        .f-1>div {
+            position: absolute;
+        }
+        
+        #shizhen {
+            height: 100px;
+            width: 6px;
+            left: 147px;
+            top: calc(50% - 50px);
+            /*transform: rotate(30deg);*/
+            animation: rotate 43200s infinite linear;
+            animation-delay: -43200s;
+        }
+        
+        #fenzhen {
+            height: 150px;
+            width: 4px;
+            /*background: blue;*/
+            left: 148px;
+            top: calc(50% - 75px);
+            /*transform: rotate(10deg);*/
+            animation: rotate 3600s infinite linear;
+            animation-delay: -3600s;
+        }
+        
+        #miaozhen {
+            height: 200px;
+            width: 2px;
+            left: 149px;
+            top: calc(50% - 100px);
+            animation: rotate 60s infinite linear;
+            animation-delay: -60s;
+            /*正值：延迟多少秒之后开始执行动画；
+            负值：已经完成的过程的时间，作用：改变当前动画的初始状态*/
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        #yuan {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            left: 140px;
+            top: calc(50% - 10px);
+        }
+        
+        section {
+            width: 100%;
+            border-radius: 10px 10px;
+        }
+        
+        #shizhen>section {
+            height: 60%;
+            background: white;
+        }
+        
+        #fenzhen>section {
+            height: 58%;
+            background: white;
+        }
+        
+        #miaozhen>section {
+            height: 56%;
+            background: red;
+        }
+        .f-1 span{
+            display: block;
+            font-size: 24px;
+            position: absolute;
+            color: white;
+        }
+        .f-1 span:nth-of-type(1){
+            left: 135px;
+        }
+        .f-1 span:nth-of-type(2){
+            left: 280px;
+            top: 130px;
+        }
+        .f-1 span:nth-of-type(3){
+            left: 145px;
+            top: 270px;
+        }
+        .f-1 span:nth-of-type(4){
+            left: 5px;
+            top: 130px;
+        }
+        .f-2{
+            float: left;
+            margin:100px 200px;
+        }
+        .f-2 p{
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+            margin: 30px;
+        }
+       
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="f-1">
+             <span>12</span>
+             <span>3</span>
+             <span>6</span>
+             <span>9</span>
+            <div id="shizhen">
+                <section>
+
+                </section>
+            </div>
+            <div id="fenzhen">
+                <section>
+
+                </section>
+            </div>
+            <div id="miaozhen">
+                <section>
+
+                </section>
+            </div>
+            <div id="yuan">
+                <section>
+
+                </section>
+            </div>
+
+        </div>
+        
+        <div class="f-2">
+            <p id="demo1"></p>
+            <p id="demo2"></p>
+            <p id="demo3"></p>
+        </div>
+    </main>
+</body>
+<script src="time1.js"></script>
+
+</html>

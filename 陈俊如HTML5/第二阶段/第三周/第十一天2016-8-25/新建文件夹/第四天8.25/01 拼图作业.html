@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 拼图作业 </title>
+    <style>
+        body{
+            font-size:0; background:#000;
+        }
+        ul,li{
+            list-style:none; margin:0; padding:0;
+        }
+        ul{
+            width:450px;  margin:50px auto;
+        }
+        li{
+            width:150px; display:inline-block;
+        }
+        img{
+            width:100%; display:block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li draggable="true"> <img draggable="false" src="images/img (1).png" alt=""> </li>
+        <li draggable="true"> <img draggable="false" src="images/img (4).png" alt=""> </li>
+        <li draggable="true"> <img draggable="false" src="images/img (5).png" alt=""> </li>
+        <li draggable="true"> <img draggable="false" src="images/img (8).png" alt=""> </li>
+        <li draggable="true"> <img draggable="false" src="images/img (9).png" alt=""> </li>
+        <li draggable="true"> <img draggable="false" src="images/img (3).png" alt=""> </li>
+        <li draggable="true"> <img draggable="false" src="images/img (2).png" alt=""> </li>
+        <li draggable="true"> <img draggable="false" src="images/img (7).png" alt=""> </li>
+        <li draggable="true"> <img draggable="false" src="images/img (6).png" alt=""> </li>
+    </ul>
+    
+    <script>
+        var lis = document.querySelectorAll('li')
+        for( var i = 0; i < lis.length; i++ ){
+            // console.log( lis[i] )
+            var li = lis[i]
+            
+            // 元素开始拖动
+            li.ondragstart = function(ev){
+                ev.target.id = 'draging'
+                ev.dataTransfer.setData( 'text', ev.target.id )
+                ev.dataTransfer.effectAllowed = 'move'
+                
+            }
+            
+            li.ondragend = function(ev){
+                ev.preventDefault()
+                ev.target.id = ''
+                
+            }
+            
+            li.ondrop = function(ev){
+                ev.preventDefault()
+                
+                // 获取当前被拖动的元素
+                var id = ev.dataTransfer.getData('text')
+                var li = document.getElementById(id)
+                var ul = document.querySelector('ul')
+                
+                ul.insertBefore(li, ev.currentTarget)
+                ev.stopImmediatePropagation()
+            }
+        }
+    </script>
+</body>
+</html>

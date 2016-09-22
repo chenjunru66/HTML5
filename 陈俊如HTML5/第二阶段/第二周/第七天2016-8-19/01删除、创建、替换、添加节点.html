@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>删除节点/节点的属性</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // 创建标签节点
+            var main = document.createElement('main')
+            var div = document.createElement('div')
+            
+            // 将创建好的main节点添加到body上
+            document.body.appendChild(main)
+            main.appendChild(div)
+            
+            // 给main标签添加属性
+            main.setAttribute('title','标题')
+            
+            //创建文本节点 
+            var  divText = document.createTextNode('这是添加的文本节点')
+            div.appendChild(divText)
+            // 移除文本节点
+            // div.removeChild(divText)
+            
+            // main.removeChild(div)会把div内的所有内容删除
+            var  divTexts = document.createTextNode('这是添加的第二个文本节点') 
+            // 替换文本节点 replaceChild(newNode,oldNode)
+            div.replaceChild(divTexts,divText)
+            
+        </script>
+    </body>
+</html>

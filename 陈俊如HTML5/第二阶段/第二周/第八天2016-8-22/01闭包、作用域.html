@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>闭包、作用域</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+            把全局变量变为局部变量的方法，把所有代码放进一个匿名函数里，然后函数自我调用
+        </pre>
+        
+        <!--全局变量的生命周期：到页面关闭
+            局部变量的生命周期：执行函数的时候，开始创建，执行完毕之后，生命结束-->
+        <script>
+            // var i = 0//全局变量：作用域当前的页面
+            // function add(){//该函数是容器，也是闭包
+            //     console.log(i)
+            //     var j = 1 //局部变量：作用域是在当前的函数范围之内
+            //         function add2(){//闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。 
+            //             for(; j < 10; j++){                            
+            //             console.log( j )
+            //             }
+            //         }
+            //     add2()
+            // }
+            // add()
+            
+            //函数的自我调用: (函数内容)()，可以通过这个方法将全局变量变为局部变量
+            (function(){
+                var i = 109//局部变量
+                console.log('匿名函数')
+            })()
+            
+        </script>
+    </body>
+</html>

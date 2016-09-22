@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> onclick点击事件 </title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <p> 鼠标点击下面的按钮，会获取相对应的文字 </p>
+        <button type="button" onclick="active();"> 点击 </button>
+        <!--
+            onclick：鼠标的点击事件，即鼠标点击的时候，触发执行某个函数(方法)
+        -->
+        <p id="result"></p>
+        <script>
+            // 通过ID名称获取到相对应的标签
+            var result = document.getElementById('result')
+            function active(){
+                // innerHTML :该属性获取标签内部的内容，即开始标签与结束标签之间的内容  -- DOM方法
+                result.innerHTML = '这是点击之后获取的内容'
+            }
+            // DOM：document object model 文档对象模型
+            // 其定义了 访问和操作HTML文档的标准方法，即 可以通过HTML DOM获取、修改、添加或删除HTML内部的内容
+            // 后期会具体讲解，暂时先用其中的方法
+        </script>
+        
+    </body>
+</html>

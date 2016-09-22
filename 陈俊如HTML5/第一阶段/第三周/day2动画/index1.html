@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>登录首页</title>
+   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+   <!--显示在浏览器网页标题旁边的小图标，可以使用16x16、32x32尺寸的png文件:<link rel="shortcut icon" href="3.jpg">-->
+   <link rel="icon" href="3.jpg">
+    <style>
+        body {
+            margin: 0;
+            /*filter: blur(20px);模糊需要定位*/
+            background: url(2.jpg) center top no-repeat;
+            /*一个100%的时候，body被撑开，两个的时候，高度为0，所以空白*/
+            background-size: 350%;
+            color: #fff;
+            text-align: center;
+        }
+        
+        header {
+            padding: 10px;
+            font-size: 18px;
+            
+        }
+        
+        header span:nth-child(1) {
+            font-size: 14px;
+            float: left;
+            /*浮动和定位会影响行内元素的特点*/
+            margin-top: 6px;
+        }
+        
+        header span:nth-child(3) {
+            font-size: 14px;
+            float: right;
+            margin-top: 6px;
+        }
+        main{
+            width: 70%;
+            margin: 0 auto;
+            line-height: 40px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin:50px 0;
+            
+        }
+        main p:first-of-type{
+            text-align: left;
+            border-bottom: 1px solid #fff;
+        }
+        main p:nth-of-type(2){
+           text-align: left;
+           border-bottom: 1px solid #fff;
+        }
+        main p:nth-of-type(3){
+            background: green;
+            border-radius: 15px;
+            letter-spacing: 10px;
+        }
+        main p:nth-last-child(){
+            font-size: 14px;
+        }
+        main span{
+            margin-left: 10px;
+        }
+        footer{
+            width: 70%;
+            margin: 0 auto;            
+            margin-top: 95px;            
+        }
+        .fa-weixin,.fa-weibo,.fa-qq{
+            color: #E7E5E8;
+            font-size: 40px;
+        }
+        .fa-weixin{
+            float: right;
+        }
+        .fa-weibo{
+            float: left;
+        }
+        footer a:hover{
+            border-bottom: 2px solid #FDFDFD;
+        }
+    </style>
+</head>
+
+<body>
+    <!--第一部分-->
+    <header>
+        <span>返回</span>
+        <span>登录</span>
+        <span>注册</span>
+    </header>
+    <!--第二部分-->
+    <main>
+        <img src="3.jpg" alt="">
+        <p>
+            账号<span>273263743@qq.com</span>
+        </p>
+        <p>密码 <span>·········</span></p>
+        <p>登录</p>
+        <p>忘记密码？</p>
+    </main>
+    <!--第三部分-->
+    <footer>
+      <a href=""><span class="fa fa-weibo"></span></a>
+                <a href=""><span class="fa fa-qq"></span></a>
+                <a href=""><span class="fa fa-weixin"></span></a>
+    </footer>
+</body>
+
+</html>

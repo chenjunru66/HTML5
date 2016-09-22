@@ -1,0 +1,9 @@
+body{
+    background:lightblue;
+}
+span:last-child{
+    background-color:#fff;
+}
+li{
+    background:#000;
+}

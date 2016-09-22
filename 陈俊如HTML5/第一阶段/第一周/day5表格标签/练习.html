@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title></title>
+        <style>
+            body{
+                background-color: gray;
+            }
+         #zhengti{
+           width: 80%;
+           height: 1000px;
+           min-width: 1350px;
+           margin: 0px auto;
+           background-color: white;
+            /*内边距*/
+           padding: 80px;
+           /*内容显示模式，让内容显示的宽度=外边距+内容宽度+内边距*/
+           box-sizing: border-box;
+           /*加一个盒子阴影:x轴方向偏移量；y轴方向偏移量；阴影的宽度；阴影颜色*/
+           box-shadow: 0 0 100px black; 
+                
+         } 
+         #liebiao{
+             padding-top:  0px;
+         }
+         #head,#head_3 {
+             text-align: center;            
+         }
+         #head_1 {
+             position: relative;
+             left: 36%;             
+         }
+         #head_3{
+             margin-top: 6px;
+         }
+         #head_1,#head{
+             margin-bottom: 0;
+         }
+         #xiahuaxian{
+             width: 300px;
+             margin-top: 0px;
+         } 
+         /*可以使用u标签，然后给h标签加个border*/
+          #table1{
+                /*collapse:折叠合并*/
+                border-collapse: collapse;
+                width: 80%;               
+                margin: 0px auto; 
+                text-align: center;
+                color:black; 
+                 /*border: 2px solid black; 
+                 border-bottom: none;            */
+            }
+            #table2{
+                border-collapse: collapse;
+                width: 80%;
+                height: 20px;
+                margin: 0px auto; 
+                text-align: center;
+                color: black; 
+                /*border: 2px solid black; */ 
+                /*隐藏边框*/
+                border-top-style:hidden;                        
+            }
+             #td2{
+                 position: relative;
+                 bottom: 1px;
+             }
+             td{
+                 width: 200px;
+                 
+             }
+        </style>
+    </head>
+    <body>
+        <div id="zhengti">
+           <div>
+               <h2 id="head">费&#x3000;用&#x3000;报&#x3000;销&#x3000;单 <hr id="xiahuaxian"></h2>
+               <p id="head_1">报销日期&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;
+                  年&#x3000;&#x3000;&#x3000;月&#x3000;&#x3000;&#x3000;日&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;
+                  &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;附件 &#x3000;&#x3000;&#x3000;张</p>            
+               </div> 
+            <div id="liebiao">
+                <table id="table1" border="1">
+                    <tr>
+                        <td>费&#x3000;用&#x3000;项&#x3000;目</td>
+                        <td>类&#x3000;别</td>
+                        <td>金&#x3000;额</td>
+                        <td rowspan="2">负责人(签章)</td>
+                        <td rowspan="2"></td>
+                    </tr>
+                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td>&#x3000;</td>
+                        <!--<td>负责人(签章)</td>-->
+                        <!--<td>负责人</td>-->
+                    </tr>
+                     <tr>
+                        <td>&#x3000;</td>
+                        <td>&#x3000;</td>
+                        <td>&#x3000;</td>
+                        <td rowspan="2">审&#x3000;查&#x3000;意&#x3000;见</td>
+                        <td rowspan="2">&#x3000;</td>
+                    </tr>
+                     <tr>
+                        <td>&#x3000;</td>
+                        <td>&#x3000;</td>
+                        <td>&#x3000;</td>
+                                 <!--<td>负责人</td>-->
+                                    <!--<td>负责人</td>-->
+                    </tr>
+                     <tr>
+                        <td>&#x3000;</td>
+                        <td>&#x3000;</td>
+                        <td>&#x3000;</td>
+                        <td  id="td2"rowspan="2">报销人签章</td>
+                        <td rowspan="2">&#x3000;</td>
+                    </tr>
+                     <tr>
+                        <td>&#x3000;</td>
+                        <td>&#x3000;</td>
+                        <td>&#x3000;</td>
+                        <!--<td>负责人</td>-->
+                        <!--<td>负责人</td>-->
+                    </tr>
+                     <tr>
+                        <td>报&#x3000;销&#x3000;金&#x3000;额&#x3000;合&#x3000;计</td>
+                        <td></td>
+                        <td></td>
+                        <td>￥&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;</td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td colspan="5">核实金额（大写）&#x3000;&#x3000;
+                            &#x3000;&#x3000;&#x3000;佰&#x3000;&#x3000;&#x3000;拾&#x3000;&#x3000;&#x3000;
+                            万&#x3000;&#x3000;&#x3000;仟&#x3000;&#x3000;&#x3000;佰&#x3000;&#x3000;&#x3000;
+                            拾&#x3000;&#x3000;&#x3000;元&#x3000;&#x3000;&#x3000;角&#x3000;&#x3000;&#x3000;
+                            分&#x3000;&#x3000;&#x3000;￥</td>
+                           <!--<td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>-->
+                    </tr>                     
+                </table>
+                <table id="table2"  border="1">
+                   <tr>
+                        <td>借&#x3000;款&#x3000;数</td>
+                        <td>&#x3000;</td>
+                        <td>应&#x3000;退&#x3000;金&#x3000;额</td>
+                        <td>&#x3000;&#x3000;&#x3000;&#x3000;</td>
+                        <td>应&#x3000;补&#x3000;金&#x3000;额</td>
+                        <td>&#x3000;</td>
+                    </tr> 
+                </table>
+                <p id="head_3">审核&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;
+                    &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;
+                    &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;
+                    &#x3000;&#x3000;&#x3000;&#x3000;出纳</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 变量和数据类型 </title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // var 创建变量，a,b是变量名称，可自定义；
+            // 变量可用来存储数据   = 赋值的意思
+            // JS对大小写敏感
+            // JS语句默认一行为一个语句，用分号隔开，分号可写，可不写
+            var a = 1
+            var b = 2
+            var A = 3
+            // alert(a)
+            // alert(b)
+            // alert(A)
+            // alert()提示框，可弹出变量的值
+        </script>
+        JS数据类型:字符串String、数字Number、布尔值Boolean、空Null、未定义Undefined
+        复杂类型：对象Object、数组Array
+
+        <script>
+            //  字符串 ，值包裹在引号之间
+            var name = 'yan'
+            var keMu = 'HTML5'
+            console.log(name)   // yan   ，在控制台输出变量的值
+            console.log(keMu)   // HTML5
+              
+            // 数字
+            var age = 3
+            console.log(age)   // 3
+            console.log(typeof(age))   // Number   typeof() 可判断变量的数据类型
+
+            // 布尔值 true false
+            var f1 = true, f2 = false 
+            console.log( f1 && f2 )   // false  && 逻辑运算符，与
+            console.log( f1 || f2 )   // true   || 漏记运算符， 或
+
+            // 对象 Object ，值在{ name:value } ，键对值，即属性名：属性值
+            // 可根据其属性名找到相对应的属性值
+            var info = { 'name':'yan', 'keMu':'HTML5', 'age':'3' } 
+            console.log(info)   // Object { name: "yan", keMu: "HTML5", age: "3" }
+            console.log( info.name )  // yan
+
+            // 数组Array，值在[ ] 之间，可嵌套对象 ，计数从0开始
+            var infoZu = [ { 'name':'yan', 'keMu':'HTML5', 'age':'3' },
+                           { 'name':'han', 'keMu':'HTML5', 'age':'3' },
+                           { 'name':'wan', 'keMu':'HTML5', 'age':'3' }   ]
+            console.log(infoZu)   // Array [ Object, Object, Object ]
+            // 可嵌套数字、字符串
+            var infoNum = [ 0,1,2,3,4,5]
+            var infoStr = [ 'yan', 'meng', 'kaisen' ]
+            console.log(infoStr[0])   //  yan
+
+            // 未定义 Undefined
+            var unNum
+            console.log(unNum)   // undefined 未定义  ； 变量未定义时的属性
+            
+            // 空null
+            var unMum = null
+            console.log(unMum)   // null
+            // var unMum = names
+            // console.log(unMum)   // ReferenceError: names is not defined
+            var name = null
+            console.log(name)  // null，  可用来清空变量的值
+
+
+
+        </script>
+    </body>
+</html>

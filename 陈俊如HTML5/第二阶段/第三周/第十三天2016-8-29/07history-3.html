@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>history对象3</title>
+        <style>
+            progress{
+                width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button">后退</button>
+        <div>
+            <button type="button" onclick="prog(0)">进度0</button>
+            <button type="button" onclick="prog(0.25)">进度25</button>
+            <button type="button" onclick="prog(0.5)">进度50</button>
+            <button type="button" onclick="prog(0.75)">进度75</button>
+            <button type="button" onclick="prog(1)">进度100</button>
+        </div>
+        <!--progress:它的value值范围[0,1]-->
+        <progress value="0">
+            
+        </progress>
+        <script>
+             console.log( history )
+             var btns = document.querySelectorAll('button')
+             var pro = document.querySelector('progress')          
+            //  for( var i = 1 ;i < ( btns.length - 1 );i++){
+            //      btns[i].index = i - 1
+            //      btns[i].onclick = function(){
+            //          pro.value = this.index * 0.25
+            //      }
+            //  }
+            // 通过指定一个相对于当前页面位置的数值，你可以使用go()方法从当前会话的历史记录中加载页面（当前页面位置索引值为0，上一页就是-1，下一页为1），注意得先进行调装之后再进行。              
+             function prog( values ){
+                 pro.value = values 
+                //添加/修改当前页面的历史记录条目：即length，通过history.pushState(state,title,url)
+                // 第一个参数：状态对象，第二个：标题；第三个：历史记录的路径(新地址)
+                // state对象，用来存储当前插入历史记录条目的相关信息
+                 history.pushState( values,'进度' + values,'#' + values )
+                 document.title = '进度' + values
+             }
+             
+             btns[0].onclick = function(){
+                 history.back()
+             }
+             
+        </script>
+       
+    </body>
+</html>

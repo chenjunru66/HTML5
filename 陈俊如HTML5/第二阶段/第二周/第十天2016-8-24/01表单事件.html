@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>表单事件</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <input type="text">
+            <input type="reset" value="重置/清空数据">
+            <input type="submit" value="提交">
+        </form>
+        <script>
+            var inp = document.querySelector('input')
+            // 获取表单事件的对象信息
+            // inp.onfocus = function(ev){
+            //     console.log(ev)
+            // }
+            // inp.onblur = function(ev){
+            //     console.log(ev)
+            // }
+            // 获取焦点：onfocus：鼠标选中
+            // 失去焦点：onblur:鼠标不选中
+            
+            // onfocusin：即将获取焦点是触发，火狐不支持
+            // onfocusout：即将失去焦点,火狐不支持
+            // inp.addEventListener('focusout',function(){
+            //     console.log('focusout')
+            // })
+            inp.onfocus = function(){
+                inp.style.background = 'red'
+            }
+            inp.onblur = function(){
+                inp.style.background = 'yellow'
+            }
+            // oninput:用户输入时触发事件
+            inp.oninput = function(){
+                console.log('已经输入文字')
+            }
+            // onchange：输入框内容改变，元素在失去焦点时候检查内容，如果输入框内容改变则触发事件
+            inp.onchange =  function(){
+                console.log('输入内容改变')
+            }
+            // onreset：当重置的时候弹出提示框
+            document.forms[0].onreset = function(ev){
+                if( confirm('确定是否清空当前内容')){//confirm(message)弹出一个对话框，带有确定和取消按钮，弹出的文字是message内容
+                    // 点击确定按钮，返回true，点击取消，返回false
+                    console.log('确定重置')
+                }else{
+                    console.log('确定不重置')
+                   ev. preventDefault()
+                   //preventDefault：阻止当前事件的发生（重置的发生）
+                }
+            }
+            // console.log(document.forms)
+            // 提交事件
+            document.forms[0].onsubmit = function(ev){
+                if( inp.value.length > 0 ){
+                    alert('可以提交')
+                }else{
+                    alert('请输入')
+                    ev.preventDefault()//阻止提交
+                }
+            }
+            //选取文本框中的文本是触发
+            inp.onselect = function(){
+                console.log('selected')
+            } 
+        </script>
+    </body>
+</html>

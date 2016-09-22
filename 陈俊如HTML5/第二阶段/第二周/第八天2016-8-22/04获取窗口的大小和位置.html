@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>获取窗口的大小和位置</title>
+        <style>
+           div{
+               height: 500px;
+           } 
+        </style>
+    </head>
+    <body>
+        <pre>
+            Document对象的属性和方法
+        </pre>
+        <div>
+            
+        </div>
+        <script>
+            // document.title获取当前的标题
+                console.log( document.title )
+                
+                // window对象：文档的大小
+                console.log( window.innerHeight )//可视窗口的高度和宽度
+                console.log( window.innerWidth )//1920包括滚动条的宽度   不受滚动条的影响
+                
+                console.log( window.outerWidth )//1936 = innerWidth + scroll宽度
+                // outerWidth 不受有无滚动条的影响，多出的16宽度为浏览器边框宽度
+                console.log( window.outerHeight)//整个浏览器的高度
+                
+                // 屏幕的大小
+                console.log( screen.width)
+                console.log( screen.height)
+                
+                    
+                // 获取页面（可视）的大小
+                console.log( document.documentElement.clientWidth )//不包含滚动条
+                console.log( document.documentElement.clientHeight )
+                
+                // 获取的是html的宽度和高度（当设置了html宽高的时候，即为设置的宽高；没有的话就是被内容撑开的宽高）
+                // document.documentElement获取根节点
+                console.log( document.documentElement.offsetHeight )
+                console.log( document.documentElement.offsetWidth )
+        </script>
+    </body>
+</html>

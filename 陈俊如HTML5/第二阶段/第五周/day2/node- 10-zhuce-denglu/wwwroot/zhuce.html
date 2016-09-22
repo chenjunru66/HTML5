@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>注册页面</title>
+    <script src="jquery.js"></script>
+    <style>
+         body{
+            margin: 0;
+        }
+        .wrapper{
+            width: 300px;
+            margin: 0 auto;
+        }
+        input{
+            margin: 5px 0;
+        }
+        button{
+            margin: 0 25px;
+        }
+    </style>
+</head>
+<body>
+     <div class="wrapper">
+         <form action="/user/login"method="post">
+            <span>用户名：</span><input type="text"name="name"placeholder="请输入用户名"required=""><br>
+            <span>密&#x3000码：</span><input type="password"name="pwd"id="pwd1" placeholder="请输入密码"required=""><br>
+            <span>请再次输入密码：</span><input type="password"name="pwd1"id="pwd2" placeholder="请再次输入密码"required=""><br>
+             <input type="radio"name="sex" value="male"/>男
+             <input type="radio"name="sex"value="female"/>女 <br/>
+            <span>邮&#x3000箱：</span><input type="text"name="email"placeholder="请输入邮箱地址"/><br/>
+             <span>特&#x3000长 :</span>
+             <select name="tedian">
+                 <option value="HTML"selected>HTML</option>
+                 <option value="CSS">CSS</option>
+                 <option value="Node.js">Node.js</option>
+                 <option value="Bootstrap">Bootstrap</option>
+             </select><br/>
+             <button type="submit">注册</button>
+             <button type="button"onclick="location.href = 'index.html'">登录</button>
+         </form>
+
+     </div>
+     <script src="zhuce.js"></script>
+</body>
+</html>

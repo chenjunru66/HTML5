@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--定义标签内语言格式-->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--设置IE浏览器的兼容性，以最新的版本兼容当前的-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--对视扣得，宽 度为当前的设备的宽度；出事的缩放比例；最初的缩放比例为1，用户是否缩放，用户是否可以缩放，-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="陈俊如">
+    <title>注册页面</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         .glyphicon-chevron-left{
+             width: 30px;
+             font-size: 30px;
+             /*color: #ffffff;*/
+             margin-top: 8px;
+         }
+         .glyphicon-chevron-left:hover{
+             color: #ffffff;
+         }
+         .input-group{
+             width: 50%;
+             margin: 0 auto;
+             margin-top: 10px;
+         }
+
+         main input{
+             width: 96%;
+             height: 30px;
+         }
+         .spangroup{
+             display: inline-block;
+             width: 25px;
+             padding: 3px;
+             background-color: #EEEEEE;
+             text-align: center;
+         }
+         main button{
+             display: inline-block;
+             width: 99%;
+             padding: 5px 0;
+             border: none;
+             font-size: 20px;
+             background-color: #428BCA;
+             border-radius: 5px;
+             color: #ffffff;
+         }
+        #male,#female{
+            width: 10px;
+            margin-top: 0;
+            display: inline-block;
+
+        }
+        label{
+            font-size: 20px;
+        }
+        select{
+            display: inline-block;
+            width: 99%;
+            height: 30px;
+        }
+        .f2{
+            font-size: 30px;
+            color: #ffffff;
+            position: absolute;
+            left: calc( 50% - 30px);
+        }
+        .modal-body{
+            text-align: center;
+            color: green;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="index.html"><span class=" glyphicon glyphicon-chevron-left"></span></a>
+            <span class="f2">注册</span>
+        </div>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"> <span class=" glyphicon glyphicon-plus"></span>提问</a></li>
+                <li><a href="zhuce.html"><span class="glyphicon glyphicon-user"></span>用户</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<main>
+    <form action="" method="post">
+        <div class="input-group">
+            <span class="spangroup"><span class="glyphicon glyphicon-user"></span></span>
+
+            <input type="text"name="uname"placeholder="请输入用户名"required=""/>
+        </div>
+        <div class="input-group">
+            <span class="spangroup"><span class="glyphicon glyphicon-lock"></span></span>
+
+            <input type="password"name="password"placeholder="请输入密码"required=""pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{4,16}"/>
+        </div>
+        <div class="input-group">
+            <span class="spangroup"><span class="glyphicon glyphicon-lock"></span></span>
+
+            <input type="password"placeholder="请再次输入密码"required=""pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{4,16}"/>
+        </div>
+        <div class="input-group">
+            <input type="radio" name="male" id="male" checked />
+            <label for="male"> 男士 </label>
+            <input type="radio" name="male" id="female" />
+            <label for="female"> 女士 </label>
+        </div>
+        <div class="input-group">
+            <span class="spangroup"><span class="glyphicon glyphicon-envelope"></span></span>
+
+            <input type="email" name="email" placeholder="请输入邮箱" required=""/>
+        </div>
+
+        <div class="input-group">
+            <select name="tedian">
+                <option value="HTML"selected>HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Node.js">Node.js</option>
+                <option value="Bootstrap">Bootstrap</option>
+            </select>
+        </div>
+
+
+        <div class="input-group">
+
+            <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">注册</button>
+        </div>
+
+    </form>
+
+</main>
+<!-- 模态框一（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"data-dismiss="modal"aria-hidden="true">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!--注意两个的顺序-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/zhuce.js"></script>
+</html></html>

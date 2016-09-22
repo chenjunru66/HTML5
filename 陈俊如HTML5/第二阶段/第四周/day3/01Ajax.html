@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="陈俊如"/>
+        <title>AJAX的基础知识了解</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+        HTML 超文本标记语言  --hyper text markep language
+        HTTP 超文本传输协议 -- hyper text transfer protocol
+        AJAX 异步的Javascript 和XML Asynchronoud  javascript and XML(传输和存储数据)
+        其核心对象；XHR--XMLHttpRequest:在不重载当前页面的情况下，与服务器进行数据交换
+        
+        </pre>
+        <div>
+            这是原来的内容，即将通过不重载页面的情况下，与服务器进行数据交换
+            
+        </div>
+        
+        <button type="button" onclick="show()">更新</button>
+        <script>
+            // 现在的浏览器都支持XHR对象，但有老版本的浏览器支持的是ActiveXObject
+            var xmlhttp
+            function show(){
+                // 创建XHR对象
+                // 浏览器的兼容判断
+                 if( window.XMLHttpRequest ){
+                     xmlhttp = new XMLHttpRequest()
+                 }else{
+                     xmlhtttp = new ActiveXObject()
+                 }
+                //  连接服务器，发送请求的数据信息到服务器
+                // open( 请求的类型，请求的url，是否支持异步 )
+                xmlhttp.open( "GET",'ceshi.html',true )
+                // 发送请求到服务器
+                xmlhttp.send()
+                
+                // 请求的状态变化会触发onreadystatechange事件
+                xmlhttp.onreadystatechange = function(){
+                    // readystate属性，请求状态的变化
+                    // 0-对象被创建，open方法未调用，1.open方法被调用
+                    // 2.send方法被调用，请求被接收 3.请求处理中 4.请求已处理，5.响应已就绪
+                    // status属性，http状态玛  404--未找到页面  200--ok找到页面
+                    if( xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        // response属性，响应的数据信息
+                        document.querySelector("div").innerHTML = xmlhttp.response
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

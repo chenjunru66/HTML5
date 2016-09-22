@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>函数的定义</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+            函数，即方法，封装一段代码，用来实现某种功能，当需要使用这段代码或者实现某种功能的时候就可以调用当前的方法
+            好处：可以多次调用，减少重复性的代码
+            创建函数的方法：使用function 关键字声明创建函数
+        </pre>
+        <script>
+            // 常见的函数表达：
+            function show(){
+                var a = 0
+                // alert(a)
+            }
+            // 写出函数名称进行调用
+            show()
+            
+            // 创建函数的方法：
+            function name(){
+                // 语句/代码
+            }
+            name()//执行函数
+            // function,只是创建了一个方法，要使用这个方法，就需要调用当前的方法
+            
+            // 有参数的函数
+            // 参数：变量,变量函数无需声明即可使用，也不用赋值
+            // 有参的函数，在调用的时候，需要传入参数值
+            // 参数变量就是用来接收调用函数传入的参数值
+            function add( num1, num2 ){
+                console.log( num1 + num2 )
+            }
+            add(3 , 5)
+            
+            // 实例，根据半径radius，计算圆的面积s= π * radius *radius
+            function area( radius ){
+                var s = 3.14 * radius * radius
+                s = s.toFixed(2) //保留两位小数点
+                s = parseFloat(s)
+                // console.log( s )
+                return s//返回当前变量的数值
+            }
+            area(5)//78.5
+             // 实例根据半径，计算连个圆的面积，然后计算器总和
+            function areas( r1,r2 ){
+                var s1 = 3.14 * r1 * r1
+                var s2 = 3.14 * r2 * r2
+                // var s1 = area(5)
+                // var s2 = area(3)
+                s1 = s1.toFixed(2)
+                s2 = s2.toFixed(2)//字符串类型
+                // 转化为浮点数
+                s1 = parseFloat(s1)  
+                s2 = parseFloat(s2)                             
+                console.log(s1 + s2 )
+            }
+            areas(3, 5)
+            function areas1( n1,n2){
+                var n = area(n1) + area(n2)
+                console.log(n)
+            }
+            areas1( 3,5)//106.76
+            areas1( 5, 6)//191.54000000000002
+         
+        </script>
+        
+        <script>
+            // 带有返回值的函数，
+            // 通过return语句可以实现函数将值返回调用的地方（重新赋值的地方）
+            // 在使用return语句的时候，函数会停止执行，返回一个固定的值
+            function calc(){
+                var x = 5
+                return x  
+                             
+            }
+            // 测试输出函数
+            console.log( calc() )
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> JS九九乘法 </title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        要求：通过两个输入框输入0~9之间的数字，通过提交按钮计算并显示当前的计算结果
+        <br>
+        <br>
+        <form action="">
+            <input type="text" id="num1" autocomplete="off" placeholder="请输入数字">
+            <input type="text" id="num2" autocomplete="off" placeholder="请输入数字">
+            <button type="button" id="tiJiao" onclick="calc();"> 提交 </button>
+        </form>
+        <p id="result"> 计算结果为: </p>
+        <script>
+            // JS写法思路：
+            // 确定输入的内容为0~9之间的整数，这样就需要排除其他不符合的内容：字母、小数、负数、大于9的数字
+            var result = document.getElementById('result')
+            function calc(){
+                // 获取输入框内部的内容 , 类型为字符串
+                var num1 = document.getElementById('num1').value
+                var num2 = document.getElementById('num2').value
+
+                // 解析字符串，将其解析成数字，整数
+                // parseInt() 将字符串转化成整数，从首字符为数字开始解析，直至遇到字母，解析结束
+                var num3 = parseInt(num1)
+                var num4 = parseInt(num2)
+                // alert(num3)
+                if( isNaN( num1 ) || isNaN( num2 ) ){
+                    alert('您输入的内容有字母，请重新输入')
+                } else if( num3 != parseFloat(num1) || num4 != parseFloat(num2) ){
+                    alert('您输入的内容有小数，请重新输入')
+                } else if( num3 < 1 || num4 < 1 ){
+                    alert('您输入的内容包含负数或0，请重新输入')
+                } else if( num3 > 9 || num3 > 9 ){
+                    alert('您输入的内容过大，请重新输入')
+                } else {
+                    result.innerHTML = '计算结果为: ' + num3 * num4
+                }
+ 
+            } 
+            // 通过标签名获取第几个标签，计数从0开始
+            var form = document.getElementsByTagName('form')[0];
+            // 给form表单添加监听事件，当输入框的内容发生改变的时候，执行hide函数，可改变demo的内容
+            form.addEventListener('input', hide)
+            function hide(){ 
+                result.innerHTML = '计算结果为: '
+            }
+        </script>
+    </body>
+</html>

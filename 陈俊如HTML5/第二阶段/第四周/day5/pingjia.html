@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>评价</title>  
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .wrapper {
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            margin-top: 50px;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            float: left;
+        }
+        
+        li {
+            float: left;
+            margin: 0 5px;
+            height: 26px;
+            width: 26px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        span,
+        #pingjia {
+            float: left;
+        }
+        
+        img {
+            display: block;
+            height: 56px;
+            position: absolute;
+        }
+        
+        #show {
+            position: relative;
+            top: 20px;
+            width: 159px;
+            height: 60px;
+            display: none;
+            background: url(1.png) no-repeat;
+            padding: 7px 10px 0;
+            font-size: 10px;
+        }
+
+        .on{
+            top: -32px;
+        }
+        #pingjia{
+            display: block;
+            font-size: 12px;
+            width: 350px;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span>点击星星就能打分</span>
+        <ul>
+            <li><img src="star.png" alt=""></li>
+            <li><img src="star.png" alt=""></li>
+            <li><img src="star.png" alt=""></li>
+            <li><img src="star.png" alt=""></li>
+            <li><img src="star.png" alt=""></li>
+        </ul>
+        <span id="pingjia"></span>
+        <p id="show"></p>
+    </div>
+    <script>
+       
+           var lis = document.querySelectorAll('li')
+           var imgs =  document.querySelectorAll('img')
+           var shows = document.querySelector('#show')
+           var ping =  document.querySelector('#pingjia')
+           var score = count = star = 0
+           var aMsg = [
+              "很不满意|差得太离谱，与卖家描述的严重不符，非常不满",
+              "不满意|部分有破损，与卖家描述的不符，不满意",
+              "一般|质量一般，没有卖家描述的那么好",
+              "满意|质量不错，与卖家描述的基本一致，还是挺满意的",
+              "非常满意|质量非常好，与卖家描述的完全一致，非常满意"]
+        for(var i= 0;i < lis.length;i++){
+            lis[i].index = i + 1
+            lis[i].onmouseover = function(){
+                show(this.index)
+                //   console.log(this.index) 1
+                shows.style.display = 'block'
+                shows.style.left = this.index * 40 + 'px'
+                shows.innerHTML = '<strong style="color:red;">'+ (this.index ) + '分'+'</strong>'+ aMsg[this.index - 1]
+            }
+            
+            lis[i].onmouseout = function(){
+                show()
+                shows.style.display = 'none'
+            }
+            
+            lis[i].onclick = function(){
+                star = this.index
+                // shows.style.diaplay = 'none'
+                ping.innerHTML = aMsg[this.index - 1]
+            }
+        }              
+        function show(count){
+            score = count || star
+            for(var i = 0 ;i < lis.length;i++){
+                imgs[i].className = i < score ? 'on' : ''
+            }
+        }       
+          
+              
+        //    for(var i = 0; i < lis.length;i++){
+        //        lis[i].index = i
+        //        lis[i].onmouseover = function(){
+                                
+        //            for(var i= 0;i < lis.length;i++){
+        //                shows.style.display = 'none'  
+        //                if(i < this.index - 1){
+        //                imgs[this.index].style.top = '0px'    
+        //                } 
+        //                else{
+        //                     imgs[this.index].style.top = '-30px'    
+        //                }               
+        //            }
+                   
+        //            var len = this.index + 1
+        //            shows.style.display = 'block'
+        //            shows.style.left = len * 40 +'px'
+                          
+        //            shows.innerHTML = '<strong style="color:red;">'+ (this.index + 1 ) + '分'+'</strong>'+ aMsg[this.index]
+        //        }
+        //    } 
+        // for(var i= 0;i < lis.length;i++){
+        //        lis[i].index = i
+        //        lis[i].onmouseout = function(){
+        //         //   imgs[this.index].style.top = '-30px'
+        //             shows.style.display = 'none'
+        //              for(var i= 0;i < lis.length;i++){
+                       
+        //                if(i < this.index - 1){
+        //                imgs[this.index].style.top = '0px'    
+        //                } 
+        //                else{
+        //                     imgs[this.index].style.top = '-30px'    
+        //                }               
+        //            }
+                    
+        //        } 
+        //    }
+        
+        
+        //    for(var i= 0;i < lis.length;i++){
+        //        lis[i].index = i
+        //        lis[i].onclick = function(){
+        //            ping.innerHTML = aMsg[this.index]
+        //            count = this.index    
+        //        }
+        //    }          
+           
+           
+    </script>
+</body>
+
+</html>

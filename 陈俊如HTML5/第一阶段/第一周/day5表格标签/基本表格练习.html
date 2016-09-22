@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>表格练习</title>
+        <style>
+            table{
+                /*collapse:折叠合并*/
+                border-collapse: collapse;
+                width: 80%;
+                margin: 0px auto;
+                height: 150px; 
+                text-align: center;
+                color: gold;               
+            }
+            td{
+                border: 2px solid green;
+            }
+        </style>
+    </head>
+    <body>
+        <!--table：声明表格可以给table加border="1"
+        tr声明一行
+        td声明一个单元格
+            -->
+        <table border="1">
+            <caption>课程表</caption>
+            <!--<th>表头：有加粗效果-->
+            <tr>
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期三</th>
+                <th>星期四</th>
+                <th>星期五</th>
+                <th>星期六</th>
+                <th>星期日</th>
+            </tr>
+            <tr>
+                <!--colspan:表示横向合并单元格
+                rowspan：表示竖直合并单元格-->
+                <td colspan="5">HTML</td>
+                <!--<td>HTML</td>
+                <td>HTML</td>
+                <td>HTML</td>
+                <td>HTML</td>-->
+                <td>自习</td>
+                <td rowspan="3">休息</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>HTML</td>
+                <td>HTML</td>
+                <td>HTML</td>
+                <td>HTML</td>
+                <td>自习</td>
+                <!--<td>休息</td>-->
+            </tr>
+            <tr>
+                <td>自习</td>
+                <td>自习</td>
+                <td>自习</td>
+                <td>自习</td>
+                <td>自习</td>
+                <td>休息</td>
+                <!--<td>休息</td>-->
+            </tr>
+            
+            
+        </table>
+    </body>
+</html>

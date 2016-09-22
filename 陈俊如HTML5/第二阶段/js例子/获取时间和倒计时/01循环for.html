@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>FOR循环</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <p>即将进入for循环内容,给下面的标签p添加内容</p>      
+        <p id="demo"></p>
+        <script>
+            
+           var demo = document.getElementById('demo');
+            for( var i=0; i<10; i++){
+            //    demo.innerHTML += i ;
+            //    alert( demo.innerHTML = i + demo.innerHTML ) 
+                //输出的是：0 ，10 ， 210，3210，
+                
+                demo.innerHTML = i + demo.innerHTML;
+            }
+            
+        </script>
+        <!--实现从1到100的数字转变-->
+        <div id="num"> 1 </div>
+        <script>
+            var num = document.getElementById('num');
+            // for( var i=0; i <=100; i++){
+                
+            // }
+            // setInterval(function, time),time 按毫秒计
+            // 每隔time毫秒之后，调用function函数，循环调用
+            var i=2;
+            function calc(){
+                if( i<=100 ){
+                    num.innerHTML = i;
+                    i++;
+                }
+            }
+            // while( i<=100 ){
+                setInterval(calc,1000);
+            // }
+        </script>
+    </body>
+</html>

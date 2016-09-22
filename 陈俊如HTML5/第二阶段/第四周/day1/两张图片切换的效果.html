@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>两张图片切换的效果</title>
+        <script src="jquery.js"></script>
+        <style>
+            body{
+                margin: 0;
+            }
+            .wrapper{
+                width: 200px;
+                margin: 0 auto;
+            }
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                /*width: 2000px;*/
+            }
+            li{
+                position: absolute;
+                width: 200px; 
+                cursor: pointer;  
+                border: 2px solid red;           
+            }
+            h5{
+                padding: 5px 0;
+                margin: 10px 0;
+                background: gray;
+                text-align: center;
+            }
+            img{
+                width: 100%;
+                
+            }
+            strong{
+                display: block;
+                width: 100%;
+                position: absolute;
+                text-align: center;
+                bottom: 0;
+                background: mediumpurple;
+                color: white;
+               
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h5>图片浏览</h5>
+            <ul>
+                <li>
+                    <img src="imgs/1.jpg" alt="">
+                    <strong>安布罗休</strong>
+                </li>
+                <li>
+                    <img src="imgs/2.jpg" alt="">
+                    <strong>刘亦菲</strong>
+                </li>
+            </ul>
+ 
+        </div>
+        <script>
+            $(function(){
+                $("ul").hover(               
+                function(){
+                  $("li").eq($("li").index()).fadeIn().siblings().fadeOut()     
+                   $("strong").eq($("li").index()).animate({
+                      padding:'5px 0'                                                           
+                  },1500)
+                  $("strong").eq($("li").index()).animate({
+                      padding:' 0' 
+                                                          
+                  },1000)
+                },
+                function(){
+                   $("li").eq($("li").index()).fadeOut().siblings().fadeIn()
+               
+                }                
+                )
+                
+                
+            })
+        </script>
+    </body>
+</html>

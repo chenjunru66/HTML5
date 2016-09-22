@@ -1,0 +1,1 @@
+{"uname":"aa","password":"aaaaaa","male":"on","email":"962540300@qq.com","tedian":"HTML","ip":"::ffff:127.0.0.1","date":"2016-09-21T01:33:36.149Z"}

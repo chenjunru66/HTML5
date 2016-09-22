@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>自定义事件</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+            自定义事件 -- 随机定义的事件
+            通过JS，可以随时触发特定的事件
+            customevent(当前方法已被废弃)
+            通过createEvent()方法可以创建新的event对象，并依据自身的init()方法进行初始化数据，
+            语法：document.createEvent(type)  type:创建对象的类型的字符串
+            
+        </pre>
+        
+        <script>
+            // 添加一个监听器
+            document.body.addEventListener('custom1',function(e){
+                console.log('自定义事件')
+                console.log(e.detail)
+            })
+            // 创建一个新的自定义事件custom1           
+            var customs = new CustomEvent('custom1',{
+                detail:{
+                    name:'yan'
+                }
+            })
+            //派发事件，即绑定事件，将事件应用到特定的节点上，便与支持当前事件
+            document.body.dispatchEvent(customs)
+            
+        </script>
+    </body>
+</html>

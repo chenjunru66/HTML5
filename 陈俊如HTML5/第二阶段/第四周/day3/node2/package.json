@@ -1,0 +1,12 @@
+{
+  "name": "myajax",
+  "version": "1.0.0",
+  "description": "这是我的第二个node.js项目",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "陈俊如",
+  "license": "ISC"
+}

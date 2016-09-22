@@ -1,0 +1,63 @@
+需要增加的标签或设置：
+
+
+H5文档类型：
+<!DOCTYPE html>   		
+
+
+视口设置：
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+viewport视口，指各种视频输出设备的显示区域
+width		宽度，可设为px或 device-width
+height		高度，可设为px或 device-height，通常不用设置
+initial-scale	初始缩放比例，1.0
+minimum-scale	最小缩放比例，1.0
+maximum-scale	最大缩放比例，1.0
+user-scalable	是否允许缩放，no | 0，单独使用可能无效
+target-densitydpi	dip数值、high-dpi、medium-dpi、low-dpi，不再支持
+专门为移动设置开发的页面通常只需要设置上面的3个即可。
+
+移动设备会读取viewport设置，并按照设置的要求渲染页面。
+设置 initial-scale=1或width=deivce-width页面宽度会使页面以Web App模式显示，此时逻辑宽度较小，通常小于400，不同的手机逻辑宽度不同。
+但如果设置width=360px则会使所有设备以360px的宽度显示页面，但页面可能因为像素对齐问题产生一些细节问题。
+如果在移到设备上显示为桌面浏览器设计的页面可以不加viewport，此时大部分手机会以980px左右的宽度显示页面，尽量不出现左右滚动条。如果不确信能够适应所有的手机，可以添加viewport将width设置为比主体宽度稍宽的值，以使页面能完美地显示出来。
+
+桌面浏览器会忽略viewport设置。即使切换到响应式视图也会忽略viewport，但可以手动调整到任何视口尺寸（用于开发测试）。
+
+initial-scale的值不是用来相乘的，而是相除的。
+
+《《《演示不同 viewport 设置对手机浏览器的影响》》》
+
+
+
+指定页面为 Web App：
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+指定 Web App 图标：
+<link rel="apple-touch-icon" sizes="57x57" href="icon57.png" />  
+<link rel="apple-touch-icon" sizes="72x72" href="icon72.png" />  
+<link rel="apple-touch-icon" sizes="114x114" href="icon114.png" />    
+<link rel="apple-touch-icon" sizes="144x144" href="icon144.png" /> 
+
+
+指定 Web App 的标题：
+<meta name="apple-mobile-web-app-title" content="天气预报">
+
+
+指定 Web App 启动图片：
+<link href="startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+<link href="startup-image-640x960.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+
+指定 Web App 系统状态栏样式：
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+禁止自动识别手机号/邮箱地址：
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+
+
+更多设置请参考：
+http://camnpr.com/html-css/2183.html

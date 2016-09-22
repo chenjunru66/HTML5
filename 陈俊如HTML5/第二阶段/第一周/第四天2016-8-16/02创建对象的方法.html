@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>创建对象的方法</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <pre>
+            在JS中，对象是具有属性和方法的数据，而且几乎所有的事物都是对象，对象是个抽象的存在（除非实例）；对象
+            是键对值的容器--name(key):value
+        </pre>
+    <script>
+        // 方法1:用对象字面量创建对象
+            var  obj = {  
+                name:'yan',
+                age:3,
+                keMu:'HTML5',
+                sing:function(){
+                    console.log('唱歌')
+                },
+                tall:[13,14,15,18]
+        }
+            console.log(obj)//Object { name: "yan", age: 3, keMu: "HTML5", sing: obj.sing(), tall: Array[4] }
+         
+        //  方法2：使用构造函数来创建对象
+        // 1.创建一个构造函数定义对象的类型(属性)，通常函数名称首字母大写
+        // 2.使用new创建对象实例
+        function Car( make,model,year ){
+            this.make = make
+            this.model = model
+            this.year = year
+            // 通过this将传入函数的值赋给对象的属性
+            // =左边是name（key），右边是相对应的参数的值
+        }
+        
+        var myCar = new Car( 'CHINA','BMW', 1989 )
+        console.log(myCar)//Object { make: "CHINA", model: "BMW", year: 1989 }
+        
+        // var myCars = Car( 'USA',1888,'sss')
+        // console.log(myCars)
+        
+        var myCars = new Car()
+         console.log(myCars)//Object { make: undefined, model: undefined, year: undefined }
+         
+        //以班级学生为例，列出所有学生的姓名、性别、身高、年龄、 学校、专业
+        function stuList( name, sex,tall,age,school,sub ){
+            this.name = name
+            this.sex = sex
+            this.tall = tall
+            this.age = age
+            this.school =school
+            this.sub = sub
+        }
+        var Cj = new stuList( 'cjr','mail','23','176','NCWU','jk' )
+        console.log(Cj)//Object {name: "cjr", sex: "mail", tall: "23", age: "176", school: "NCWU", sub: "jk" }
+    </script>
+</body>
+
+</html>
+
+            

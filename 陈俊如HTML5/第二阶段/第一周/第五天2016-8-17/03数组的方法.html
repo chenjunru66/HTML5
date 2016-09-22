@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>数组的方法</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        // 合并多个数组concat()
+        // array.concat(array1,array2,....)
+        var arr1 = [12,20,31,42,75]
+        var arr2 = ['name','age','tall']
+        var arr = arr1.concat(arr2)
+        console.log(arr)
+        // 检测数组的每一个元素是否符合条件every(),返回的值是true/false
+        // 只要有一个元素不满足条件，返回false，剩下的元素不再检测
+        // 先写检测的条件，写在函数里
+        function active(nums){
+            return nums > 30
+        }
+        console.log( arr1.every(active) ) //false
+        function action(strs){
+            return typeof(strs) == 'string'
+        }
+        console.log( arr2.every(action) )//true
+        console.log( arr1.filter(active))
+        // filter()创建一个新的数组，检测并筛选出符合条件的所有元素放入新的数组中
+        
+        // indexof()搜索数组的元素第一次出现，并返回它所在的位置,找到了就不执行
+        console.log( arr2.indexOf('name') )//0
+        
+        var arr3 = [ 'name',1,4,'name',4,6,7,'name',9 ]
+        // lastIndexOf()指定的数组元素最后出现的位置，返回其索引值，如果检测不到，则返回-1；
+        console.log( arr3.lastIndexOf('name') )//7
+        console.log( arr3.lastIndexOf( 4 ) ) //4        
+        console.log( arr3.indexOf('name') )//0
+        
+        // map() 先通过函数处理数组元素，其值组成一个新的数组
+        console.log( arr1.map(active) )
+        //Array [ false, false, true, true, true ]
+        
+        function add(nums){
+            return nums + 1
+        }
+        console.log( arr1.map(add) )
+        //Array [ 13, 21, 32, 43, 76 ]
+  
+        // pop()删除最后一个元素，最后返回删除的元素,影响原始数组
+        console.log( arr1.pop() )//75
+        
+        //push()向当前数组添加元素，并输出数组长度 uuuuuuuuuuuuub
+        console.log( arr1.push(88) ) //5
+        
+        console.log( arr1 )//Array [ 12, 20, 31, 42, 88 ]
+        //slice(start,end)数组元素的选取从start开始，到end结束
+        // start<= index <end,-1指最后一个元素
+        console.log( arr1.slice(1,3) )//Array [ 20, 31 ]
+    </script>
+</body>
+
+</html>

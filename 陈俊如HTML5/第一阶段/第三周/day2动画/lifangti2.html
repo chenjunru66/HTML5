@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>立方体</title>
+        <style>
+            body{
+                height: 100vh;
+                margin: 0;
+                background: #000;
+            }
+            .wrapper{
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                perspective: 900px;
+            }
+            main{
+                width: 300px;
+                height: 300px;
+                border: solid 1px red;
+                 animation: rotate 5s infinite linear both;
+                 transform-style: preserve-3d;
+            }
+            @keyframes rotate {
+            0% {
+                transform: rotateX(0) rotateY(0);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+            main div{
+                width: 100%;
+                height: 100%;
+                border: 1px solid blue;
+            }
+            .front{
+                transform: rotateZ(150px);
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+      <div class="wrapper">
+          
+          <main>
+              <div class="front"></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </main>
+      </div>
+    </body>
+</html>

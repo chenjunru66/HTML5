@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>类名的添加、切换和移除</title>
+        <style>
+            main{
+                height: 100px;width:300px;
+            }
+            .red{
+                color: red;font-size: 14px;border: 1px solid gold;
+            }
+            .blue{
+                color: blue;font-size: 30px;background:red;
+            }
+            .fff{
+                color: #fff;background: #000;font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="red">
+            想要修改当前标签的颜色，第一次是红色，字体14px，第二次是蓝色，背景色是红色，字体是30px
+            第三次是白色，黑色背景，字体15px
+        </main>
+        <main class="blue">
+            想要修改当前标签的颜色，第一次是红色，字体14px，第二次是蓝色，背景色是红色，字体是30px
+            第三次是白色，黑色背景，字体15px
+        </main>
+        <main class="fff">
+            想要修改当前标签的颜色，第一次是红色，字体14px，第二次是蓝色，背景色是红色，字体是30px
+            第三次是白色，黑色背景，字体15px
+        </main>
+        <main class="bre">
+            想要修改当前标签的颜色，第一次是红色，字体14px，第二次是蓝色，背景色是红色，字体是30px
+            第三次是白色，黑色背景，字体15px
+        </main>
+        <script>
+            var main = document.querySelector('main')
+             var mainLi = document.querySelectorAll('main')
+            // className属性：改变的是当前标签的类名
+            // main.className = 'red'
+            // main.className = 'blue red'
+            
+            // 示例：如果标签包含blue类名，移除blue，否则添加blue
+            for(var i = 0;i < mainLi.length;i++){
+                // console.log( mainLi[i].className)
+                // console.log( mainLi[i].classList)
+                var m = mainLi[i].classList
+                // contains('')返回布尔值，判断指定的类名是否存在。 
+                // if( m.contains('blue' )){
+                //     m.remove('blue')//remove:移除
+                // }
+                // else{
+                //     m.add('blue')
+                // }
+                // toggle()切换，如果类名存在，则移除当前类名；若不存在则添加
+                m.toggle('blue')
+                console.log( m )
+            }
+        </script>
+    </body>
+</html>

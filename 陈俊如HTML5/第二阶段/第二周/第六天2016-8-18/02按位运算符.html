@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>按位运算符</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // 按位运算符& ：将操作数先转换为二进制进行比较，如果相同位上的数字都为1，则返回1；否则返回0；输出的数值以十进制表示
+            // 按位运算符与 &
+            var a = 10 //1010
+            var b = 15 //1111
+            console.log( a & b) //10   1010
+            // 按位运算符或 |  将操作数先转换为二进制进行比较，如果相同位上的数字至少有一个1，则返回1，否则返回0，输出的数值以十进制表示
+            console.log( a | b )//15 1111
+            
+            // 按位运算符异或 ^ 将操作数先转换为二进制进行比较，如果相同位上的数字只有有一个1，则返回1，否则返回0，输出的数值以十进制表示
+            console.log( a ^ b )//5  0101
+            // 按位运算符 ~非  a+1后取相反数
+            console.log( ~ a )//-11
+            // << 左移运算符  向左移动n位，后面加n个0
+            console.log( a << 3 ) //80   1010000
+            // >>右移运算符 把当前的二进制位数删除右侧的n个位
+            console.log( a >> 2)
+            
+            //字符串运算符 
+            var x = 'name'
+            var y = 'age'
+            // + 连接作用，把多个字符串连接成一个字符串
+            console.log( x + y )//'nameage'
+            
+             x += y
+             console.log( x )//'nameage'
+             var c = 5
+             console.log( x + c )//'nameage5'
+             console.log( x - c )//NaN
+             
+            //  条件运算符 - 三元运算符
+              var score = 65 
+              score = score > 60 ? '及格' : '不及格'
+            //   语法： 条件 ? (true)语句1 : (false)语句2
+            
+            // 逗号运算符
+            for (var i = 0, j = 9; i <= j; i++, j--)
+             console.log( i,j );
+            //  一元操作符：仅对应一个操作数
+        </script>
+    </body>
+</html>

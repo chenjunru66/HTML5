@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>滚动界面</title>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <script src="jquery.js"></script>
+        <style>
+            body{
+                margin: 0;
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 3000px;
+                overflow: hidden;
+            }
+            .banner{
+                width: 1000px;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
+            }
+            #demo>img{
+                width: 1000px;
+                height:600px; 
+            }
+            li{
+                float: left;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            li>img{
+                width: 150px;
+                height: 100px;
+                display: block;
+            }
+            span{
+                display: block;
+                width: 50px;
+                height: 80px;     
+                padding-top: 20px;          
+                text-align: center;
+                background: gray;
+                color: white;
+                position: absolute;
+                bottom: 0px;
+                cursor: pointer;
+            }
+            .fa-angle-left{
+                font-size: 60px;
+            }
+            .fa-angle-right{
+                font-size: 60px;
+                right: 0;
+            }
+            .current{
+                border: 1px solid blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="banner">
+            <div id="demo">
+                <img src="imgs/1.jpg" alt="">
+            </div>
+            <ul>
+                <li><img src="imgs/1.jpg" alt=""></li>
+                <li><img src="imgs/2.jpg" alt=""></li>
+                <li><img src="imgs/3.jpg" alt=""></li>
+                <li><img src="imgs/4.jpg" alt=""></li>
+                <li><img src="imgs/5.jpg" alt=""></li>
+                <li><img src="imgs/6.jpg" alt=""></li>
+                <li><img src="imgs/7.jpg" alt=""></li>
+                <li><img src="imgs/8.jpg" alt=""></li>
+            </ul>
+           <span class="fa fa-angle-left"></span>
+           <span class="fa fa-angle-right"></span>
+        </div>
+        
+        <script>
+            $(function(){
+                $("li").click(function(){
+                   $("#demo>img").attr("src","imgs/" + ( $(this).index() + 1) + ".jpg")
+                   $("li").eq($(this).index()).addClass("current").siblings().removeClass("current")
+                    
+                })
+                
+                
+                
+                
+            })
+        </script>
+    </body>
+</html>

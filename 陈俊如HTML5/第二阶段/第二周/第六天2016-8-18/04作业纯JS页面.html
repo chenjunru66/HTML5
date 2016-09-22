@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>纯JS页面</title>
+    <style>
+        .active {
+            /*background: url('images/4.jpg')*/
+            background: #F69 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var body = document.getElementsByTagName('body')[0]
+            body.style.margin = 0
+            var div = document.createElement('div')
+            body.appendChild(div)
+            div.setAttribute('class','wrapper')          
+            div.style.cssText = 'background:lightblue;margin:10px auto;width:50%;overflow:hidden'
+            
+            var section1 = document.createElement('section')
+            div.appendChild(section1)
+            section1.style.cssText = 'width:300px;height:150px;background:url(images/1.jpg) no-repeat;background-size:100% 100%;float:left;margin:10px 10px 10px 18px'
+            
+            var h1 = document.createElement('h4')
+            section1.appendChild(h1)
+            h1.innerHTML = '浮动布局1'
+            h1.style.color = 'white'
+            h1.style.textAlign = 'center'
+            
+            var section2 = document.createElement('section')
+            div.appendChild(section2)  
+            section2.style.cssText = 'width:300px;height:150px;background:url(images/2.jpg) no-repeat;background-size:100% 100%;float:left;margin:10px 10px 10px 0px'        
+            var h2 = document.createElement('h4')
+            section2.appendChild(h2)
+            h2.innerHTML = '浮动布局2'
+            h2.style.color = 'white'
+            h2.style.textAlign = 'center'
+                       
+            var section3 = document.createElement('section')
+            div.appendChild(section3)
+             section3.style.cssText = 'width:300px;height:150px;background:url(images/3.jpg) no-repeat;background-size:100% 100%;float:left;margin:10px 10px 10px 0px' 
+            
+            var h3 = document.createElement('h4')
+            section3.appendChild(h3)
+            h3.innerHTML = '浮动布局3'
+            h3.style.color = 'white'
+            h3.style.textAlign = 'center'
+            
+            var div1 = document.createElement('div')
+            body.appendChild(div1)
+            
+            div1.style.cssText ='width:50%;margin:0 auto;'
+            var h5 = document.createElement('h4') 
+            div1.appendChild(h5)
+            h5.setAttribute('id','demo')
+            h5.innerHTML = '美丽的星空，每当晚上，星星一个一个闪耀在天空中'
+            h5.style.cssText = 'text-align:center;font-size:30px;font-family:"时尚中黑简体" '
+            
+            var arra =['美丽的星空，每当晚上，星星一个一个闪耀在天空中',
+                        '花,以它鲜艳的色彩、婀娜多姿的体态和芳香的气味吸引着人们。',
+                        '玉龙雪山以险、奇、美、秀著称于世，随着时令和阴晴的变化而变化' ]
+                 
+            var section = document.getElementsByTagName('section')
+            // console.log(sec)
+            var h4 = document.getElementById('demo')
+            // console.log(h4)
+            
+            var i = 0            
+            for( i = 0; i < 3;i++){
+                section[i].index = i                
+                // console.log(section[i])
+                section[i].onclick = function(){
+                    // section[i].style.background = 'url(images/4.jpg) no-repeat'
+                      for( i = 0; i < 3;i++){
+                          section[i].className = ''
+                      }this.className = 'active'
+                
+                demo.innerHTML = arra[this.index]
+                }
+            }
+            // div.style.background = 'lightblue'
+            // div.style.margin = '20px auto'
+            // div.style.width = '50%'
+            // div.style.overflow = 'hidden'
+            
+            // section1.style.width = '300px'
+            // section1.style.height = '150px'           
+            // section1.style.background = 'url(images/1.jpg) no-repeat'
+            // section1.style.backgroundSize = '100% 100%'
+            // section1.style.float = 'left'
+            // section1.style.margin = '10px 10px 10px 18px'
+            
+            // section2.style.margin = '10px 10px 10px 0'
+            // section2.style.width = '300px'
+            // section2.style.height = '150px'           
+            // section2.style.background = 'url(images/2.jpg) no-repeat'
+            // section2.style.backgroundSize = '100% 100%'
+            // section2.style.float = 'left'
+            
+            // section3.style.margin = '10px 10px 10px 0'
+            // section3.style.width = '300px'
+            // section3.style.height = '150px'           
+            // section3.style.background = 'url(images/3.jpg) no-repeat'
+            // section3.style.backgroundSize = '100% 100%'
+            // section3.style.float = 'left'
+    </script>
+    
+</body>
+
+</html>

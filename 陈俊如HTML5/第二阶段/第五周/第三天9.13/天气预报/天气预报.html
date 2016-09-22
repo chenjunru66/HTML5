@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>天气预报</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+//    console.log( $.ajax() )
+
+$.ajax(
+        'http://apis.baidu.com/3023/weather/weather?id=101180101',
+        {
+//            url : 'http://apis.baidu.com/tianyiweather/basicforecast/weatherapi?area=101180101',
+            headers : {
+                apikey : '553c3b05951e2bef05021919230b872f'
+            },
+            success : function(data){
+                console.log(data)
+                var datas = JSON.stringify(data)
+//                console.log(datas )
+//                $('div').html(datas)
+
+                var weather = data.weather
+                console.log( weather )
+                var now = weather[0].info
+                console.log(now)
+
+             }
+        }
+)
+
+
+
+</script>
+</body>
+</html>

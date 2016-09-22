@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 全选和全不选 </title>
+    <style>
+        body{
+            text-align:center;
+        }
+        main{
+            width:120px; border:solid 1px #ccc; padding:20px; border-radius:10px;
+            margin:30px auto; font-size:14px;
+        }
+        a {
+            color:blue; text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <form action="">
+            <input type="checkbox"> <label for="">全选</label>  <a>反选</a>
+            <hr>
+            <p> <input type="checkbox"> 选项(一) </p>
+            <p> <input type="checkbox"> 选项(二) </p>
+            <p> <input type="checkbox"> 选项(三) </p>
+            <p> <input type="checkbox"> 选项(四) </p>
+            <p> <input type="checkbox"> 选项(五) </p>
+            <p> <input type="checkbox"> 选项(六) </p>
+            <p> <input type="checkbox"> 选项(七) </p>
+            <p> <input type="checkbox"> 选项(八) </p>
+            <p> <input type="checkbox"> 选项(九) </p>
+            <p> <input type="checkbox"> 选项(十) </p>
+        </form>
+    </main>
+    <div> 1.切换全选/全不选文字; 2.根据选中个数更新全选框状态 </div>
+    <!--
+        效果：
+        1.当下面十个选项全部被选中的时候，第一个复选框也被选中，内容变为‘全不选’
+        2.点击全选的时候，下面的选项全部选中，再次点击，全不选中，
+        3.反选
+    -->
+    <script>
+        var inp = document.querySelector('input')
+        var inps = document.querySelectorAll('input')
+        var oA = document.querySelector('a')
+        var oLa = document.querySelector('label')
+        // 判断选项卡是否全部被选中，选项被选中，inps[i].checked为true时让n+1，否则为false；
+        // 判断每一个选项卡被选中，为真或为假
+        function action(){
+            for( var i = 1,n = 0;i <inps.length;i++ ){
+             inps[i].checked && n++//console.log( inps[i].checked)判断为真还是为假，为真n+1，为假n不加1
+            
+        }
+        console.log(n)//n的值满了为10
+        // 当n=10的时候，第一个input也被选中
+        // console.log( n == inps.length - 1 ) 要么为真要么为假
+        inp.checked = ( n == inps.length - 1 )
+        // 当全选为true的时候，文字内容设为全不选，否则为全选
+        oLa.innerHTML = inp.checked ? '全不选' : '全选'       
+        
+        }
+        
+        // 点击的时候，方能判断选项卡的checked为真或为假
+        for( var i = 1;i <inps.length;i++){
+            inps[i].onclick = function(){
+                action()
+            }
+        }
+        
+        // 当第一个被选中的时候，下面的十个选项全部选中
+        
+        // 第一个input.checked的值，与选项卡的值是一一对应的
+        inp.onclick = function (){
+            for( var i = 1 ; i < inps.length; i++){
+                inps[i].checked = this.checked
+            }
+            action()
+        }
+        
+        // 取反
+        
+        oA.onclick = function(){
+            for( var i= 1; i < inps.length;i++){
+                inps[i].checked = !inps[i].checked//!取反
+            }
+            action()
+        }
+        
+        
+    </script>
+</body>
+</html>

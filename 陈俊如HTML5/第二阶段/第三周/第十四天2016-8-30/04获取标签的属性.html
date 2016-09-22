@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>获取标签的属性</title>
+    <script src="jquery.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div title="标签名称" id="demo" class="d1" style="background:red;color:#fff">
+        获取标签的属性，添加、删除等；
+        <span>这是新添加的span标签和内容，看我的内容待会还在不在</span>
+    </div>
+    <p>这是第一个段落标签</p>
+    <p>这是第二个段落标签</p>
+    <p>这是第三个段落标签</p>
+    <script>
+        $(function(){
+            //    $("#demo").attr("class")标签的属性
+              console.log( $("#demo").attr("class") ) 
+            // 设置一个属性 attr(key,value)
+            $("p").attr("class","p1") 
+            //设置多个属性 attr({name:value,name:value})
+            $("p").attr({
+                "style":"background:lightblue",
+                "title":"标题"
+            })   
+            
+            // 移除某个属性
+            $("p").removeAttr("title")
+              
+           })
+           
+           //    增加或移除类名,增加类名不影响之前的类名存在，
+            $("#demo").addClass("current moves")
+            $("#demo").removeClass("d1")
+            
+            // html()不仅可以添加文本内容，还可以添加标签；text()只能添加文本内容
+            $("#demo").html("这是新替换的标签内容，我要取代之前的内容<p>我想被添加进去</p>")
+            // $("#demo").text("这是通过text替换的内容，我和html()方法有什么区别，<p>我想被添加进去</p>")
+    </script>
+</body>
+
+</html>

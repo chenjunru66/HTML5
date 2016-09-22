@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>通过jQuery对象延伸出新的对象</title>
+    <script src="jquery.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>第一项</li>
+        <li>第二项</li>
+        <li>第三项</li>
+        <li>第四项</li>
+        <li>第五项</li>
+        <li>第六项</li>
+        <li>第七项</li>
+    </ol>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>jQuery</li>
+    </ul>
+
+
+    <script>
+        $(function(){
+                
+               console.log($("li").parent()) 
+               
+               //过滤：选中符合条件的元素
+               $("li").filter( ":nth-child(2n)").css("color","red")
+               
+            //    .has()包含特定标签
+               $("ul").has("li").css("font-size","20px")
+               
+            //    .not()删除与条件符合的标签
+               $("ol>li:odd,ul>li:odd").not("ol>li").css("color","blue")
+            //    通过jQuery对象衍生出新的jQuery对象，通过调用某些特定的方法
+            // 链式调用方法
+            })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 网页换肤 </title>
+    <style>
+        body{
+            background:lightgreen;
+            color:#fff;
+            text-align:center;
+        }
+        span{
+            display:inline-block; width:20px; height:20px;box-sizing:border-box;
+        }
+        span:first-child{
+             border:solid 5px red; background-color:red;
+        }
+        span:nth-child(2){
+            border:solid 5px green;   background:green
+        }
+        span:last-child{
+            border:solid 5px #000; background:#000;
+        }
+         
+        ul{
+            list-style:none; margin:0; padding:0;
+        }
+        li{
+            display:inline-block; background:green; padding:5px 20px; 
+        }
+        .current{
+            background:#fff !important
+        }
+        
+    </style>
+    <link rel="stylesheet" href="css/green.css">
+</head>
+<body>
+    <main>
+        <section>
+            <span id='red'></span>
+            <span id='green'></span>
+            <span id='black'></span>
+        </section>
+        <ul>
+            <li> 新闻 </li>
+            <li> 新闻 </li>
+            <li> 新闻 </li>
+            <li> 新闻 </li>
+            <li> 新闻 </li>
+            <li> 新闻 </li>
+            <li> 新闻 </li>
+        </ul>
+    </main>
+    <script>
+        var spans = document.querySelectorAll('span')
+        var links = document.querySelector('link')
+        
+        for( var i = 0 ; i < spans.length; i++ ){
+            spans[i].onclick = function(){
+                links['href'] = 'css/' + this.id + '.css'
+            }
+        }
+      
+    </script>
+</body>
+</html>

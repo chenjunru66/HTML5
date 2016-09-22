@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--定义标签内语言格式-->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--设置IE浏览器的兼容性，以最新的版本兼容当前的-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--对视扣得，宽 度为当前的设备的宽度；出事的缩放比例；最初的缩放比例为1，用户是否缩放，用户是否可以缩放，-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="陈俊如">
+    <title>用户页面</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       main{
+           width: 80%;
+           margin: 0 auto;
+       }
+       button{
+           display: inline-block;
+           width: 99%;
+           padding: 5px 0;
+           border: none;
+           font-size: 20px;
+           background-color: #428BCA;
+           border-radius: 10px;
+           color: #ffffff;
+       }
+        .input-group{
+            width: 100%;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">智游教育</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span><span id="use"></span><b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">个人资料</a></li>
+                        <li><a href="">退出</a></li>
+                    </ul>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<main>
+    <form action="" method="post">
+        <textarea name="liuyan" id="" cols="245" rows="10"placeholder="请输入问题"></textarea>
+        <div class="input-group">
+            <button type="submit">提交</button>
+        </div>
+
+    </form>
+</main>
+</body>
+<!--注意两个的顺序-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/answer.js"></script>
+</html>

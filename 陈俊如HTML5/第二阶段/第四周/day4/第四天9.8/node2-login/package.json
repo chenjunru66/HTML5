@@ -1,0 +1,14 @@
+{
+  "name": "form-login",
+  "version": "1.0.0",
+  "description": "这是一个登录验证页面",
+  "main": "service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "闫涵",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

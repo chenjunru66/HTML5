@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Js控制流程语句 -- 条件判断 </title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <pre>
+        JS由一行行语句构成，语句由分号隔开，分号可写，可不写，默认一行为一个语句 为了使JS的语句结构清晰明了，可以把部分语句分块化，在{ }之中表示 即{ 语句1； 语句2； 语句3； 语句4； ... 语句N } 大部分的语句块多用于流程控制
+        ，比如if...else, for循环等
+    </pre>
+    <script>
+            // 条件判断语句  if...else
+            
+            // 以考试分数为例，引入If判断语句
+            // 一个条件的时候
+            // if(条件){    // 当条件为真时，执行语句1； 为假时，执行语句2
+            //     语句1
+            // } else {
+            //     语句2
+            // }
+
+            var score = 65
+            if( score > 60 ){
+                console.log( '及格分数' )
+            } else {
+                console.log( '分数不及格' )
+            }
+
+            // 依然以成绩为例，分不及格，及格分数，分数良好，分数优秀，特优分数
+            // 五个条件，当前情况，if...else...无法实现，因此需要多个条件的判断
+            // if(条件1){ 
+            //     语句1
+            // } else if(条件2){
+            //     语句2   
+            // } else if(条件3){    // 当设定的条件满足If()条件为真的时候，执行相对应的语句，否则执行else内部的语句
+            //     语句3
+            // } else if(条件n){
+            //     语句n
+            // } else {
+            //     语句
+            // }
+
+            score = 87
+            if( score>60 && score<70 ){
+                console.log('及格分数')
+            } else if( score >= 70 && score < 80 ){
+                console.log('分数良好')
+            } else if( score >= 80 && score < 90 ){
+                console.log('分数优秀')
+            } else if( score >= 90 ){
+                console.log('分数特优')
+            } else {
+                console.log('分数不及格')
+            }
+
+            // switch语句，条件判断，匹配与变量值相等的时候，执行相关的语句，如果没有找到与变量值相匹配的，则会找到default，执行其相关的语句
+            var week = 10
+            switch(week){
+                case 0:
+                week = '星期天'
+                break
+                case 1:
+                week = '星期一'
+                break
+                case 2:
+                week = '星期二'
+                break
+                case 3:
+                week = '星期三'
+                break
+                case 4:
+                week = '星期四'
+                break
+                case 5:
+                week = '星期五'
+                break
+                case 6:
+                week = '星期六'
+                break
+                default:
+                week = '期待周末'
+                break
+
+            }
+            console.log(week)
+        </script>
+</body>
+
+</html>

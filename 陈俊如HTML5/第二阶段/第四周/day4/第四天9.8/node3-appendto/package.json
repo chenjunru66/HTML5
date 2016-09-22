@@ -1,0 +1,14 @@
+{
+  "name": "appendto",
+  "version": "1.0.0",
+  "description": "在当前页面展示发送的数据内容",
+  "main": "service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "闫涵",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

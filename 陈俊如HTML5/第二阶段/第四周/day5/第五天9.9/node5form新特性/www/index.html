@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        novalidate -- 不再对表单内容进行验证，可以直接提交
+    -->
+    <form action="#" novalidate="" id="forms">
+        <input type="text" name="username" required="" placeholder="请输入姓名" /> <br> <br>
+        <input type="password" name="passward" placeholder="请输入密码"> <br> <br>
+        <!--数字
+            min--最小值； max--最大值  step--按上下键修改数字时，出现的数字间隔
+        -->
+        <input type="number" name="number" placeholder="请输入年龄" step="5" min="10" max="35"/> <br/>
+        <!--
+            颜色
+        -->
+        <input type="color" name="color"/> <br/>
+        <!--
+            火狐浏览器不支持，建议使用谷歌浏览器
+            日期 -- 日期选择器  Date picker
+            (time, month, week, datetime, datetime-local)
+        -->
+        <input type="date" name="date" placeholder="请输入日期"/> <br/>
+        <!--
+            邮箱email
+        -->
+        <input type="email" name="emial" placeholder="请输入邮箱"/> <br/>
+        <!--
+            range 进度条
+        -->
+        <input type="range" name="range" /> <br/>
+        <!--
+            url  -- 路径
+        -->
+        <input type="url" name="url" placeholder="请输入网址"/> <br/>
+
+        <!--
+            search 搜索
+        -->
+        <input type="search" placeholder="请输入搜索关键字" name="search"/> <br/>
+        <!--
+            datalist 与 input标签联合使用，给输入框绑定设定的值
+            list =  datalist的'id名' ，将datalist与input绑定在一起
+        -->
+        <input type="text" name="kemu" placeholder="请输入科目" list="kemus"/> <br/>
+        <datalist id="kemus">
+            <option value="HTML"> HTML </option>
+            <option value="CSS"> CSS </option>
+            <option value="JS"> JS </option>
+        </datalist>
+
+
+        <input type="submit" value="提交">
+    </form>
+        <!--
+            默认submit是在form内部提交
+            如果submit在表单之外的时候，添加form属性，将按钮与form通过id名称连接，也可以提交表单
+        -->
+    <input type="submit" value="我也可以提交"  form="forms" formtarget="_blank" >
+</body>
+</html>

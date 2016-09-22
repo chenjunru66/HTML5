@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--定义标签内语言格式-->
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <!--设置IE浏览器的兼容性，以最新的版本兼容当前的-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--对视口得，宽 度为当前的设备的宽度；出事的缩放比例；最初的缩放比例为1，用户是否缩放，用户是否可以缩放，-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="">
+        <title>Bootstrap</title>
+        <!--引用bootstrapcss文件-->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body{
+                margin-top: 50px;
+            }
+            .container{
+                border: solid 1px red;
+                height: 500px;
+            }
+            .col-lg-4,.col-md-2,.col-md-6,.col-md-4{
+                border: solid 1px blue;
+                height: 300px;                
+            }
+        </style>
+    </head>
+    <body>
+        <!--容器布局，拆分布局从container内部开始-->
+        <div class="container">
+            <!--从上往下拆分，每一排为一行；-->
+            <div class="row">
+                <div class="col-lg-4 col-md-2 col-sm-12">
+                    <div style="width:80%;margin:0 auto;border:1px solid green;height:100%;"></div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    <!--注意两个的顺序-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!--<link rel="stylesheet" href="style.css">-->
+</html>

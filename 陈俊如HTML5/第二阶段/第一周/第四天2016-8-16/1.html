@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+body,ul,li,h2,p
+{
+margin:0px;
+padding:0xp;
+}
+#div1
+{
+width:200px;
+height:200px;
+background:#ccc;
+
+}
+.calendar
+{
+width:240px;
+height:345px;
+background:#ccc;
+margin:auto;
+}
+.calendar ul
+{
+list-style:none;
+width:232px;
+height:260px;
+margin:0px;
+padding:0px;
+}
+
+.calendar ul li
+{
+width:45px;
+height:65px;
+background:#333;
+float:left;
+display:inline;
+margin-left:11px;
+margin-top:10px;
+border:1px solid #ccc;
+text-align:center;
+color:#FFF;
+
+}
+.calendar ul li:hover
+{
+border:1px solid #000;
+
+}
+.text
+{
+background:#F96;
+margin:10px;
+padding-bottom:10px;
+height:45px;
+}
+.text h2
+{
+display:inline;
+
+}
+.active
+{
+background:#FFF !important;
+color:#C03 !important;
+}
+
+</style>
+<script type="text/javascript">
+/* window.onload=function()
+{
+var oBtn=document.getElementById('btn1');
+var oTxt=document.getElementById('txt1');
+var oDiv=document.getElementById('div1');
+oBtn.onclick=function()
+{
+oDiv.innerHTML=oTxt.value;
+}
+
+}*/
+window.onload=function()
+{
+var aLi= document.getElementsByTagName('li');
+var Otxt =document.getElementById('tab').getElementsByTagName('div')[0];
+var aDats =['元旦1月1日','2月14日情人节','3月3日全国爱耳日',
+'4月1日愚人节','5月1日国际劳动节','6月1日 国际儿童节',
+'7月1日中国共产党诞生日','8月1日中国人民解放军建军节','9月10日中国教师节',
+'10月1日中华人民共和国国庆节','11月9日消防宣传日','12月3日世界残疾人日'
+];
+
+var i=0;
+for(i=0;i<aLi.length;i++) //for循环历遍li元素
+{
+aLi[i].index=i;
+aLi[i].onmouseover =function() //添加鼠标指向事件
+{
+
+for(i=0;i<aLi.length;i++) //for循环历遍li元素去掉li样式
+{
+aLi[i].className ='';
+}
+this.className ='active'; //给当前标签添加active 样式
+
+Otxt.innerHTML ='<h2>'+(this.index+1)+'</h2>'+'月'+'<p>'+aDats[this.index]+'</p>';
+}
+
+}
+
+};
+
+</script>
+</head>
+<body>
+
+<div id="tab" class="calendar">
+<ul>
+<li class="active"><h2>1</h2><p>JAN</p></li>
+<li><h2>2</h2><p>FER</p></li>
+<li><h2>3</h2><p>MAR</p></li>
+<li><h2>4</h2><p>APR</p></li>
+<li><h2>5</h2><p>MAY</p></li>
+<li><h2>6</h2><p>JUM</p></li>
+<li><h2>7</h2><p>JUL</p></li>
+<li><h2>8</h2><p>AUG</p></li>
+<li><h2>9</h2><p>SEP</p></li>
+<li><h2>10</h2><p>OCT</p></li>
+<li><h2>11</h2><p>NOV</p></li>
+<li><h2>12</h2><p>DEC</p></li>
+</ul>
+<div class="text">
+
+</div>
+</div>
+</body>
+</html> 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>检测用户输入的字数</title>
+        <script src="jquery.js"></script>
+        <style>
+            body{
+                margin: 0;
+            }
+            .wrapper{
+                width: 400px;
+                margin: 0 auto;
+            }
+            h5{
+                margin: 0;
+                padding: 0;
+            }
+            textarea{
+                resize: none;
+                width: 400px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h5>有什么想说的？~)·(~</h5>
+            <textarea name="" id="texts" cols="30" rows="10" maxlength="280"></textarea>
+            <p><span id="demo1">你可以输入</span><strong id="demo2">140</strong>个字</p>
+        </div>
+        <script>
+            $(function(){
+                // 两个字母/数字算一个汉字
+                // 当Unicode编码值大于255的时候，可以当做文字对待
+                // val()获取文本内容               
+                function action(){
+                    var length = 140
+                    var temp = 0
+                     var len = $("#texts").val().length
+                    // 判断输入的内容（字符串）中的字符是中文还是字母
+                    for( var i = 0;i < len;i++ ){
+                        // $("#texts").val()是字符串，也是字符串对象
+                         
+                        if( $("#texts").val().charCodeAt(i) > 256){
+                           temp += 1 
+                        }else{
+                            temp += 0.5
+                        }
+                    }
+                    var result = Math.ceil( length - temp )
+                    
+                    if( result >= 0){
+                        $("#demo2").html(result)
+                    }else{
+                        alert("文字已超出，禁止输入")
+                    }
+                    
+                }
+                // 获取焦点是执行
+                $("#texts").focus(function(){
+                    action()
+                    $("#demo1").html("你还可以输入")
+                })
+                // 用户输入时执行 on("事件")用来绑定事件
+                $("#texts").on("input",function(){
+                    action()
+                })  
+                
+            })
+        </script>
+    </body>
+</html>

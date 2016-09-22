@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>Math对象的属性和方法</title>
+        <style>
+             
+        </style>
+    </head>
+    <body>
+        <pre>
+            Math对象用来执行数学任务，没有构造函数Math()
+        </pre>
+        <script>
+            // 获取0~1随机小数[0,1) Math.random()
+            var i = Math.random()
+            console.log(i)
+            //获取0~10的随机小数[0,10)
+            var j = Math.random() * 10
+            console.log(j)
+            
+            // 向下取整数：取的是最近小于它的整数
+            // Math.floor()
+            console.log( Math.floor(j) )
+            
+            // 向上取整数：取的是最近大于它的整数
+            console.log( Math.ceil(j) )
+        </script>
+    </body>
+</html>

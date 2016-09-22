@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>九宫格拼图</title>
+    <style>
+        body {
+            margin: 0;
+            background: lightblue;
+        }
+        
+        .f-1 {
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .f-1>img {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .f-2 {
+            width: 456px;
+            margin: 0 auto;
+            /*border: 1px solid white;*/
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        li{
+            float: left;
+            border: 1px solid black;
+        }
+        li>img{
+            width: 150px;
+            height: 150px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="f-1">
+        <img src="images/tu1/0.png" alt="">
+
+    </div>
+    <center>
+        <button type="button">开始游戏</button>
+    </center>
+    <div class="f-2">
+        <ul>
+            <li draggable="true"><img draggable="false" src="images/tu1/1.png" alt=""></li>
+            <li draggable="true"><img draggable="false" src="images/tu1/2.png" alt=""></li>
+            <li draggable="true"><img draggable="false" src="images/tu1/3.png" alt=""></li>
+            <li draggable="true"><img draggable="false" src="images/tu1/4.png" alt=""></li>
+            <li draggable="true"><img draggable="false" src="images/tu1/5.png" alt=""></li>
+            <li draggable="true"><img draggable="false" src="images/tu1/6.png" alt=""></li>
+            <li draggable="true"><img draggable="false" src="images/tu1/7.png" alt=""></li>
+            <li draggable="true"><img draggable="false" src="images/tu1/8.png" alt=""></li>
+            <li draggable="true"><img draggable="false" src="images/tu1/9.png" alt=""></li>
+
+        </ul>
+
+    </div>
+
+
+    <script>
+        var lis = document.querySelectorAll('li')
+        for(var i = 0;i < lis.length;i++){
+            var li = lis[i]
+            li.ondragstart = function(ev){
+                ev.target.id = 'draging'
+                ev.dataTransfer.setData( 'text',ev.target.id )
+                ev.dataTransfer.effectAllowed = 'move'
+            }
+            li.ondragend = function(ev){
+                ev.preventDefault()
+                ev.target.id = ''
+            }
+            li.ondrop = function(ev){
+                ev.preventDefault()
+                var id = ev.dataTransfer.getData('text')
+                var li = document.getElementById(id)
+                var ul = document.querySelector('ul')
+                
+                ul.insertBefore(li,ev.currentTarget)
+                ev.stopImmediatePropagation()
+            }
+        }
+    </script>
+</body>
+
+</html>

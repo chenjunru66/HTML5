@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 留言页面 </title>
+    <style>
+        body{
+            margin:0;
+        }
+        #box{
+            width:100vw; height:100vh; position: absolute;
+            top:0; left:0; background:rgba(0, 0, 0, 0.4);
+            display: flex; justify-content: center; align-items: center; visibility: hidden;
+        }
+        #box div{
+            width:300px; height:260px; background: #fff; border-radius: 10px; box-shadow: 1px 1px 5px #000; text-align: center;
+        }
+        p{
+            margin: 0;
+        }
+        .top{
+            font-size:30px; line-height: 160px; color: #666;
+        }
+        .bottom{
+            font-size:35px; border-top:solid 1px #666; line-height:98px; cursor: pointer;
+        }
+        form{
+            z-index:5; position:relative;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="post">
+    <textarea name="message" placeholder="请输入留言内容" ols="30" rows="10" required=""></textarea>
+    <br/>
+    <button type="submit"> 提交留言 </button>
+</form>
+<div id="box">
+    <div>
+        <p class="top"> 感谢您的留言！ </p>
+        <p class="bottom"> 确定 </p>
+    </div>
+</div>
+<!--<script src="message.js"></script>-->
+<script src="jquery.js"></script>
+<script src="mesjq.js"></script>
+</body>
+</html>

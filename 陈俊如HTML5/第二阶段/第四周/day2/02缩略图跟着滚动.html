@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>缩略图</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .suelue {
+            width: 680px;
+            margin: 50px auto;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        
+        .tab {
+            width: 100%;
+            border: solid 1px #eee;
+        }
+        
+        .tabbox {
+            width: 1000px;
+            position: relative;
+            height: 392px;
+        }
+        
+        .tabbox li {
+            width: 680px;
+            position: absolute;
+        }
+        
+        .tabbox li img {
+            width: 100%;
+            height: 392px;
+        }
+        
+        .list {
+            width: 100%;
+            margin-top: 10px;
+            height: 78px;
+        }
+        
+        .list div {
+            width: 25px;
+            background: #aaa;
+            color: #fff;
+            text-align: center;
+            float: left;
+            height: 100%;
+            line-height: 78px;
+            font-size: 30px;
+            cursor: pointer
+        }
+        
+        .list .current:hover {
+            background: #333;
+        }
+        
+        .list section {
+            width: 620px;
+            float: left;
+            margin: 0 5px;
+            overflow: hidden;
+        }
+        
+        .imgbox {
+            width: 2000px;
+            position: relative;
+        }
+        
+        .imgbox li {
+            width: 125px;
+            float: left;
+            cursor: pointer;
+        }
+        
+        .imgbox .active img {
+            border: solid 1px red;
+        }
+        
+        .imgbox img {
+            display: block;
+            width: 120px;
+            height: 78px;
+            margin-right: 5px;
+        }
+        
+        .imgbox li:last-child img {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="suelue">
+        <div class="tab">
+            <ul class="tabbox" id="tabbox">
+                <li style="z-index:3"> <img src="imgs/dsl-1.jpg" alt=""> </li>
+                <li> <img src="imgs/dsl-2.jpg" alt=""> </li>
+                <li> <img src="imgs/dsl-3.jpg" alt=""> </li>
+                <li> <img src="imgs/dsl-4.jpg" alt=""> </li>
+                <li> <img src="imgs/dsl-5.jpg" alt=""> </li>
+                <li> <img src="imgs/dsl-6.jpg" alt=""> </li>
+                <li> <img src="imgs/2.jpg" alt=""> </li>
+                <li> <img src="imgs/3.jpg" alt=""> </li>
+                <li> <img src="imgs/4.jpg" alt=""> </li>
+                <li> <img src="imgs/5.jpg" alt=""> </li>
+            </ul>
+        </div>
+        <div class="list">
+            <div id="btn-pre" class="current"> <span class="fa fa-caret-left"></span></div>
+            <section>
+                <ul class="imgbox" id="thumbs">
+                    <li> <img class="active" src="imgs/sl-1.jpg" alt=""> </li>
+                    <li> <img src="imgs/sl-2.jpg" alt=""> </li>
+                    <li> <img src="imgs/sl-3.jpg" alt=""> </li>
+                    <li> <img src="imgs/sl-4.jpg" alt=""> </li>
+                    <li> <img src="imgs/sl-5.jpg" alt=""> </li>
+                    <li> <img src="imgs/sl-6.jpg" alt=""> </li>
+                    <li> <img src="imgs/2.jpg" alt=""> </li>
+                    <li> <img src="imgs/3.jpg" alt=""> </li>
+                    <li> <img src="imgs/4.jpg" alt=""> </li>
+                    <li> <img src="imgs/5.jpg" alt=""> </li>
+                </ul>
+            </section>
+            <div id="btn-next" class="current"> <span class="fa  fa-caret-right"></span> </div>
+        </div>
+    </main>
+    <script>
+        $(function(){
+               
+            //    效果1：点击缩略图的时候出现相应的大图
+            $("#thumbs li").click(function(){
+                var num = $(this).index()//获取当前点击的索引值                
+                $(this).addClass("active").siblings().removeClass("active")//通过改变类名.active img,能够改变css样式的话，尽量改css，不要用js
+                $("#tabbox li").eq(num).css("z-index","3").siblings().removeAttr("style")
+            })
+               
+           var len = $("#thumbs li").length
+           var swidth = $("#thumbs li").width()
+        //    console.log(swidth)
+           $("#thumbs").css("width",len * swidth )
+           var isNow = 2
+        //    $("#thumbs li").eq(isNow).addClass("active").siblings().removeClass("active")
+        //    $("#tabbox li").eq(isNow).css("z-index","3").removeAttr("style")
+           show()
+           function show(){
+                $("#thumbs li").eq(isNow).addClass("active").siblings().removeClass("active")
+                $("#tabbox li").eq(isNow).css("z-index","3").siblings().removeAttr("style")
+                if( isNow < len - 2 && isNow >= 2){
+                   $("#thumbs").animate({
+                       left: -swidth * (isNow - 2)
+                   }, 100)
+               }
+           }
+           
+        //    上一张
+           $("#btn-pre").click(function(){
+               if( isNow <= 0 ){
+                   return
+               }
+               isNow--
+               show()
+               
+           }) 
+           
+        //    下一张  
+            $("#btn-next").click(function(){
+                if( isNow > len - 1){
+                   return
+               }
+               isNow++
+               show()
+             
+           }) 
+            
+           })
+    </script>
+</body>
+
+</html>

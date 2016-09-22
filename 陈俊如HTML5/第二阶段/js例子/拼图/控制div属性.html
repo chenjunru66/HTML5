@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>控制div属性</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .f-1 {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        
+        .f-2 {
+            text-align: center;
+        }
+        
+        #demo {
+            width: 100px;
+            height: 100px;
+            background: black;
+            margin: 0 auto;
+            margin-top: 50px;
+            /*display: none;*/
+        }
+        
+        button {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="f-1">
+
+        <div class="f-2">
+            <button type="button">变宽</button>
+            <button type="button">变高</button>
+            <button type="button">背景改变</button>
+            <button type="button">隐藏</button>
+            <button type="button">重置</button>
+        </div>
+        <div id="demo">
+
+        </div>
+    </div>
+
+    <script>
+           var btns = document.querySelectorAll('button')
+           var div = document.getElementById('demo')
+           var divAttr = ['width','height','background-color','display','display']
+           var divVal = ['200px','200px','red','none','block']
+        
+        //    对象：关联数组 obj.name = value ;obj[name] = value
+           var divStyle = function( ele,attr,value ){//(标签名称，样式名称，样式值)
+               ele.style[attr] = value
+           }
+        //    console.log( div.style)
+        //    console.log( div.style.width )
+        //    console.log( div.style['width'] )
+        for( var i = 0;i < btns.length;i++ ){
+            btns[i].index = i//获取索引值
+            btns[i].onclick = function(){
+                
+                divStyle(div,divAttr[this.index],divVal[this.index])
+                // 重置的时候，发现样式为变换之后的样式，所以需要把样式还原为最初的样式
+                if( this.index == btns.length - 1){
+                    div.removeAttribute('style')
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+            // var bt1 = document.getElementsByTagName('button')[0]
+            // var bt2 = document.getElementsByTagName('button')[1]
+            // var bt3 = document.getElementsByTagName('button')[2]
+            // var bt4 = document.getElementsByTagName('button')[3]
+            // var bt5 = document.getElementsByTagName('button')[4]
+            // var demo = document.getElementById('demo')
+            // bt1.onclick = function(){
+            //     demo.style.width = '200px'
+            // }
+            // bt2.onclick = function(){
+            //     demo.style.height = '200px'
+            // }
+            // bt3.onclick = function(){
+            //     demo.style.background = 'red'
+            // }
+            // bt4.onclick = function(){
+            //     demo.style.visibility = 'hidden'
+            // }
+            // bt5.onclick = function(){
+            //     demo.style.cssText = 'width: 100px;height: 100px;background: black;margin: 0 auto;margin-top: 50px;'
+            // }
+    </script>
+</body>
+
+</html>

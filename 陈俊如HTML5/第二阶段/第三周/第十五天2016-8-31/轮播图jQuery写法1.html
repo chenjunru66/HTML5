@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>轮播图</title>
+    <script src="jquery.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .banner {
+            width: 600px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        img {
+            width: 600px;
+            height: 200px;
+        }
+        .count1{
+            width: 3000px;
+            position: relative;
+        }
+        .count1 li {
+            float: left;
+            width: 600px;
+            /*position: absolute;*/
+            /*opacity: 1;*/
+            /*opacity: 0;*/
+        }
+        
+       
+        
+        .count2 {
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+        }
+        
+        .count2 li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #f90;
+            color: #fff;
+            margin-left: 5px;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .current {
+            background: yellow !important;
+            color: black !important;
+        }      
+    </style>
+</head>
+
+
+<body>
+    <div class="banner">
+        <ul class="count1">
+            <li><img src="imgs/1.jpg" alt=""></li>
+            <li><img src="imgs/2.jpg" alt=""></li>
+            <li><img src="imgs/3.jpg" alt=""></li>
+            <li><img src="imgs/4.jpg" alt=""></li>
+        </ul>
+        <ul class="count2">
+            <li class="a">1</li>
+            <li class="a">2</li>
+            <li class="a">3</li>
+            <li class="a">4</li>
+        </ul>
+    </div>
+
+
+    <script>
+        $(function(){
+         var slideShow=$(".banner")  
+         var ul=slideShow.find(".count1") 
+         var showNumber=slideShow.find(".count2 li")
+         var oneWidth=slideShow.find(".count1 li").eq(0).width() 
+         var iNow=0  
+   
+        showNumber.on("click",function(){   
+             $(this).addClass("current").siblings().removeClass("current")
+             var index=$(this).index() 
+             iNow=index
+             ul.animate({
+                "left":-oneWidth*iNow 
+             })
+        })
+   
+        timer=setInterval(function(){ 
+             iNow++      
+             if(iNow>(showNumber.length - 1)){ 
+             iNow=0
+              }
+           showNumber.eq(iNow).trigger("click") 
+         },2000);
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        // $(".count2>li").hover(
+        //     function(){
+        //     $(this).addClass("current").siblings().removeClass("current")
+        //     $(".count1>li").eq( $(this).index()).css('opacity', 1 ).siblings().css('opacity',0 ) 
+        // }
+        // )
+    
+       
+          
+          
+      })
+    </script>
+</body>
+
+</html>

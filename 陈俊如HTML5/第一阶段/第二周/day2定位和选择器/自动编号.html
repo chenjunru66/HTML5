@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>自动编号</title>
+    <style>
+        h3 {
+            margin-left: 50px;
+        }
+        
+        h4 {
+            margin-left: 100px;
+        }
+        
+        body {
+            /*统计在body下的h2元素的个数
+        reset：重置计数器的初始值
+        注意-1前面有空格*/
+            counter-reset: h2 -1;
+            /*counter-reset：重置计数器的初始值，以及确定计数器的技术范围，
+            即计算哪个标签内部的递增数值出现次数，该样式写在选择其中
+            counter-increment: 某个计数器的递增数值，默认值为1；
+            content: counter（）：设定计数器的内容，计算数值为出现次数，这两个样式是写在：before{}选择器中；
+            计数器的名称为自定义；当counter-increment出现在哪个选择器中，数值递增*/
+        }
+        
+        section {
+            counter-reset: h3 h4;
+        }
+        
+        h2:before {
+            /*对部分和子部分进行编号*/
+            counter-increment: h2;
+            content: counter(h2)':';
+        }
+        
+        h3:before {
+            counter-increment: h3;
+            content: counter(h2)'.' counter(h3)':';
+        }
+        
+        h4:before {
+            counter-increment: h4;
+            content: counter(h2)'.' counter(h3)'.' counter(h4)':';
+        }
+        
+        p:before {
+            /*计数器的递增数值*/
+            counter-increment: h3;
+            /*计数数值*/
+            content: counter(h2)'.'counter(h3)':';
+        }
+    </style>
+</head>
+
+<body>
+    <h1>个人简历</h1>
+    <h2>基本信息</h2>
+    <section>
+        <h2>专业技能</h2>
+        <section>
+            <h3>精通HTML5</h3>
+            <h4>HTML基本结构</h4>
+            <h4>文本标签</h4>
+            <h4>其他高级标签</h4>
+        </section>
+        <h3>精通CSS3</h3>
+        <h3>精通JavaScript</h3>
+        <h3>H5专家、高手、牛人</h3>
+    </section>
+    <h2>求职意向</h2>
+    <p>HTML高级开发工程师，全职</p>
+    <p>薪资面议</p>
+    <p>现已离职，可一周到岗</p>
+    <h2>项目经验</h2>
+    <h2>教育经历</h2>
+</body>
+
+</html>

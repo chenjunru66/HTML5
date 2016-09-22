@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>九九乘法表</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <input type="text" id="num1" placeholder="请输入数字" autocomplete="off"><input type="text" id="num2" placeholder="请输入数字" autocomplete="off">
+            <button type="button" onclick="calc()">计算</button>
+        </form>
+        <p id="result">计算结果为：</p>
+        
+        <script>
+            
+            function calc(){
+                
+                var num3 = document.getElementById('num1').value;
+                var num4 = document.getElementById('num2').value;
+                // 获取的是字符串
+                num1 = parseInt(num3);
+                num2 = parseInt(num4);
+                // 在这里如果出现11a下面仍会执行
+                 if( isNaN( num3 ) || isNaN( num4 )){
+                     alert('你输入的内容不是数字，请重新输入');
+                    //  return;
+                 } else if( num1 != parseFloat(num3) || num2 !=parseFloat(num4) ){
+                     alert('你输入的内容有小数，请重新输入')
+                     
+                 }
+                 else if( num1 < 0 || num2 < 0){
+                     alert('你输入的内容有负数，请重新输入')
+                    //  return;
+                 } else if( num1 > 9 || num2 > 9){
+                     alert('你输入的内容过大，请重新输入')
+                    //  return;
+                 }  else{
+                     result.innerHTML = '计算结果为：' + num1 * num2 ;
+                 }
+                
+            }
+            
+            
+        </script>
+        
+    </body>
+</html>

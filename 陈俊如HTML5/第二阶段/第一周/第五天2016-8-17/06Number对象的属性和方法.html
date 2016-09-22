@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>Number对象的属性和方法</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // Number:二进制  八进制  十进制  十六进制
+            // 十进制 :是多少写多少
+            // 以0开始，后面是其他的十进制数字，如果小于8，计算机会当做八进制处理
+            console.log( 99 )
+            console.log( 099)
+            //会提示SyntaxError: 09 is not a legal ECMA-262 octal constant
+            
+            // 二进制：以0b或0B开始
+            console.log( 0b11111 )//31
+            console.log( 11111 )//11111
+            console.log( 011111 )//4681
+            
+            // 八进制 以0开始，后面是小于8的数字
+            console.log( 02344 )//1252
+            
+            // 十六进制 以0x或0X开始，后面跟0~9，A~F的数值
+            console.log( 0x123 )//291
+        </script>
+    </body>
+</html>

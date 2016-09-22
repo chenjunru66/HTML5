@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>2D图形变换</title>
+        <style>
+            html{
+                height: 100%;
+            }
+           body{
+               background: #000;
+               margin: 0;
+               height: 100%; 
+               display: flex;
+               /*开启弹性布局，处理的是子元素的对齐方式*/
+               /*水平方向上居中对齐*/
+               justify-content: center;
+               /*竖直方向：居中对齐*/
+               align-items: center;
+                            
+           }
+           main{
+               width: 300px;
+               height: 300px;
+               background: blue;
+           } 
+           div{
+               width: 100%;
+               height: 100%;
+               background: red;
+               opacity: 0.5;
+               /*透明度*/
+               font-size: 30px;
+               /*transform: translate(100%,100%);*/
+               /*tanslate()平移:
+               一个值：水平方向平移，正值向右，负值向左
+               两个值：X轴水平值  Y轴竖直值：正值向下，负值向上；
+               百分比是根据自身的宽高而定；
+               （0,0）为原点；
+               */
+               /*transform: rotate(30deg);*/
+               /*rotate：旋转；正值顺时针旋转，负值逆时针旋转；*/
+               /*transform-origin: 50% 50%;*/
+               /*transform-origin基点位置，默认值为50% 50%， 即元素的中心位置
+               当设置一个值的时候，为x轴的值，另一个值默认为50%；*/
+               /*transform: rotateX(30deg);*/
+               /*x轴上的旋转，上下消失一部分*/
+               /*transform: rotateX(30deg);*/
+               /*transform: scale(0.5,1);*/
+               /*scale()缩放 两个值：宽度 高度；按比例缩小或放大，一个值的时候x，y都为该值*/
+               /*transform: scale(-0.5,1);*/
+               /*transform: scale(0.5,-1);*/
+               /*x值为负的，沿y轴镜像（翻转180度）
+               y轴为负的，沿x轴镜像（翻转180度）*/
+               /*transform: skew(30deg);*/
+               /*skew()倾斜*/
+               /*transform: skewY(30deg);上下倾斜*/
+               /*transform: skewX(30deg);左右倾斜*/
+               /*transform: skew(30deg,30deg);*/
+               /*执行的顺序是先x后y*/
+               
+               transform: translate(100px,100px) rotate(30deg) scale(0.5);
+               /*执行顺序按照谁先写在前面谁先执行，然后在执行的结果上再执行*/
+               transform: rotate(30deg) translate(100px,100px) scale(0.5);
+               
+           }
+           
+        </style>
+    </head>
+    <body>
+        <main>
+            <div>
+                我
+            </div>
+        </main>
+    </body>
+</html>

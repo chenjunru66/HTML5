@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>jQuery的了解</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+         <script>
+            //  $ == jQuery
+            console.log($)//function
+            console.log( jQuery )//function
+            console.log( $ === jQuery )//true
+            // $等价于jQuery
+            // 基本写法：$(selector).action()
+            
+            // 当页面加载完成后才开始执行某代码，这个写法跟简写写法意思一样
+            $(document).ready(function(){
+                // js代码
+                document.querySelector('div').style.color = 'red'
+            })
+            
+            // 简写写法
+            $(function(){
+                // 执行某行代码
+                document.querySelector('div').style.color = 'blue'
+            })
+         </script>
+         <div>
+             页面加载完成以后才开始执行的代码
+         </div>
+    </body>
+</html>

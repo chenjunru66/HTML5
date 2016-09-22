@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>车辆信息卡</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        div {
+            width: 690px;
+            margin: 0 auto;
+            margin-top: 30px;
+            border: 1px solid black;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        li {
+            /*display: inline-block;不能使用这个是因为，行内块元素中不能再放块元素了*/
+            border: 1px solid black;
+            width: 130px;
+            height: 130px;
+            margin: 10px 1px;
+            float: left;
+            background: lightblue;
+        }
+        
+        img {
+            display: none;
+            /*border: 1px solid black;*/
+        }
+        
+        span {
+            display: block;
+            /*display: none;*/
+            text-align: center;
+            margin: 30px 0;
+        }
+        p{
+            margin: 0;
+        }
+        .active2{
+            display: block;           
+        }
+        .active1{
+            display: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>
+                <p>
+                <span>宝马</span>
+                <span>宝马X5</span>
+                </p>
+                <img src="images/1.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>阿尔法·罗密欧</span>
+                <span>阿尔法·罗密欧GT</span>
+                </p>
+                <img src="images/2.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>斯柯达</span>
+                <span>斯柯达Superb </span>
+                </p>
+                <img src="images/3.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>大众汽车</span>
+                <span>大众汽车Passat</span>
+                </p>
+                <img src="images/4.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>萨博 </span>
+                <span>Saab 9-7X</span>
+                </p>
+                <img src="images/5.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>兰博基尼</span>
+                <span>LP670-4 SV</span>
+                </p>
+                <img src="images/6.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>法拉利</span>
+                <span>LaFerrari</span>
+                </p>
+                <img src="images/7.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>标致</span>
+                <span>雪铁龙C4</span>
+                </p>
+                <img src="images/8.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>梅赛德斯-奔驰</span>
+                <span>X5</span>
+                </p>
+                <img src="images/9.jpg" alt="">
+            </li>
+            <li>
+                <p>
+                <span>别克</span>
+                <span>Verano</span>
+                </p>
+                <img src="images/10.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        var p = document.querySelectorAll('p')
+        var lis = document.querySelectorAll('li')
+        var imgs = document.querySelectorAll('img')
+        for( var i = 0;i < lis.length;i++){
+            lis[i].index = i
+            p[i].index = i
+            imgs[i].index = i
+            lis[i].onmouseover = function(){
+                for( var i = 0;i < lis.length;i++){
+                    p[i].className = ''
+                    p[this.index].className = 'active1'
+                    imgs[i].className = ''
+                    imgs[this.index].className = 'active2'
+                                      
+                }
+                
+                
+            }
+        }        
+    </script>
+</body>
+
+</html>

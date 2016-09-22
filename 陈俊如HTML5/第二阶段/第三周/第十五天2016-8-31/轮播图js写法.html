@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>轮播图js写法</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .banner {
+            width: 600px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+        }       
+        img {
+            width: 600px;
+            height: 200px;
+        }
+        .count1 li{
+            position: absolute;
+            opacity: 0;
+        }
+        .count1 li:nth-of-type(1){
+            opacity: 1;
+        }
+        .count2{
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+        }
+        .count2 li {
+            float: left;           
+            width: 20px;
+            height: 20px;
+            background:#f90;
+            color:#fff;  
+            margin-left: 5px;
+            text-align: center;
+            border-radius: 20px;            
+            cursor: pointer;         
+        }      
+        .current{
+            background: yellow !important;
+            color: black !important;
+        }
+        .active{
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul class="count1">
+            <li><img src="imgs/1.jpg" alt=""></li>
+            <li><img src="imgs/2.jpg" alt=""></li>
+            <li><img src="imgs/3.jpg" alt=""></li>
+            <li><img src="imgs/4.jpg" alt=""></li>
+        </ul>
+        <ul class="count2">
+            <li class="a">1</li>
+            <li class="a">2</li>
+            <li class="a">3</li>
+            <li class="a">4</li>
+        </ul>
+    </div>
+    <script>
+       var ban = document.querySelector(".banner")
+       var aLis = document.querySelectorAll(".count1 li")
+       var bLis = document.querySelectorAll(".count2 li")
+       var timer
+       var index = 0
+       for( var i=0;i <bLis.length;i++){
+           bLis[i].index = i
+           bLis[i].onmouseover = function(){
+            clearInterval(timer)
+            show(this.index)   
+       }
+       
+        }
+        for( var i=0;i <bLis.length;i++){
+           bLis[i].index = i
+           bLis[i].onmouseout = function(){            
+            play()  
+       }
+       
+        }
+        
+  function show(a){
+      index = a
+      for( var i = 0;i < bLis.length;i++){
+                   bLis[i].className = ''
+                   aLis[i].style.opacity = 0               
+               }
+               bLis[this.index].className = 'current'              
+               aLis[this.index].style.opacity = 1
+           }           
+ function play(){
+       timer = setInterval(function(){
+           index++
+           if( index >= bLis.length){
+               index = 0
+           }
+           show(index)
+       },1000)
+ }
+    play()   
+       
+    </script>
+
+</body>
+
+</html>

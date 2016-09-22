@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>jQuery遍历元素及hover()方法</title>
+    <script src="jquery.js"></script>
+    <style>
+   .current{
+       font-size: 30px;
+   }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>第一个标签</li>
+        <li class="current">第二个标签</li>
+        <li>第三个标签</li>
+        <li>第四个标签</li>
+        <li>第五个标签</li>
+    </ul>
+    <script>
+        $(function(){
+            // .each()遍历数组和对象
+            $("li").each(function(){
+                $("li").hover(
+                    // 当鼠标指针经过标签的时候触发的效果
+                    function(){
+                    $(this).css("background","red")
+                    // 当前标签添加类名的同时，它的同胞元素移除类名
+                    $(this).addClass("current").siblings().removeClass('current')
+                    },
+                    // 当鼠标指针离开标签的时候触发的效果
+                    function(){
+                    $(this).css("background","blue")
+                })
+                
+            })
+            
+            
+        })
+        
+        
+    </script>
+</body>
+
+</html>

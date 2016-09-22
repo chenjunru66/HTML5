@@ -1,0 +1,258 @@
+<html>
+
+<head>
+    <title>郑州市 - 天气预报</title>
+    <meta charset="utf-8">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            text-shadow: 1px 0px 1px #333;
+            background-image: linear-gradient(to bottom, rgb(13, 104, 188), rgb(114, 173, 224));
+            background-color: rgb(114, 173, 224);
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            font-size: 19px;
+            line-height: 50px;
+        }
+        
+        main .icon {
+            margin: 40px;
+            background-image: url(days/xue.png);
+            height: 128px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        main .tempers {
+            text-align: center;
+            font-size: 32px;
+            color: white;
+            font-family: Arial;
+        }
+        
+        main sup {
+            font-size: 19px;
+        }
+        
+        main .weather {
+            text-align: center;
+            color: white;
+            font-size: 17px;
+        }
+        
+        main .wind {
+            text-align: center;
+            color: white;
+            font-size: 13px;
+            line-height: 200%;
+        }
+        
+        main .current {
+            text-align: center;
+            color: white;
+            font-size: 13px;
+        }
+        
+        footer {
+            width: 90%;
+            color: white;
+            text-align: center;
+            margin: 60px auto;
+            font-size: 13px;
+        }
+        
+        section {
+            width: 33.3333333333333%;
+            float: left;
+            border-right: solid 1px #aaf;
+            box-sizing: border-box;
+        }
+        
+        section:nth-child(3) {
+            border: none;
+        }
+        
+        section .icon {
+            height: 60px;
+            margin: 15px auto;
+            background-image: url(days/qing.png);
+            background-repeat: no-repeat;
+            background-size: 60px;
+            background-position: center center;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <header>郑州市</header>
+    <main>
+        <div class="icon"></div>
+        <div class="tempers">&nbsp; -13 ~ 2<sup>℃</sup></div>
+        <div class="weather">小雪</div>
+        <div class="wind">微风</div>
+        <div class="current">实时温度：13℃，空气指数 135 轻度污染</div>
+    </main>
+    <footer>
+        <section>
+            <div class="week">周二</div>
+            <div class="icon"></div>
+            <div class="temper">13 ~ 5℃</div>
+            <div class="weather">晴</div>
+            <div class="wind">微风</div>
+        </section>
+        <section>
+            <div class="week">周三</div>
+            <div class="icon"></div>
+            <div class="temper">13 ~ 5℃</div>
+            <div class="weather">晴</div>
+            <div class="wind">微风</div>
+        </section>
+        <section>
+            <div class="week">周四</div>
+            <div class="icon"></div>
+            <div class="temper">13 ~ 5℃</div>
+            <div class="weather">晴</div>
+            <div class="wind">微风</div>
+        </section>
+        <div style="clear:left;"></div>
+    </footer>
+    <script src="jquery.js"></script>
+    <script>
+        // function Flake(){
+        //         var f = document.createElement('img');
+        //         var h = document.documentElement.clientHeight;
+        //         var w = document.documentElement.clientWidth;
+        //         var top = h * Math.random();
+        //         var left = w * Math.random();
+                
+        //         f.src = 'flake.png';
+        //         f.style.position = 'absolute';
+        //         f.style.top = top + 'px';
+        //         f.style.left = left + 'px';
+        //         f.style.transform = 'scale(' + Math.random() / 4 + ')';
+                
+        //         document.body.appendChild(f);
+                
+        //         function down(){
+        //             top += Math.random() * 10;
+        //             left += Math.random() * 5;
+                    
+        //             if(top > h) top = -100;
+        //             if(left > w) left = -100;
+                    
+        //             f.style.top = top + 'px';
+        //             f.style.left = left + 'px';
+        //         }
+                
+        //         setInterval(down, 50);
+        //     }
+            
+        //     for(var i = 0; i < 50; i++){
+        //         new Flake();
+        //     }
+            // $.getJSON('http://api.map.baidu.com/telematics/v3/weather?callback=?',
+            //         {
+            //             location:'郑州',
+            //             ak:'fc00d73a809bd592adcea5d0829833d0',
+            //             out:'json' },
+            //             function(data){
+            //                 console.log(data)
+            //                 var datas = JSON.stringify(data)
+            //                 console.log(datas)
+            //             }
+            //        )
+//            $.ajax('http://apis.baidu.com/3023/weather/weather?id=101180101',
+//                    {
+//                        headers:{
+//                            apikey:'fc00d73a809bd592adcea5d0829833d0'
+//                        },
+//                        success:function(data){
+//                            console.log(data)
+//                            var datas = JSON.stringify(data)
+////        console.log(datas)
+////        $('div').html(datas)
+//                            var  weather = data.weather
+////                            获取当天的信息
+//                            var infos = weather[0].info
+//                            var mintem = infos.night[2]
+////                            console.log(mintem)
+//                            var maxtem = infos.day[2]
+//                            var rain = infos.day[1]
+//                            var wind = infos.day[4]
+//                        }
+//
+//                    }
+//            )
+$.getJSON( 'http://api.map.baidu.com/telematics/v3/weather?callback=?',{
+   location:'郑州市',
+   ak :'7UeZuqEYl9GTKwIVBAolPK25Em2HodAB',
+   output : 'json'
+}, function (data){
+//    console.log(data)
+//    console.log( JSON.stringify(data) )
+      
+   function show(){
+        var dates = data.date
+    //    console.log(dates)
+    var results = data.results
+    var weather = results[0]
+    // console.log(weather)
+    var city = weather.currentCity
+    var pm = weather.pm25
+    var weadata1 = weather.weather_data[0]
+    // console.log(weadata1)
+    var tem1 = weadata1.temperature
+    var wea1 = weadata1.weather
+    var wind1 = weadata1.wind
+    var date1 =weadata1.date
+    var url1 = weadata1.dayPictureUrl
+    // console.log(url1)
+    
+    var weadata2 = weather.weather_data[1]
+    var tem2 =  weadata2.temperature
+    var wea2 = weadata2.weather
+    var wind2 = weadata2.wind
+    var date2 = weadata2.date
+    var url2 = weadata2.dayPictureUrl
+    
+    var weadata3 = weather.weather_data[2]
+    var tem3 =  weadata3.temperature
+    var wea3 = weadata3.weather
+    var wind3 = weadata3.wind
+    var date3 = weadata3.date
+    var url3 = weadata3.dayPictureUrl
+    // console.log(tem) 
+    $('main .tempers,section:eq(0) .temper').text(tem1)
+    $('main .weather,section:eq(0) .weather').text(wea1)
+    $('main .wind,section:eq(0) .wind').text(wind1)
+    $('main .current,section:eq(0) .week').text(date1)
+    $('main .icon,section:eq(0) .icon').css('background-image','url(' + url1 + ')')
+     
+    $('section:eq(1) .temper').text(tem2)
+    $('section:eq(1) .weather').text(wea2) 
+    $('section:eq(1) .wind').text(wind2)  
+    $('section:eq(1) .week').text(date2)
+    $('section:eq(1) .icon').css('background-image','url(' + url2 +')')
+    
+    $('section:eq(2) .temper').text(tem3)
+    $('section:eq(2) .weather').text(wea3) 
+    $('section:eq(2) .wind').text(wind3)  
+    $('section:eq(2) .week').text(date3)
+    $('section:eq(2) .icon').css('background-image','url(' + url3 +')')
+   }
+   setInterval(show,1000)
+})
+
+    </script>
+</body>
+
+</html>

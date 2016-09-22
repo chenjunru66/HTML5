@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> 金玛银城案例 </title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+   
+        <!-- 第一部分 -->
+        <div class="baner">
+            <ul class="list">
+                <li class="current"><img src="image/banner1.jpg" /></li>
+                <li><img src="image/banner2.jpg"  /></li>
+                <li><img src="image/banner3.jpg"  /></li>
+                <li><img src="image/banner4.jpg"  /></li>
+            </ul>
+            <ul class="count">
+                <li class="current">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <!-- 第二部分 -->
+        <footer>
+            <div>
+                <div class="f-1" >
+                    <img src="index.png" alt="">
+                    <address>
+                        <p>香港金玛银城珠宝国际集团有限公司</p>
+                        <p>河南金玛银城珠宝有限公司</p>
+                        <p>紫荆山路兴达国贸珠宝大厦5楼520房间</p>
+                        <p>Tel：0371 - 65320083/85513008</p>
+                        <p>Copyright © 2013 jmycgj.com. ALL RIGHTS RESERVED</p>
+                        <p> 技术支持：河南智巢 郑州网站建设</p>
+                    </address>
+                </div>
+               
+</body>
+
+</html>
+<script>
+    window.onload = function(){
+        //第一步，选取要操作的元素
+        var box = document.querySelectorAll('#box')[0];
+        var oUl = document.querySelectorAll('.list')[0];
+        var aLi = document.querySelectorAll('.list li');
+        var aImg = document.querySelectorAll('img');
+        var aNum = document.querySelectorAll('.count li');
+        var index = 0;
+        var timer = dd = null;
+        var opa = 0;
+
+
+
+        //先写手动的
+        for(var i=0;i<aNum.length;i++){
+            //先把下标存储一下
+            aNum[i].index = i;
+            aNum[i].onmouseover = function(){
+                show(this.index);
+            }
+        }
+        function show(a){
+            //当前图片显示的时候，那么，其余的图片应该都是隐藏状态吧
+            //这里，要改变下index的当前值就好了
+            index = a;
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].style.opacity = 0;
+                aNum[i].className = '';
+
+            }
+            //让当前的图片显示
+            aNum[a].className = 'current';
+            aLi[a].style.opacity = 1;
+            /*dd = setInterval(function(){
+             opa  = opa + 2;
+             aLi[index].style.opacity = opa / 100;
+             if(opa == 100){
+             opa = 0;
+             clearInterval(dd);
+             }
+             },10);*/
+        }
+
+
+        //再写自动的
+        function autoplay(){
+            /*clearInterval(dd);*/
+            timer = setInterval(function(){
+                index++;
+                if(index >= aLi.length){
+                    index = 0;
+                }
+                console.log(index);
+                show(index);
+            },1000)
+        }
+        autoplay();
+
+        //当鼠标移入这个box的时候，这个autoplay停止,移出的时候继续
+
+        box.onmouseover = function(){
+            clearInterval(timer);
+
+        }
+        box.onmouseout = function(){
+            autoplay();
+        }
+
+
+
+
+
+    }
+</script>    
+    
+    
+    
+    
+    
+    

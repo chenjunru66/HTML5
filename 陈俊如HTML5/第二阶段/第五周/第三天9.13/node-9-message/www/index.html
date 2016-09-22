@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 留言板首页 </title>
+</head>
+<body>
+<h1> 留言板 </h1>
+<button type="button" onclick=" location.href = 'message.html' "> 我要留言 </button>
+</body>
+<script>
+    var xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = function(){
+        if( xhr.readyState == 4 ){
+            console.log( xhr.responseText )
+//            处理接受的响应数据
+
+            var mess = xhr.responseText
+            var info = '[' + mess.substr(0, mess.length - 1) + ']'
+            var arr = JSON.parse(info)
+            console.log(arr)
+// 把数据放置在标签对中,section>span+p
+            var div = document.createElement('div')
+            document.body.appendChild(div)
+            var sec = ''
+            for( var i = arr.length - 1; i >= 0; i-- ){
+                sec +=  '<section><span>' + arr[i].infos.message + '</span><p>'
+ + arr[i].date + '</p></section>'
+            }
+            div.innerHTML = sec
+
+        }
+    }
+    xhr.open('get', '/saveMessage')
+    xhr.send()
+</script>
+</html>

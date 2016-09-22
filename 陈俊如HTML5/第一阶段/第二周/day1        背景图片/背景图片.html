@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>背景图片</title>
+        <style>
+            /*根元素的高度*/
+            html{
+                height: 100%;
+            }
+            body{
+                background-color: red;
+                height: 100%;
+                /*当背景图片的大小小于标签的大小的时候，背景图片会在两个方向上（水平和竖直）平铺，直到填满整个空间*/
+                background-image: url(leaf.jpg);
+                /*处理背景图片在两个方向上的是否重复*/
+                background-repeat: no-repeat;
+                /*处理背景图片在x轴的重复*/
+                /*background-repeat: repeat-x;*/
+                /*处理背景图片在y轴的重复*/
+                /*background-repeat: repeat-y;*/
+                /*固定的值
+                两个值：x轴 y轴
+                  一个值：x轴 y轴的值自动处理，默认值为50%，浏览器位置上的50%；*/
+                background-position:50px;                
+                /*右下角*/
+                /*background-position: 100% 100%;*/
+                /*右下角
+                 top  left;top center;top right;
+                 center left;center center;center right;
+                 bottom left;bottom center;bottom right;
+                 如果只定义了一个值，另一个值默认为center       */
+                /*background-position: bottom right;*/
+                
+                /*根据当前的标签大小而定；一个值的时候，为背景图片的宽度，高度是按比例变化的；
+                两个值的时候:宽度 高度*/
+                background-size: 100% 100%;
+                
+                /*简写属性写样式的时候先写简写属性，再单独处理直接属性*/
+                background: red url(leaf.jpg) no-repeat;
+                background-position: 100px;
+                background-size: 20%;
+            }
+            /*流式布局：从上到下，从左到右，尽可能的最少的占据空间*/
+            
+        </style>
+    </head>
+    <body>
+        
+    </body>
+</html>

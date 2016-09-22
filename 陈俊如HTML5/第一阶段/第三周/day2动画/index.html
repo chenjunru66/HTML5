@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>弹性布局对齐方式</title>
+        <style>
+            html{
+                height:100%;
+            }
+            main{
+                height: 100%;
+                /*开启弹性布局*/
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                flex-wrap: wrap;
+                /*flex-flow: row nowrap;*/
+                /*justify-content: center;*/
+                /*justify-content: space-between;*/
+                /*align-items: flex-start;
+                align-items: flex-end;
+                align-items: center;
+                align-items: baseline;*/
+                
+                align-content: stretch;
+                align-content: flex-start;
+                align-content: flex-end;
+                align-content: center;
+                align-content: space-between;
+                
+            }
+            body{
+                margin: 0;
+                height: 100%;
+                
+            }
+            section{
+                border: solid 1px blue;
+                height: 80px;
+                font-size: 50px;
+                width: 30%;
+                flex-basis: 100px;
+                flex-grow: 1;
+                /*flex-basis和width:如果只存在width
+                ：剩余空间=容器宽度——项目宽度width之和
+                如果存在flex-basis（值不为auto）和width：
+                剩余空间=容器宽度——项目basis值之和*/
+            }
+            span {
+                border: solid 1px red;
+                height: 150px;
+                font-size: 120px;
+                width: 40%;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>1 A</section>
+            <section>2 b</section>
+            <section>3 j</section>
+            <section>4 y</section>
+            <span>5 Y</span>
+            <span>6 g</span>
+            <span>7 G</span>
+        </main>
+            
+    </body>
+</html>

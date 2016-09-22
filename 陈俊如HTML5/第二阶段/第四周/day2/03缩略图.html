@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缩略图</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        body{
+            margin:0; 
+        }
+        *{
+            box-sizing:border-box;
+        }
+        ul{
+            list-style:none; margin:0; padding:0;
+        }
+        .suelue{
+            width:680px; margin:50px auto;
+        }
+        img{
+            width:100%;  display:block; 
+        }
+        .tab{
+            width:100%; border:solid 1px #eee; 
+        }
+        .tabbox{
+            width:1000px; position:relative; height:392px; 
+        }
+        .tabbox li{
+            width:680px;  position:absolute;
+        } 
+        .list{
+            width:100%; margin-top:10px; height:78px; 
+        }
+        .list div{
+            width:25px; background:#aaa; color:#fff;  text-align:center; float:left; height:100%;  line-height:78px; font-size:30px;  cursor:pointer
+        }
+        .list .current{
+            background:#333;
+        }
+        .list section{
+            width:620px; float:left; margin:0 5px; overflow:hidden; 
+        }
+        .imgbox{
+            width:900px; position:relative;
+        }
+        .imgbox li{
+            width:125px; float:left; cursor:pointer; 
+        }
+        .imgbox .active img{
+            border:solid 1px red; 
+        }
+        .imgbox img{
+            display:block; width:120px; margin-right:5px;
+        }
+        .imgbox li:last-child img{ 
+            margin-right:0; 
+        }
+
+    </style>
+</head>
+<body>
+    <main class="suelue">
+            <div class="tab">
+                <ul class="tabbox" id="tabbox">
+                        <li style="z-index:3"> <img src="imgs/dsl-1.jpg" alt=""> </li>
+                        <li> <img src="imgs/dsl-2.jpg" alt=""> </li>
+                        <li> <img src="imgs/dsl-3.jpg" alt=""> </li>
+                        <li> <img src="imgs/dsl-4.jpg" alt=""> </li>
+                        <li> <img src="imgs/dsl-5.jpg" alt=""> </li>
+                        <li> <img src="imgs/dsl-6.jpg" alt=""> </li>
+                       <li> <img src="imgs/dsl-3.jpg" alt=""> </li>
+                </ul>
+            </div>
+            <div class="list">
+                    <div id="btn-pre"> <span class="fa fa-caret-left"></span></div>
+                    <section>
+                            <ul class="imgbox" id="thumbs"> 
+                                    <li> <img class="active" src="imgs/sl-1.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-2.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-3.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-4.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-5.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-6.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-3.jpg" alt=""> </li>
+                            </ul>
+                    </section>
+                    <div id="btn-next" class="current"> <span class="fa  fa-caret-right"></span> </div>
+            </div>
+    </main>
+    <script>
+           $(function(){
+               
+            //    效果1：点击缩略图的时候出现相应的大图
+            $("#thumbs li").click(function(){
+                var num = $(this).index()//获取当前点击的索引值
+                // $(this).children().addClass("active").parent().siblings().children().removeClass("active")复杂写法
+                $(this).addClass("active").siblings().removeClass("active")//通过改变类名.active img,能够改变css样式的话，尽量改css，不要用js
+                $("#tabbox li").eq(num).css("z-index","3").siblings().removeAttr("style")
+            })
+               
+            //    效果2：当图片个数小于5张的时候上一张和下一张是默认无法点击的
+            var len = $("#thumbs li").length//获取li的个数
+            if( len <=5 ){
+                $("#btn-next").removeClass("current").css("cursor","auto")
+                
+            }
+            
+            
+            // 可以点击的情况，需要判断可以点击的次数， = 隐藏图片的个数
+            // 点击一次，偏移一次，偏移量为Li标签的宽度
+            var s_width = $("#thumbs li").width()
+            var count = 0//点击次数的初始值
+           
+            $("#btn-next").click(function(){
+                count++
+                if(count > len - 5 ){
+                    var nums = 0
+                    nums+=count                    
+                    $("#thumbs li").eq(count).addClass("active").siblings().removeClass("active")
+                    $("#tabbox li").eq(count).css("z-index","3").siblings().removeAttr("style")
+                    // console.log(nums)
+                     $("#btn-pre").addClass("current").css("cursor","pointer")
+                    if(nums >= 6){
+                        $("#btn-next").removeClass("current").css("cursor","auto")
+                        // nums = 6
+                       
+                    }
+                    
+                    return
+                }
+                $("#thumbs li").eq(count).addClass("active").siblings().removeClass("active")
+                $("#tabbox li").eq(count).css("z-index","3").siblings().removeAttr("style")
+                $("#thumbs").animate({
+                    left:"-=" + s_width + "px"
+                },"fast")
+                
+            })
+            
+            $("#btn-pre").click(function(){
+                count--
+                if(count <= 0 ){
+                    var nums = 0
+                    nums-=count                    
+                    $("#thumbs li").eq(count).addClass("active").siblings().removeClass("active")
+                    $("#tabbox li").eq(count).css("z-index","3").siblings().removeAttr("style")
+                    // console.log(nums)
+                     $("#btn-pre").addClass("current").css("cursor","pointer")
+                    if(nums == 0){
+                        $("#btn-pre").removeClass("current").css("cursor","auto")
+                        // nums = 6
+                       
+                    }
+                    
+                    return
+                }
+                $("#thumbs li").eq(count).addClass("active").siblings().removeClass("active")
+                $("#tabbox li").eq(count).css("z-index","3").siblings().removeAttr("style")
+                $("#thumbs").animate({
+                    left:"-=" + s_width + "px"
+                },"fast")
+                
+            })
+           
+           
+               
+           }) 
+    </script>
+</body>
+</html>

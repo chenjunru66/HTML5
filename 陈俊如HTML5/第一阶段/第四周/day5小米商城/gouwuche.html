@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>购物车</title>
+        <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">  
+        <link rel="stylesheet" href="style.css"> 
+        <style>
+            /*body{
+                margin: 0 auto;
+            }
+            .b-1{                
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+                background: #F2F2F2;
+            }
+          .wrapper2  .fa-angle-left,.wrapper2 .fa-search{
+                font-size: 30px;
+                color: #9DA0A0;
+                padding:0 10px;
+            }
+             .b-1 span:nth-of-type(2){
+                color: #9DA0A0;
+                font-size: 18px;
+            }
+            .d-1-1{
+                overflow: hidden;
+                padding: 10px;
+            }
+            .d-1-1 img{
+                width: 80px;
+                height: 80px;
+                float: left;
+            } 
+            .d-1-1>section{
+                float: left;
+            }           
+            .d-1-1>section>span{
+                display: block;
+                font-size: 12px;
+                line-height:2;
+            }
+            .d-1-1 .d-1-2{
+                display: inline-block;
+                border: 1px solid #F4F4F4;
+                
+            }
+            .d-1-2 .fa-minus{
+               border-right: 1px solid #F4F4F4;
+               padding: 10px;
+               background: #FAFAFA;                            
+            }
+            .d-1-2 .fa-plus{
+                border-left: 1px solid #F4F4F4;
+                padding: 10px;
+                background: #FAFAFA;   
+            }
+            .d-1-2>span:nth-of-type(2){
+                padding: 10px;
+                font-size: 16px;
+            }
+            .d-1-1>section .fa-trash-o{
+                 display: inline-block;
+                 font-size: 20px;
+                 margin: 0 0 0 135px;
+            }
+            .f-1{
+                font-size: 12px;
+                display: inline-block;
+                padding: 10px; 
+                margin: 10px 0;
+                background: #F6F6F6;
+            }
+            .f-1>img{
+                width: 20px;
+                height: 20px;
+                
+            }
+            .f-2{
+                color: red;
+                display: inline-block;
+                padding: 0 30px;                
+            }
+            .f-3{
+                display: block;
+                font-size: 12px;
+                color: #CDB399;
+                border-top:1px solid #F6F6F6;
+                border-bottom: 1px solid #F6F6F6;
+                padding: 10px 0;
+            }
+            .d-2 ul{
+                list-style: none;
+                padding: 0;
+                font-size: 12px;
+                color: #666666;
+            }
+            .d-2 ul li{
+                border: 1px solid #F6F6F6;
+                overflow: hidden;
+            }
+            .fa-check-square{
+                font-size: 18px;
+                color: #DDDDDD;
+                display: inline-block;
+                padding: 10px;
+            }
+            .d-2 ul li .fa-angle-right{
+                display: inline-block;
+                float: right;
+                padding:10px 20px;
+                font-size: 18px;
+                border-left:1px solid #F6F6F6; 
+            }
+            .d-3{
+                position: fixed;
+                z-index: 2;
+                bottom: 0;
+            }
+            .d-3 ul{
+                list-style: none;
+                padding: 0;
+            }
+            .d-3 ul li{
+                display: inline-block;                             
+            }
+            .d-3 ul li:first-of-type{
+                background: green; 
+                margin-bottom: -15px;               
+            }*/
+            /*.d-3-1{
+                
+                padding:0 10px;
+                color: #9DA0A0;
+            }
+            .d-3-2{
+                padding:0 15px ;
+                color: red;
+                display: block;
+            }
+            .d-3-3{
+                background:#F6F6F6;  
+                padding: 10px 20px;
+                color: black;
+                 display: inline-block;
+                 margin-bottom: -15px;
+            }
+           .d-3 ul  a{
+                text-decoration: none;
+            }
+            .d-3-4{
+                background: #FF5722;
+                color: white;
+                padding: 10px 40px;
+            }*/
+            
+            /*.d-3-2{
+                padding:5px 25px ;
+                color: red;
+                display: block;
+            }
+            .d-3-3{
+                background:#F6F6F6;  
+                padding: 30px 25px 5px 25px;
+                color: black;
+                display: inline-block;
+                margin-bottom: -15px;
+            }
+            .d-3-4{
+                background: #FF5722;
+                color: white;
+                padding: 30px 40px 5px 40px;
+                display: inline-block;
+                margin-right: -20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper2">
+         <div class="b-1">
+            <span class="fa fa-angle-left "></span>
+            <span>购物车</span>
+            <span class="fa fa-search"></span>
+        </div>
+        <div class="d-1">
+            <div class="d-1-1">
+                <img src="images/14.png" alt="">
+                <section>
+                    <span>小米Max全网通版 金色 32GB</span>
+                    <span>售价：1499元 合计：1499元</span>
+                     <span class="d-1-2">
+                         <span class="fa fa-minus"></span>
+                         <span>1</span>
+                         <span class="fa fa-plus"></span>                          
+                     </span>
+                     <span class="fa fa-trash-o"></span>
+                </section> 
+                <span class="f-1"><img src="images/26.png" alt="">意外保障服务小米MAX 199元/年 <span class="f-2">购买服务</span></span>          
+                <span class="f-3">
+                    温馨提示：产品是否购买成功，以最终下单为准，请尽快结算
+                </span>
+                     
+            </div>
+        </div>
+        
+        <div class="d-2">
+            <ul>
+                <li><span class="fa fa-check-square"></span><span>+66元小米胶囊耳机</span><span class="fa fa-angle-right"></span></li>
+                <li><span class="fa fa-check-square"></span><span>+199元得小米移动电源16000mAh</span><span class="fa fa-angle-right"></span></li>
+                <li><span class="fa fa-check-square"></span><span>+10元得超薄肤感软胶保护套</span><span class="fa fa-angle-right"></span></li>
+                <li><span class="fa fa-check-square"></span><span>+59元得小米随身蓝牙音箱</span><span class="fa fa-angle-right"></span></li>
+                <li><span class="fa fa-check-square"></span><span>+10元得标准透贴膜</span><span class="fa fa-angle-right"></span></li>
+            </ul>
+        </div>
+        
+        <div class="d-3">
+            <ul>
+                <li> <span class="d-3-1"><span>共一件 金额</span ><br><span class="d-3-2">1499元</span> </span ></li>
+                <li><a href="index.html"><span class="d-3-3">继续购物</span></a></li>
+                <li><span class="d-3-4">去结算</span></li>
+            </ul>
+        </div>
+       </div> 
+    </body>
+</html>

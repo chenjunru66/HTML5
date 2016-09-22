@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>选择器</title>
+        <style>
+            /*main>div{
+                width: 300px;
+                height: 300px;
+                border: solid 2px blue;                                                                          }*/
+            /*main div:选中的是main下面的所有div元素；
+            main>div：选中的是以main为父元素的div元素；
+            id名是唯一的（尽量在使用js时使用）；类名class是可以重复使用的，当前页面可以出现很多次*/
+            /*：:nth-child(n);:nth-of-type(n) */
+            main>div :nth-child(1)>div{
+                width: 50px;
+                height: 50px;
+                border: solid 1px blue;
+            }
+        </style>
+    </head>
+    <body>
+        <!--快速写标签：main>(div>(div*2))*2写完按tab键-->
+        <!--main尽可能出现一次-->
+        <!--<main>
+            <div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+            </div>
+            <section>
+                <section></section>
+                <section></section>
+                <section></section>
+            </section> 
+            <p></p>
+            <p></p>  
+            <p>
+                <span></span>
+                <span></span>
+            </p>         
+        </main>-->
+        <main>
+            <div></div>
+            <div></div>
+            <span></span>
+            <section></section>
+            <p></p>
+        </main>
+    </body>
+</html>

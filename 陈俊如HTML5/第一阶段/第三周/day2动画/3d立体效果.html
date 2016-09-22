@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>3D立体效果</title>
+        <style>
+            html{
+                height: 100%;
+            }
+            body{
+                background: #000;
+                margin: 0;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            main{
+                height: 300px;
+                width: 300px;
+                background: blue;
+                /*perspective: 视图与3D元素的距离*/
+                perspective: 900px;
+                perspective-origin: 80% 50%;
+                /*视图（人的所在位置与所看的距离）的基点位置，其默认值为50% 50%；*/
+            }
+            div{
+                width: 100%;
+                height: 100%;
+                background: red;
+                opacity: 0.5;
+                /*transform-origin: 0 0;*/
+                /*transform: rotateY(-30deg);*/
+                transform: rotateX(75deg);
+                transform-style: preserve-3d;
+                /*保留子元素的3d转换效果，需要与transform共同使用*/
+            }
+            section{
+                width: 100%;
+                height: 100%;
+                background: yellow;
+                opacity: 0.6;
+                /*transform: rotate(30deg) translate(-100px,-100px) skew(30deg);*/
+                /*transform: rotateX(75deg) rotateZ(60deg);*/
+                transform: translateZ(-150px);
+                /*注意执行顺序，当前面有缩放的时候，后面的平移受影响*/
+                transform:scale3d(0.5,1,0.5)  translate3d(0,0,-150px) ;
+            }
+            /*动画过程*/
+            main{
+                animation: rotate 5s infinite linear both;
+            }
+            @keyframes rotate{
+                0%{
+                    transform: rotateX(0) rotateY(0);
+                }
+                100%{
+                    transform: rotateX(360deg) rotateY(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div>
+                <section>
+                    
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

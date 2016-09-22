@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>信息</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        div{
+            width: 40%;
+            margin: 0 auto;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td {
+            border: 2px solid black;
+            width: 80px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div>
+         <button type="button" onclick="active()">查询</button>
+        <table>
+            <tr>
+                <td>name</td>
+                <td>sex</td>
+                <td>age</td>
+                <td>tall</td>
+                <td>weight</td>
+                <td>school</td>
+            </tr>
+            <tr id="demo">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function  stuList( name,sex,age,tall,weight,sch){
+                this.name = name
+                this.sex = sex
+                this.age = age
+                this.tall = tall           
+                this.weight = weight
+                this.sch = sch
+            }
+            
+           var Cjr = new stuList( 'cjr','man',23,176,65,'ncwu')
+           var James = new stuList( 'james','man',32,216,120,'ncwupp') 
+           var Clay = new stuList( 'clay','man',26,206,110,'ncy') 
+           var Curry = new stuList( 'curry','man',28,196,100,'uyiiy') 
+           var Tom = new stuList( 'tom','man',22,226,140,'ncwpp') 
+           var Amy = new stuList( 'amy','woman',41,186,90,'ncwp') 
+           var Jim = new stuList( 'jim','woman',32,216,120,'npp')
+           var Jason = new stuList( 'jason','man',22,196,120,'wupp')
+           var Jack = new stuList( 'jack','man',22,196,120,'wuhkpp')
+           var Kimi = new stuList( 'kimi','woman',32,156,120,'wuiupp')
+           var aArr = new Array()
+            aArr[0] = Cjr
+            aArr[1] = James
+            aArr[2] = Clay
+            aArr[3] = Curry
+            aArr[4] = Tom
+            aArr[5] = Amy
+            aArr[6] = Jim
+            aArr[7] = Jason
+            aArr[8] = Jack
+            aArr[9] = Kimi
+            // console.log(aArr[0])
+            var i           
+            function active(){
+                
+                i = Math.random() * 10
+                //  console.log(i)
+                i = Math.floor(i)
+                // console.log( Math.floor(i) )
+                // aArr[i].index = i
+                // console.log(aArr[i])
+                document.getElementById('demo').innerHTML =  '<tr>' + '<td>' + aArr[i].name + '</td>' + '<td>' + aArr[i].sex + '</td>' + '<td>' + aArr[i].age + '</td>' + '<td>' + aArr[i].tall + '</td>' + '<td>' + aArr[i].weight + '</td>' + '<td>' + aArr[i].sch + '</td>' + '</tr>' 
+            }
+    </script>
+</body>
+
+</html>

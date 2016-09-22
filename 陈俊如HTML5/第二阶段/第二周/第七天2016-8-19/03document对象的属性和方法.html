@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>document对象的属性和方法</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        main {
+            background: blue;
+        }
+        
+        div {
+            width: 600px;
+            background: yellow;
+        }
+        
+        section {
+            width: 400px;
+            height: 100px;
+            background: red;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <section>
+                这是新的文本内容
+            </section>
+        </div>
+    </main>
+    <script>
+        // document的只读属性，获取当前页面的styleSheetList
+        console.log( document.styleSheets)//输出的是数组
+        // 第一步
+        var cssStyle = document.styleSheets
+        // 它是一个 StyleSheet 对象的有序集合。styleSheetList.item(index) 或 styleSheetList[index] 根据它的索引（索引基于0）返回一个单独的样式表对象。
+        console.log( cssStyle[0])//输出的是对象CSSStyleSheet
+        
+        //第二步
+        // 获取当前页面的样式表  输出的是个数组，这里的cssRules是对象中的属性名
+        var cssR = cssStyle[0].cssRules
+        console.log( cssR )
+        
+        console.log( cssR[0] )//输出的是数组中的值
+        // cssText 输出的是相对应的标签选择器的具体样式列表内容
+        console.log( cssR[0].cssText )
+        
+        // 给styleSheets添加样式
+        cssStyle[0].insertRule( 'section{ border:solid 1px blue}' , 1 )//这里的1是索引值，将section（这个section是新的）的样式定位数组中的第二个位置
+        console.log( cssR[0])
+        
+        // 添加样式的三种方法
+        1.添加className，前提是在style标签对内写好相对应得样式列表
+        2.setAttribute(name,value),添加的样式在开始标签内部即内联
+        3.通过document.styleSheets添加，通过js动态添加相应的样式，
+        方法：insertRule(样式列表，索引值（位置）)这种方法不影响HTML文档的css样式以及内容
+        
+    </script>
+</body>
+
+</html>

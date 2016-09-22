@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>全选和全不选</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        div {
+            width: 200px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        
+        form {
+            border: 1px solid black;
+            text-align: center;
+        }
+        
+        #demo2 {
+            color: dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <form action="">
+            <input type="checkbox" onclick="action1()" checked><span id="demo1" onclick="action1()">全选</span> <span id="demo2"
+                onclick="action2()">反选</span><br>
+            <input type="checkbox" checked>选项一 <br>
+            <input type="checkbox" checked>选项二 <br>
+            <input type="checkbox" checked>选项三 <br>
+            <input type="checkbox" checked>选项四 <br>
+            <input type="checkbox" checked>选项五 <br>
+            <input type="checkbox" checked>选项六 <br>
+            <input type="checkbox" checked>选项七 <br>
+            <input type="checkbox" checked>选项八<br>
+            <input type="checkbox" checked>选项九 <br>
+            <input type="checkbox" checked>选项十
+        </form>
+    </div>
+    <script>
+        // 1当下面是否选项全部被选中的时候，第一个复选框也被选中，内容变为全不选
+            // 2点击全选的时候，下面的选项全部选中，再次点击全被选中
+            // 3.反选
+           var inps = document.querySelectorAll( 'input' )
+           var inp = document.querySelector('input')
+           var demo1 = document.getElementById('demo1')
+           var demo2 = document.getElementById('demo2')
+           function action(){
+            for( var i = 1,n = 0;i <inps.length;i++ ){
+             inps[i].checked && n++//console.log( inps[i].checked)判断为真还是为假，为真n+1，为假n不加1
+            
+        }
+        console.log(n)//n的值满了为10
+        // 当n=10的时候，第一个input也被选中
+        // console.log( n == inps.length - 1 ) 要么为真要么为假
+        inp.checked = ( n == inps.length - 1 )
+        // 当全选为true的时候，文字内容设为全不选，否则为全选
+        demo1.innerHTML = inp.checked ? '全不选' : '全选'       
+        
+        }
+        
+        // 点击的时候，方能判断选项卡的checked为真或为假
+        for( var i = 1;i <inps.length;i++){
+            inps[i].onclick = function(){
+                action()
+            }
+        }
+            function action1(){
+                 for( var i = 1 ;i < inps.length;i++ ){
+                     inps[i].index = i
+                   console.log( inps[i])
+                   if(inps[i].checked == false ){
+                       inp.checked = true
+                       inps[i].checked = true
+                       demo1.innerHTML = '全选'
+                   }
+                   else if(inp.checked == false ){
+                       inps[i].checked = false
+                       demo1.innerHTML = '全不选'
+                    //    inp.checked = true                      
+                   }                                       
+               }          
+           }
+           function action2(){
+               for( var i = 1 ; i < inps.length;i++){
+                   inps[i].index = i
+                   if(inps[i].checked == false ){
+                       inps[i].checked = true                                                            
+                   }                   
+                   else{
+                       inp.checked = false
+                       demo1.innerHTML = '全不选'
+                       inps[i].checked = false
+                   }
+                   action()
+               }
+           }
+    </script>
+</body>
+
+</html>

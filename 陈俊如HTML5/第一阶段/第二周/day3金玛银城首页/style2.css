@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+}
+a:hover{
+    color: white;
+}
+header{
+    background: #87191C;
+    width: 100%;    
+}
+header>div{
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+header>div img{
+    width: 180px;
+    height: 150px;
+    float: left;
+}
+header>div>div>ul{
+    list-style: none;
+    margin-top: 0;
+     
+}
+header>div>div>ul li a{
+    text-decoration: none;
+    color: #DAB866;
+    padding: 0 15px 0 0;
+}
+header>div>div>ul li{
+    float: right;
+    margin: 0 15px 0 0;
+    border-right: solid 1px  #DAB866;
+}
+header>div>div>ul li:first-child{
+    border-right: none;
+}
+header>div>div>span{
+    color: #DAB866;
+    font-size: 20px;
+    float: right;
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+}
+header>div>section>ul{
+    list-style: none;
+    margin-top: 0;
+}
+ header>div>section>ul li{
+     float: left;
+     margin: 0 15px;
+     position: relative;
+     top: 80px;
+     left: 80px;
+ }
+ header>div>section>ul li a{
+      text-decoration: none;
+    color: #DAB866;
+    padding: 0 30px 0 0;
+ }
+ header>div>section>ul li p{
+     font-size: 16px;
+     margin: 0;
+ }
+ .banner{
+     width: 100%;
+ }
+ .banner img{
+     width: 100%;
+ }
+ footer{
+     width: 100%;   
+     background-color: #87191C;
+     overflow: hidden;
+     position: relative;     
+ }
+ footer>div{
+     width: 80%;     
+     margin: 0 auto;
+     
+ }
+ footer img{
+     width: 180px;
+     height: 150px;      
+ }
+ footer>div>section>address>p{
+     font-style: normal;
+     font-size: 14px;
+     color: #DAB866;
+     margin: 0px;
+     text-align: center;
+ }
+ footer>div>section{
+     float: left;
+     padding: 50px 0 50px 90px;
+ }
+ footer>div ul{
+     list-style: none;
+     float: left;
+     
+ }
+footer>div ul li a{
+      text-decoration: none;
+      color: #DAB866;
+     
+}
+footer  div:nth-of-type(1) div{
+       padding-top: 50px;
+       margin-left: 50px; 
+}
+footer>div ul li{
+    margin:0 30px; 
+}
+footer>div>div:nth-of-type(1) ul li:first-child{
+    font-size: 20px;
+    font-weight: bold; 
+}
+footer>div>div:nth-of-type(2)>div>ul>li{
+    float: left;
+    margin: 0;
+    padding:0 30px;
+    border: solid 1px  #DAB866;
+    position: relative;
+    top:50px;
+}
+footer>div>div:nth-of-type(2)>div>ul li:first-child{
+    border-left: none;
+}
+footer>div>div:nth-of-type(2)>div>ul li:last-child{
+    border-right: none;
+}
+footer>div>div:nth-of-type(2) a{
+    padding:0 15px ;
+}

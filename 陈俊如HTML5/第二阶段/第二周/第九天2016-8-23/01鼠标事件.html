@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>鼠标事件</title>
+        <style>
+            div{
+                background: red;
+                height: 50px;
+                color: #fff;
+                width: 200px;
+                margin-top: 20px;
+            }
+            .trans{
+                animation: trans 3s both;
+            }
+            @keyframes trans{
+                from{
+                    transform: translateX(0)
+                }
+                to{
+                    transform: translateX(300px)
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            鼠标的点击事件和滑过事件
+        </div>
+        <div>
+            鼠标的双击事件
+        </div>
+        <div>
+            鼠标按钮被按下
+        </div>
+        <div>
+            鼠标指针被移到元素上触发onmouseenter
+        </div>
+        
+        <script>
+            var div1 = document.querySelector('div')
+            var div2 = document.getElementsByTagName('div')[1]
+            var div3 = document.getElementsByTagName('div')[2]
+            var div4 = document.getElementsByTagName('div')[3]
+            // 点击事件
+            div1.onclick = function (){
+                div1.style.background = 'blue'
+                div1.className = ''
+            }
+            // 鼠标滑过是触发事件 onmouseover
+            div1.onmouseover = function(){
+                div1.style.background = 'red'
+                div1.className = 'trans'
+            }
+            
+            //鼠标双击事件  ondblclick
+            div2.ondblclick = function(){
+                div2.style.color = 'yellow'
+            }
+            
+            // 鼠标按钮被按下 :onmousedown:鼠标上的任意键被按下
+            div3.onmousedown = function(){
+                div3.style.fontSize = '20px'
+                div2.style.fontSize = '20px'
+            }
+            
+            // 鼠标指针移到元素上被触发 onmouseenter与onmouseover类似，但不支持冒泡
+            div4.onmouseenter = function(){
+                div4.style.width = '300px'
+            }
+            
+            // onmouseleave鼠标离开元素时触发的事件，但不支持冒泡
+            div4.onmouseleave = function(){
+                div4.style.color = 'black'
+            }
+            
+            // div4.addEventListener('mouseenter',function(){
+            //     div4.style.width = '300px'
+            //     alert('111')
+            // })
+            // document.body.addEventListener('mouseenter',function(){
+            //     div4.style.width = '300px'
+            //     alert('222')
+            // })
+            
+            // 鼠标被移动的事件,鼠标得移动才会触发
+            div4.onmousemove = function(){
+                div4.style.border = 'solid 5px black'
+            }
+            
+            // onmouseup鼠标按键松开触发的事件
+            div3.onmouseup = function(){
+                div3.style.background = 'blue'
+                div3.style.fontSize = '14px'
+            }
+        </script>
+    </body>
+</html>

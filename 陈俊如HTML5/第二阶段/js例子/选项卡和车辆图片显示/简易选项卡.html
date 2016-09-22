@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>简易选项卡</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            div{
+                width: 40%;
+                margin: 0 auto;
+                border: 1px solid black;
+                margin-top: 15px;                
+            }
+            h5{
+                margin: 0;
+                background: black;
+                border-bottom: 1px solid black;
+                color: white;
+            }
+            span{
+                 display: inline-block;
+                 padding: 10px 25px;
+                 /*border: 1px solid red;*/
+            }        
+            ul{
+                display: none;
+            }
+            .f1{
+                display: block;
+            }
+            .active{
+                background: gray;
+                color: black;
+            }
+            .active2{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h5>
+                <span>第一课</span>
+                <span>第二课</span>
+                <span>第三课</span>
+            </h5>
+            
+            <ul class="f1">
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECMAScript</li>
+            </ul>
+            <ul class="f2">
+                <li>javascript组成：ECMAScript</li>
+                <li>javascriript</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascrScript</li>
+                <li>javascricript</li>
+                <li>javascript组成：ECMAScript</li>
+            </ul>
+            <ul class="f3">
+                <li>javascript组成：</li>
+                <li>javascript组成</li>
+                <li>javascript组成：E</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECt</li>
+                <li>javascript组成：ECMAScript</li>
+                <li>javascript组成：ECMAScript</li>
+            </ul>
+            
+        </div>
+        
+        <script>
+            var spans = document.querySelectorAll('span') 
+            var uls = document.querySelectorAll('ul')                      
+            for( var i = 0;i < spans.length;i++){
+                spans[i].index = i 
+                uls[i].index = i               
+                spans[i].onmouseover = function(){                    
+                   for(var i = 0;i < spans.length;i++){                       
+                       spans[i].className = ''  
+                       uls[i].className = ''                  
+                       this.className = 'active' 
+                       uls[this.index].className = 'active2'      
+                   }                                    
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>

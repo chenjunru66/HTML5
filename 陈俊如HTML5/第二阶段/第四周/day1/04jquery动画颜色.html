@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>jQuery动画颜色</title>
+        <script src="jquery.js"></script>
+        <script src="jquery.color.js"></script>
+        <style>
+            div{
+                width: 200px;
+                height: 100px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div>我是一个div标签，即将进行颜色变化的动画效果</div>
+        <script>
+            $(function(){
+                 $("div").animate({
+                   width:300,
+                   height:200,
+                   backgroundColor:"blue",//不能写简写属性
+                   color:"#fff"  
+                     
+                 },2000)
+                
+            })
+           
+        </script>
+    </body>
+</html>
